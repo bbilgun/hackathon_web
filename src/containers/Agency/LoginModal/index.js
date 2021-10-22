@@ -50,7 +50,7 @@ const LoginModal = ({
 
   const registerData = async (data) => {
     toast.promise(
-      axios.post('http://192.168.43.170:8081/api/v1/olympiads/616ef1d2be18de66889ae3e8/users', data, {
+      axios.post('https://syscotech-api.herokuapp.com/api/v1/olympiads/616ef1d2be18de66889ae3e8/users', data, {
         headers: {
           'Access-Control-Allow-Headers': "*"
         }
