@@ -7,9 +7,6 @@ import HamburgMenu from 'common/components/HamburgMenu';
 import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
 import { Container } from './navbar.style';
 import CopyrightSection from '../CopyrightsSection';
-
-import LogoImage from 'common/assets/image/agency/logo-word-green.png';
-
 import { DrawerContext } from 'common/contexts/DrawerContext';
 
 import data from 'common/data/Agency/';
@@ -28,7 +25,8 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       <Container>
         <Logo
           href="#"
-          logoSrc={LogoImage}
+          withAnchor
+          logoSrc="/logo-word-green.png"
           title="Agency"
           logoStyle={logoStyle}
         />

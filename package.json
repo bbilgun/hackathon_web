@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "export": "next build && next export",
     "serve": "npm run build && firebase emulators:start --only functions,hosting",
     "shell": "npm run build && firebase functions:shell",
@@ -66,11 +67,18 @@
     "tsparticles": "^1.35.2",
     "yup": "^0.32.11"
   },
+  "workspaces": [
+    "packages/common",
+    "packages/landing",
+    "packages/landing-gatsby",
+    "packages/reusecore"
+  ],
   "devDependencies": {
     "babel-plugin-styled-components": "^1.11.1",
+    "eslint": "^8.0.1",
+    "eslint-config-next": "11.1.2",
     "firebase-tools": "^9.10.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.0"
-  },
-  "proxy": "http://192.168.43.170:8081/api/v1"
+  }
 }

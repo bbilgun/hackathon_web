@@ -8,8 +8,6 @@ import Logo from 'common/components/UIElements/Logo';
 import Container from 'common/components/UI/Container';
 import FooterWrapper, { List, ListItem } from './footer.style';
 
-import LogoImage from 'common/assets/image/agency/logo-word-green.png';
-
 import data from 'common/data/Agency';
 
 const Footer = ({
@@ -26,7 +24,7 @@ const Footer = ({
       <Container>
         <Box className="row" {...row}>
           <Box {...colOne}>
-          <Logo href='/' logoSrc={LogoImage} title='Sys&CoTech club' logoStyle={logoStyle} />
+          <Logo href='/' withAnchor logoSrc="/logo-word-green.png" title='Sys&CoTech club' logoStyle={logoStyle} />
             <Text content='ШУТИС-МХТС 400 тоот' {...textStyle} style={{ marginTop: 20 }} />
             <Text content='+976 8844 5432' {...textStyle} />
           </Box>
