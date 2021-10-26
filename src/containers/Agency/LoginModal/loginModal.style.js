@@ -13,7 +13,9 @@ const LoginModalWrapper = styled.div`
   }
   @media only screen and (max-width: 667px) {
     width: 100%;
+    padding-top: 250px;
   }
+
   .col {
     position: relative;
     .patternImage {

@@ -86,33 +86,17 @@ export const features = {
       id: 1,
       color: '#F55767',
       icon: featureIcon1,
-      title: 'App Development',
+      title: '1-р шат',
       description:
-        'We are specialized at custom Saas Application Development and special features.',
-    },
-    {
-      id: 2,
-      color: '#ff4742',
-      icon: featureIcon2,
-      title: '10 Times Award',
-      description:
-        'We are globally recognised for our services and won a lot of prices around the world .',
+        'Hackerrank флатформыг ашиглан 2021-11-06 16:00:00 цагт онлайнаар явагдана.',
     },
     {
       id: 3,
       color: '#fb5781',
       icon: featureIcon3,
-      title: 'Cloud Storage',
+      title: '2 -р шат',
       description:
-        'LiteSpeed Web Server known for its high performance and low resource consumption.',
-    },
-    {
-      id: 4,
-      color: '#f18e47',
-      icon: featureIcon4,
-      title: 'Customization',
-      description:
-        'Client Satisfaction is our first priority and We are best at it. Keep In Touch for the best output. ',
+        'МХТС-ийн 320, 324 лабораторын танхимуудад 2021-11-06 16:00:00 цагт зохион байгуулагдана.',
     },
   ],
 };

@@ -19,6 +19,8 @@ import LogoImage from 'common/assets/image/agency/logo.png';
 import LoginImage from 'common/assets/image/agency/login-bg.jpg';
 import { alignItems, height } from 'styled-system';
 import axios from 'axios';
+import Counter from 'containers/AppMinimal/Counter';
+import Features from 'containers/AppModern/Features';
 
 
 const Space = styled.div`
@@ -59,12 +61,13 @@ const LoginModal = ({
           pending: 'Бүртгэл хийгдэж байна... ',
           success: {
             render(data){
+              setRegister(true);
               return `Амжилттай бүртгэгдлээ. `
             },
           },
           error: {
             render(data){
-              return `Бүртгэлтэй оюутны дугаар байна. `
+              return `Оюутны код бүртгэлтэй байна. `
             },
           },
         }
@@ -76,6 +79,7 @@ const LoginModal = ({
   const [phoneNumber, setPhoneNumber] = useState(null);
   const [email, setEmail] = useState(null);
   const [studentCode, setStudentCode] = useState(null);
+  const [register, setRegister] = useState(false);
 
   const validateText = (val) => {
     if(val === null) {
@@ -135,43 +139,49 @@ const LoginModal = ({
     registerData({ firstname, lastname, email, studentCode, phoneNumber });
   }
 
-  return (
-    <LoginModalWrapper>
-      <Box className="row" {...row}>
-        <Box className="col " {...col}>
-          <Box {...contentWrapper}>
-          <ToastContainer 
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar={true}
-            newestOnTop={false}
-            closeOnClick
-            draggable
-          />
-            <form onSubmit={onSubmit}>
-            <Heading content="Бүртгүүлэх хэсэг" {...titleStyle} />
-            <Space/>
-            <Input label="Овог: " value={lastname || ''} onChange={(text) => setLastname(text)} />
-            {!validateText(lastname) && <Text content="*Овогоо оруулна уу" {...hintStyle} style={{ marginTop: 8 }} />}
-            <Space/>
-            <Input label="Нэр: " value={firstname} onChange={(text) => setFirstname(text)} />
-            {!validateText(firstname) && <Text content="*Нэрээ оруулна уу" {...hintStyle} style={{ marginTop: 8 }} />}
-            <Space/>
-            <Input inputType="text" label="Оюутны код: " value={studentCode} onChange={(text) => setStudentCode(text)}/>
-            {!validateCode(studentCode) && <Text content="*Оюутаны код буруу ..." {...hintStyle} style={{ marginTop: 8 }} />}
-            <Space/>
-            <Input inputType="number" value={phoneNumber} label="Утасны дугаар: " onChange={(text) => setPhoneNumber(text)}/>
-            {!validateNumeric(phoneNumber) && <Text content="*Утасны дугаар буруу ..." {...hintStyle} style={{ marginTop: 8 }} />}
-                        <Space/>
-            <Input inputType="email" value={email} label="Мэйл хаяг" onChange={(text) => setEmail(text)} />
-            {!validateEmail(email) && <Text content="*Мэйл хаяг буруу байна." {...hintStyle} style={{ marginTop: 8 }} />}
-            <Space/>
-            <br/>
-            <Button type="submit" className="default" title="Бүтгүүлэх" {...btnStyle}/>
-          </form>
-          </Box>
+  const renderRegister = () => (
+    <Box className="row" {...row}>
+      <Box className="col " {...col}>
+        <Box {...contentWrapper}>
+          <form onSubmit={onSubmit}>
+          <Heading content="Бүртгүүлэх хэсэг" {...titleStyle} />
+          <Space/>
+          <Input label="Овог: " value={lastname || ''} onChange={(text) => setLastname(text)} />
+          {!validateText(lastname) && <Text content="*Овогоо оруулна уу" {...hintStyle} style={{ marginTop: 8 }} />}
+          <Space/>
+          <Input label="Нэр: " value={firstname} onChange={(text) => setFirstname(text)} />
+          {!validateText(firstname) && <Text content="*Нэрээ оруулна уу" {...hintStyle} style={{ marginTop: 8 }} />}
+          <Space/>
+          <Input inputType="text" label="Оюутны код: " value={studentCode} onChange={(text) => setStudentCode(text)}/>
+          {!validateCode(studentCode) && <Text content="*Оюутаны код буруу ..." {...hintStyle} style={{ marginTop: 8 }} />}
+          <Space/>
+          <Input inputType="number" value={phoneNumber} label="Утасны дугаар: " onChange={(text) => setPhoneNumber(text)}/>
+          {!validateNumeric(phoneNumber) && <Text content="*Утасны дугаар буруу ..." {...hintStyle} style={{ marginTop: 8 }} />}
+                      <Space/>
+          <Input inputType="email" value={email} label="Мэйл хаяг" onChange={(text) => setEmail(text)} />
+          {!validateEmail(email) && <Text content="*Мэйл хаяг буруу байна." {...hintStyle} style={{ marginTop: 8 }} />}
+          <Space/>
+          <br/>
+          <Button type="submit" className="default" title="Бүтгүүлэх" {...btnStyle}/>
+        </form>
         </Box>
       </Box>
+    </Box>
+  );
+
+  return (
+    <LoginModalWrapper>
+        <ToastContainer 
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          draggable
+          style={{ zIndex: 1000, top: 200 }}
+        />
+      {/* <Counter/> */}
+      { register ? (<Features/>) : renderRegister() }
     </LoginModalWrapper>
   );
 };

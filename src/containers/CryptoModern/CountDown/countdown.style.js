@@ -64,9 +64,9 @@ export const ContentWrapper = styled.div`
         border-radius: 5px;
         background-color: #0b1741;
         @media (max-width: 480px) {
-          width: 70px;
-          height: 70px;
-          background-color: transparent;
+          width: 65px;
+          height: 65px;
+          margin: 10px;
         }
         .NormalupperCard {
           align-items: center;

@@ -22,10 +22,14 @@ const Features = () => {
       <Container>
         <SectionHeader>
           <Fade up>
-            <Heading as="h5" content={slogan} />
-            <Heading content={title} />
+            <Heading content="Манай програмчлалыг олимпиадад бүртгүүлсэнд баярлалаа." />
           </Fade>
         </SectionHeader>
+          <Fade up>
+            <div style={{ textAlign: 'center' }}>
+              <p>Уг програмчлалын олимпиадад нь 2 үе шаттай зохион байгуулагдана.</p>
+            </div>
+          </Fade>
         <FeatureWrapper>
           {items.map((item) => (
             <Fade up delay={100 * item.id} key={`feature-key${item.id}`}>

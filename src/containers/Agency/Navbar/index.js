@@ -25,8 +25,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       <Container>
         <Logo
           href="#"
-          withAnchor
-          logoSrc="/logo-word-green.png"
+          logoPath="/logo-word-green.png"
           title="Agency"
           logoStyle={logoStyle}
         />

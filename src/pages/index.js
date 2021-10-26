@@ -22,6 +22,11 @@ import { DrawerProvider } from 'common/contexts/DrawerContext';
 import FaqSection from 'containers/Agency/FaqSection';
 import CountDownSection from 'containers/CryptoModern/CountDown';
 
+// Дуусах хугацаа
+const deadline = new Date("2021-11-02");
+const today = new Date();
+const endTime = today > deadline;
+
 const Main = () => {
   return (
     <ThemeProvider theme={agencyTheme}>
@@ -49,7 +54,7 @@ const Main = () => {
             </DrawerProvider>
           </Sticky>
           <BannerSection />
-          <CountDownSection/>
+          {!endTime && (<CountDownSection  deadline={deadline} />)}
           {/* <Banner/> */}
           <FeatureSection />
           <WorkHistory />

@@ -353,9 +353,9 @@ export const GalleryData = [
 
 export const CounterData = {
   blockTitle: {
-    title: 'Let’s take your wallet Experience to the next level',
+    title: 'Манай програмчлалыг олимиадад бүртгүүлсэнд баярлалаа.',
     tagline:
-      'Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool. Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool.',
+      'Манай олимиадад нь хоёр үе шаттай ',
   },
   countBox: [
     {

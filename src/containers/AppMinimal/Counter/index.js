@@ -17,9 +17,9 @@ const Counter = () => {
       <Container className="Container">
         <Box className="topTitle">
           <Heading as="h2" content={title} />
-          <Text as="p" content={tagline} />
+          {/* <Text as="p" content={tagline} /> */}
         </Box>
-        <Row>
+        {/* <Row>
           {countBox.map(({ number, text, button }, index) => (
             <Col key={`counter-key-${index}`}>
               <Box className="CounterBox">
@@ -33,7 +33,7 @@ const Counter = () => {
               </Box>
             </Col>
           ))}
-        </Row>
+        </Row> */}
       </Container>
     </CounterArea>
   );

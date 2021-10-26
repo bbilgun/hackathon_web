@@ -15,14 +15,14 @@ const SectionWrapper = styled.section`
 export const FeatureWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: -12px 0 -30px;
 
   > div {
-    width: calc(100% / 4 - 34px);
+    width: calc(100% / 4 - 20px);
     margin: 38px 0 30px;
     @media only screen and (max-width: 1366px) {
-      width: calc(100% / 4 - 30px);
+      width: calc(100% / 4 - 15px);
     }
     @media only screen and (max-width: 991px) {
       width: calc(100% / 2 - 30px);
@@ -39,6 +39,9 @@ export const FeatureWrapper = styled.div`
   .feature__block {
     align-items: flex-start;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
     @media only screen and (max-width: 767px) {
       align-items: center;
       text-align: center;

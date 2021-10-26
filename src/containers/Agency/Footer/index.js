@@ -24,7 +24,7 @@ const Footer = ({
       <Container>
         <Box className="row" {...row}>
           <Box {...colOne}>
-          <Logo href='/' withAnchor logoSrc="/logo-word-green.png" title='Sys&CoTech club' logoStyle={logoStyle} />
+          <Logo href='/' logoPath="/logo-word-green.png" title='Sys&CoTech club' logoStyle={logoStyle} />
             <Text content='ШУТИС-МХТС 400 тоот' {...textStyle} style={{ marginTop: 20 }} />
             <Text content='+976 8844 5432' {...textStyle} />
           </Box>

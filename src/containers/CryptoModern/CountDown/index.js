@@ -9,10 +9,13 @@ import { openModal, closeModal } from '@redq/reuse-modal';
 import NormalClock from './timer';
 import SearchPanel from 'containers/Agency/SearchPanel';
 import LoginModal from 'containers/Agency/LoginModal';
-const deadline = new Date(Date.parse(new Date()) + 12 * 24 * 60 * 60 * 1000);
+
+// Дуусах хугацаа
+const deadline2 = new Date("2021-11-02 18:00:00");
+
 import SectionWrapper, { ContentWrapper } from './countdown.style';
 
-const CountDownSection = () => {
+const CountDownSection = ({ deadline }) => {
 
     // Alt close button for modal
   const CloseModalButtonAlt = () => (

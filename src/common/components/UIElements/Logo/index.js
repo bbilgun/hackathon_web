@@ -9,16 +9,17 @@ const Logo = ({
   logoStyle,
   titleStyle,
   withAnchor,
+  logoPath,
   anchorProps,
   logoSrc,
   title,
   ...props
 }) => (
   <Link {...props} {...logoWrapperStyle}>
-    {withAnchor ? (
+    {logoPath ? (
       <a {...anchorProps}>
-        {logoSrc ? (
-          <Image src={logoSrc} alt={title} {...logoStyle} />
+        {logoPath ? (
+          <Image src={logoPath} alt={title} {...logoStyle} />
         ) : (
           <Text content={title} {...titleStyle} />
         )}
@@ -43,6 +44,7 @@ Logo.propTypes = {
   titleStyle: PropTypes.object,
   withAnchor: PropTypes.bool,
   anchorProps: PropTypes.object,
+  logoPath: PropTypes.string,
 };
 
 Logo.defaultProps = {
@@ -60,5 +62,6 @@ Logo.defaultProps = {
     lineHeight: 'inherit',
     whiteSpace: 'nowrap',
   },
+  logoPath: null,
 };
 export default Logo;
