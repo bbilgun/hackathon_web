@@ -353,7 +353,7 @@ export const GalleryData = [
 
 export const CounterData = {
   blockTitle: {
-    title: 'Манай програмчлалыг олимиадад бүртгүүлсэнд баярлалаа.',
+    title: 'Манай програмчлалын олимиадад бүртгүүлсэнд баярлалаа.',
     tagline:
       'Манай олимиадад нь хоёр үе шаттай ',
   },

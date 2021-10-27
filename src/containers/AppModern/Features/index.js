@@ -22,7 +22,7 @@ const Features = () => {
       <Container>
         <SectionHeader>
           <Fade up>
-            <Heading content="Манай програмчлалыг олимпиадад бүртгүүлсэнд баярлалаа." />
+            <Heading content="Манай програмчлалын олимпиадад бүртгүүлсэнд баярлалаа." />
           </Fade>
         </SectionHeader>
           <Fade up>

@@ -39,8 +39,7 @@ const BannerSection = ({
         <Box className="row" {...row}>
           <Box className="col" {...col}>
             <DiscountLabel>
-              <Text content="5 сарын 16-ны өдөр 13:00-16:00 " {...discountAmount} />
-              <Text content="цагийн хооронд онлайнаар явагдана" {...discountText} />
+              <Text content="11 сарын 4-ний өдөр явагдана" {...discountAmount} />
             </DiscountLabel>
             <FeatureBlock
               title={
@@ -51,7 +50,7 @@ const BannerSection = ({
               }
               description={
                 <Text
-                  content='Sys&CoTech клубээс уламжлал болгон зохион байгуулдаг Мэдээлэл, Холбооны Технологийн Сургуулийн 1-3-р курсийн оюутнууд оролцох боломжтой програмчлалын Олимпиадын бүртгэл эхэллээ '
+                  content='Sys&CoTech клубээс Мэдээлэл, Холбооны Технологийн Сургуулийн 1-3 -р курсийн оюутнуудын дунд уламжлал болгон зохион байгуулдаг Програмчлалын Олимпиадын бүртгэл эхэллээ.'
                   {...description}
                 />
               }
