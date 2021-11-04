@@ -39,7 +39,7 @@ const BannerSection = ({
         <Box className="row" {...row}>
           <Box className="col" {...col}>
             <DiscountLabel>
-              <Text content="11 сарын 4-ний өдөр явагдана" {...discountAmount} />
+              <Text content="11 сарын 11-ний өдөр явагдана" {...discountAmount} />
             </DiscountLabel>
             <FeatureBlock
               title={

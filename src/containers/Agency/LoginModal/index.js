@@ -106,7 +106,8 @@ const LoginModal = ({
     if(val === null) {
       return true;
     }
-    const re = /^B[0-9]{9}$/;
+    // B190120009
+    const re = /^B[1-2]{1}[0-1.9]{1}[0-9]{7}$/;
     return re.test(val);
   };
   const onSubmit = (event) => {
@@ -153,7 +154,7 @@ const LoginModal = ({
           {!validateText(firstname) && <Text content="*Нэрээ оруулна уу" {...hintStyle} style={{ marginTop: 8 }} />}
           <Space/>
           <Input inputType="text" label="Оюутны код: " value={studentCode} onChange={(text) => setStudentCode(text)}/>
-          {!validateCode(studentCode) && <Text content="*Оюутаны код буруу ..." {...hintStyle} style={{ marginTop: 8 }} />}
+          {!validateCode(studentCode) && <Text content="*Тэмцэнд оролцох боломжгүй оюутны код байна ..." {...hintStyle} style={{ marginTop: 8 }} />}
           <Space/>
           <Input inputType="number" value={phoneNumber} label="Утасны дугаар: " onChange={(text) => setPhoneNumber(text)}/>
           {!validateNumeric(phoneNumber) && <Text content="*Утасны дугаар буруу ..." {...hintStyle} style={{ marginTop: 8 }} />}
