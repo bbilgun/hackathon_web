@@ -10,11 +10,11 @@ const LocationSelectorWrap = styled.section`
     }
   }
   .locationSelector {
-    width: 60%;
+    width: 90%;
     box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.08);
     border-radius: 5px;
     @media (max-width: 1600px) {
-      width: 80%;
+      width: 90%;
     }
     @media (max-width: 400px) {
       width: 100%;

@@ -39,6 +39,7 @@
     "react-aria-menubutton": "^7.0.2",
     "react-collapser": "^1.5.10",
     "react-content-loader": "^6.0.3",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-countdown-now": "^2.1.2",
     "react-countup": "^6.0.0",
     "react-dom": "^17.0.1",

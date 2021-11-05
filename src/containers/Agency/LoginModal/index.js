@@ -163,7 +163,7 @@ const LoginModal = ({
           {!validateEmail(email) && <Text content="*Мэйл хаяг буруу байна." {...hintStyle} style={{ marginTop: 8 }} />}
           <Space/>
           <br/>
-          <Button type="submit" className="default" title="Бүтгүүлэх" {...btnStyle}/>
+          <Button type="submit" className="default" title="Бүртгүүлэх" {...btnStyle}/>
         </form>
         </Box>
       </Box>
@@ -182,7 +182,7 @@ const LoginModal = ({
           style={{ zIndex: 1000, top: 200 }}
         />
       {/* <Counter/> */}
-      { register ? (<Features/>) : renderRegister() }
+      { register ? (<Features content="Манай програмчлалын олимпиадад бүртгүүлсэнд баярлалаа." />) : renderRegister() }
     </LoginModalWrapper>
   );
 };

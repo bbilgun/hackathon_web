@@ -9,6 +9,9 @@ import Container from 'common/components/UI/Container';
 import Particles from '../../Agency/Particle';
 import BannerWrapper, { DiscountLabel } from './bannerSection.style';
 import Countdown from '../../CryptoModern/CountDown';
+import { openModal, closeModal } from '@redq/reuse-modal';
+import LoginModal from 'containers/Agency/JuramModal';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const BannerSection = ({
   row,
@@ -20,15 +23,46 @@ const BannerSection = ({
   discountAmount,
   outlineBtnStyle,
 }) => {
+
+      // Alt close button for modal
+      const CloseModalButtonAlt = () => (
+        <Button
+          className="modalCloseBtn alt"
+          variant="fab"
+          onClick={() => closeModal()}
+          icon={<i className="flaticon-plus-symbol" />}
+        />
+      );
+
+      
+     // Search modal handler
+     const handleSearchModal = () => {
+      openModal({
+        config: {
+          className: 'search-modal',
+          disableDragging: true,
+          width: '100%',
+          height: '100%',
+          animationFrom: { transform: 'translateY(100px)' }, // react-spring <Spring from={}> props value
+          animationTo: { transform: 'translateY(0)' }, //  react-spring <Spring to={}> props value
+          transition: {
+            mass: 1,
+            tension: 180,
+            friction: 26,
+          },
+        },
+        component: LoginModal,
+        componentProps: {},
+        closeComponent: CloseModalButtonAlt,
+        closeOnClickOutside: false,
+      });
+    };
+
   const ButtonGroup = () => (
     <Fragment>
-      <Button title="LEARN MORE" {...btnStyle} />
-      <Button
-        title="WATCH WORKS"
-        variant="textButton"
-        icon={<i className="flaticon-next" />}
-        {...outlineBtnStyle}
-      />
+      <AnchorLink href='#normalCount' offset='70'>
+        <Button title='Бүртгэлийн тухай' icon={<i className='flaticon-down-arrow' />} {...btnStyle} />
+      </AnchorLink>
     </Fragment>
   );
   return (
@@ -38,7 +72,7 @@ const BannerSection = ({
       <Particles />
         <Box className="row" {...row}>
           <Box className="col" {...col}>
-            <DiscountLabel>
+          <DiscountLabel>
               <Text content="11 сарын 11-ний өдөр явагдана" {...discountAmount} />
             </DiscountLabel>
             <FeatureBlock
@@ -50,10 +84,11 @@ const BannerSection = ({
               }
               description={
                 <Text
-                  content='Sys&CoTech клубээс Мэдээлэл, Холбооны Технологийн Сургуулийн 1-3 -р курсийн оюутнуудын дунд уламжлал болгон зохион байгуулдаг Програмчлалын Олимпиадын бүртгэл эхэллээ.'
+                  content='Sys&CoTech клубээс Мэдээлэл, Холбооны Технологийн Сургуулийн 1-ээс 3 -р курсийн оюутнуудын дунд уламжлал болгон зохион байгуулдаг Програмчлалын Олимпиадын бүртгэл эхэллээ.'
                   {...description}
                 />
               }
+              button={<ButtonGroup/>}
             />
           </Box>
         </Box>

@@ -39,37 +39,11 @@ const LocationSection = ({
       <Box {...sectionWrapper} id="control">
         <Container fullWidth noGutter className="control-sec-container">
           <Box {...row} {...imageAreaRow}>
-            <Box {...col} {...imageArea}>
-              <Card {...imageWrapper} {...imageWrapperOne}>
-                <Fade left>
-                  <Image
-                    src={ImageOne?.src}
-                    alt="Info Image One"
-                    {...imageOne}
-                  />
-                </Fade>
-              </Card>
-            </Box>
-
             <Box {...col} {...textArea} className="textArea">
-              <Text content="Where to ?" {...sectionSubTitle} />
-              <FeatureBlock
-                description={
-                  <Text
-                    content="How much does GoDrive cost in your city? Calculate a fare estimate for your next trip.Simply enter a pickup location and destination to get started.."
-                    {...description}
-                  />
-                }
-              />
               <Box className="locationSelector">
                 <div className="locationSelectorWrapper">
-                  <Input
-                    inputType="email"
-                    placeholder="Enter pickup Location"
-                    icon={<Icon icon={iosNavigate} />}
-                    iconPosition="right"
-                    aria-label="pickup location"
-                  />
+                  <p>ДАНСНЫ ДУГААР</p>
+                  <p>5027883557</p>
                   <div className="locationColor" />
                 </div>
                 <div className="locationSelectorWrapper">
@@ -81,37 +55,6 @@ const LocationSection = ({
                     aria-label="dropoff location"
                   />
                   <div className="locationColor secondChild" />
-                </div>
-              </Box>
-              <Box className="derviceSelector">
-                <div className="deviceSelectorWrapper">
-                  <Box
-                    className={
-                      activeStatus ? 'vejpaImage active-item' : 'vejpaImage'
-                    }
-                    onClick={() => setState({ active: true })}
-                  >
-                    <Image src={VespaImage?.src} alt="Vespa Image" />
-                  </Box>
-                  <Box
-                    className="carImage"
-                    className={
-                      activeStatus === false
-                        ? 'carImage active-item'
-                        : 'carImage'
-                    }
-                    onClick={() => setState({ active: false })}
-                  >
-                    <Image src={CarImage?.src} alt="Car Image" />
-                  </Box>
-                </div>
-                <div className="derviceSelectorBtn">
-                  <Button
-                    title="Get Estimate"
-                    variant="textButton"
-                    icon={<i className="flaticon-next" />}
-                    {...estimateBtnStyle}
-                  />
                 </div>
               </Box>
             </Box>

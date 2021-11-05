@@ -9,6 +9,7 @@ import { openModal, closeModal } from '@redq/reuse-modal';
 import NormalClock from './timer';
 import SearchPanel from 'containers/Agency/SearchPanel';
 import LoginModal from 'containers/Agency/LoginModal';
+import JuramModal from 'containers/Agency/JuramModal';
 
 // Дуусах хугацаа
 const deadline2 = new Date("2021-11-02 18:00:00");
@@ -16,6 +17,28 @@ const deadline2 = new Date("2021-11-02 18:00:00");
 import SectionWrapper, { ContentWrapper } from './countdown.style';
 
 const CountDownSection = ({ deadline }) => {
+
+  const JuramModalHandle = () => {
+    openModal({
+      config: {
+        className: 'search-modal',
+        disableDragging: true,
+        width: '100%',
+        height: '100%',
+        animationFrom: { transform: 'translateY(100px)' }, // react-spring <Spring from={}> props value
+        animationTo: { transform: 'translateY(0)' }, //  react-spring <Spring to={}> props value
+        transition: {
+          mass: 1,
+          tension: 180,
+          friction: 26,
+        },
+      },
+      component: JuramModal ,
+      componentProps: {},
+      closeComponent: CloseModalButtonAlt,
+      closeOnClickOutside: false,
+    });
+  }
 
     // Alt close button for modal
   const CloseModalButtonAlt = () => (
@@ -53,7 +76,7 @@ const CountDownSection = ({ deadline }) => {
 
 
   return (
-    <SectionWrapper>
+    <SectionWrapper id="normalCount">
       <Container>
         <ContentWrapper>
           <Heading style={{ color: '#10AC84', fontSize: 30,
@@ -66,7 +89,10 @@ const CountDownSection = ({ deadline }) => {
               <NormalClock countdown={deadline} divider="true" />
             </div>
           </Fade>
-          <Button onClick={handleSearchModal} className="secondary" title="Бүтгүүлэх" />
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <Button onClick={handleSearchModal} className="secondary" title="Бүртгүүлэх" />
+          <Button style={{ marginLeft: 10 }} onClick={JuramModalHandle} className="primary" title="Бүртгэлийн хураамж" />
+            </div>
         </ContentWrapper>
       </Container>
     </SectionWrapper>
