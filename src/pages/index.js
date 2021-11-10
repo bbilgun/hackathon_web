@@ -23,7 +23,7 @@ import FaqSection from 'containers/Agency/FaqSection';
 import CountDownSection from 'containers/CryptoModern/CountDown';
 
 // Дуусах хугацаа
-const deadline = new Date("2021-11-10");
+const deadline = new Date("2021-11-10 12:00");
 const today = new Date();
 const endTime = today > deadline;
 
