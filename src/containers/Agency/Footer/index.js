@@ -26,7 +26,7 @@ const Footer = ({
           <Box {...colOne}>
           <Logo href='/' logoPath="/logo-word-green.png" title='Sys&CoTech club' logoStyle={logoStyle} />
             <Text content='ШУТИС-МХТС 400 тоот' {...textStyle} style={{ marginTop: 20 }} />
-            <Text content='+976 8844 5432' {...textStyle} />
+            <Text content='+976 9435 1314' {...textStyle} />
           </Box>
           {/* End of footer logo column */}
           <Box {...colTwo}>
