@@ -60,8 +60,8 @@ const BannerSection = ({
 
   const ButtonGroup = () => (
     <Fragment>
-      <AnchorLink href='#normalCount' offset='70'>
-        <Button title='Бүртгэлийн тухай' icon={<i className='flaticon-down-arrow' />} {...btnStyle} />
+      <AnchorLink href='#featureSection' offset='60'>
+        <Button title='БИДЭНТЭЙ ТАНИЛЦАХ' icon={<i className='flaticon-down-arrow' />} {...btnStyle} />
       </AnchorLink>
     </Fragment>
   );
@@ -72,19 +72,21 @@ const BannerSection = ({
       <Particles />
         <Box className="row" {...row}>
           <Box className="col" {...col}>
-          <DiscountLabel>
-              <Text content="11 сарын 11-ний өдөр явагдана" {...discountAmount} />
-            </DiscountLabel>
+            <a href='https://www.facebook.com/SysAndCoTech/posts/7323404347684580'>
+              <DiscountLabel>
+                <Text content="Шинэ гишүүний элсэлт эхлэлээ. 🎉" {...discountAmount} />
+              </DiscountLabel>
+            </a>
             <FeatureBlock
               title={
                 <Heading
-                  content="Програмчлалын Олимпиад - 2021"
+                  content="Хүсэл зорилго, сэтгэл зүтгэлээр нэгдсэн..."
                   {...title}
                 />
               }
               description={
                 <Text
-                  content='Sys&CoTech клубээс Мэдээлэл, Холбооны Технологийн Сургуулийн 1-ээс 3 -р курсийн оюутнуудын дунд уламжлал болгон зохион байгуулдаг Програмчлалын Олимпиадын бүртгэл эхэллээ.'
+                  content='ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил, үйл ажиллагааг удирдан зохион байгуулж явуулсаар байна.'
                   {...description}
                 />
               }
