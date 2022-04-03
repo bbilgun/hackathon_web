@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 const SectionWrapper = styled.div`
   padding: 75px 0;
@@ -24,7 +24,7 @@ export const ContentWrapper = styled.div`
   }
 
   h2 {
-    color: ${themeGet('colors.white', '#fff')};
+    color: ${themeGet("colors.white", "#fff")};
     font-size: 32px;
     line-height: 44px;
     font-weight: 400;
@@ -76,7 +76,7 @@ export const ContentWrapper = styled.div`
             font-size: 60px;
             letter-spacing: -1px;
             color: #ffffff;
-            font-family: 'Roboto';
+            font-family: "Roboto";
             font-weight: 300;
             text-align: center;
             @media (max-width: 480px) {
@@ -87,8 +87,8 @@ export const ContentWrapper = styled.div`
         .digitLabel {
           font-size: 14px;
           letter-spacing: 3px;
-          color: #8ec7ff;
-          font-family: 'Roboto';
+          color: #6c247e;
+          font-family: "Roboto";
           font-weight: 500;
           text-align: center;
           margin-top: 12px;
@@ -101,7 +101,7 @@ export const ContentWrapper = styled.div`
         font-size: 36px;
         line-height: 48px;
         color: #fff;
-        font-family: 'Roboto';
+        font-family: "Roboto";
         font-weight: 700;
         text-align: center;
         @media (max-width: 480px) {

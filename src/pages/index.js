@@ -1,77 +1,78 @@
-import React, { Fragment } from 'react';
-import Head from 'next/head';
-import Sticky from 'react-stickynode';
-import { ThemeProvider } from 'styled-components';
-import { agencyTheme } from 'common/theme/agency';
-import ResetCSS from 'common/assets/css/style';
-import { GlobalStyle, AgencyWrapper } from 'containers/Agency/agency.style';
-import Navbar from 'containers/Agency/Navbar';
-import BannerSection from 'containers/Agency/BannerSection';
-import FeatureSection from 'containers/Agency/FeatureSection';
-import AboutUsSection from 'containers/Agency/AboutUsSection';
-import WorkHistory from 'containers/Agency/WorkHistory';
-import BlogSection from 'containers/Agency/BlogSection';
-import Banner from 'containers/Hosting/Banner';
-import TestimonialSection from 'containers/Agency/TestimonialSection';
-import TeamSection from 'containers/Agency/TeamSection';
-import VideoSection from 'containers/Agency/VideoSection';
-import NewsletterSection from 'containers/Agency/NewsletterSection';
-import QualitySection from 'containers/Agency/QualitySection';
-import Footer from 'containers/Agency/Footer';
-import { DrawerProvider } from 'common/contexts/DrawerContext';
-import FaqSection from 'containers/Agency/FaqSection';
-import CountDownSection from 'containers/CryptoModern/CountDown';
-import moment from 'moment';
+/* eslint-disable react/display-name */
+/* eslint-disable import/no-anonymous-default-export */
+import React, { Fragment } from "react";
+import Head from "next/head";
+import { ThemeProvider } from "styled-components";
+import { theme } from "common/theme/appCreative";
+import ResetCSS from "common/assets/css/style";
+import Sticky from "react-stickynode";
+import Navbar from "containers/AppCreative/Navbar";
+import Banner from "containers/AppCreative/Banner";
+import KeyFeatures from "containers/AppCreative/KeyFeatures";
+import Experiences from "containers/AppCreative/Experience";
+import ChooseUs from "containers/AppCreative/ChooseUs";
+import Testimonials from "containers/AppCreative/Testimonials";
+import AvailableStore from "containers/AppCreative/AvailableStore";
+import Faqs from "containers/AppCreative/Faq";
+import CallToAction from "containers/AppCreative/CallToAction";
+import FeatureSlider from "containers/AppCreative/FeatureSlider";
+import Footer from "containers/AppCreative/Footer";
+import GlobalStyle, {
+  AppWrapper,
+  ContentWrapper,
+} from "containers/AppCreative/appCreative.style";
+import CountDownSection from "containers/CryptoModern/CountDown";
+import moment from "moment";
 
 // Дуусах хугацаа
-const deadline = moment("2021-11-11");
+const deadline = moment("2022-04-22");
 const today = new Date();
 const endTime = today > deadline;
 
-const Main = () => {
+export default function () {
   return (
-    <ThemeProvider theme={agencyTheme}>
+    <ThemeProvider theme={theme}>
       <Fragment>
-        {/* Start agency head section */}
         <Head>
-        <title>Sys&CoTech club | SICT</title>
-          <meta name='theme-color' content='#10ac84' />
-          <meta name='description' content='Sys&CoTech' />
-          
-          {/* Load google fonts */}
+          <title>Sys&CoTech club | SICT</title>
+          <meta name="theme-color" content="#10ac84" />
+          <meta name="description" content="Sys&CoTech" />
+          <meta
+            name="keywords"
+            content="Dev Student Hackathon, Sys&CoTech club, syscotech"
+          />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
             rel="stylesheet"
           />
         </Head>
+        {/* end of head */}
+
         <ResetCSS />
         <GlobalStyle />
-        {/* End of agency head section */}
-        {/* Start agency wrapper section */}
-        <AgencyWrapper>
-          <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
-            <DrawerProvider>
-              <Navbar />
-            </DrawerProvider>
+        {/* end of global and reset style */}
+
+        {/* start app creative landing */}
+        <AppWrapper>
+          <Sticky top={0} innerZ={9999} activeClass="sticky-active">
+            <Navbar />
           </Sticky>
-          <BannerSection />
-          {!endTime && (<CountDownSection  deadline={deadline} />)}
-          {/* <Banner/> */}
-          <FeatureSection />
-          <WorkHistory />
-          {/* <BlogSection /> */}
-          <AboutUsSection />
-          <QualitySection />
-          {/* <VideoSection />
-          <TestimonialSection /> */}
-          {/* <TeamSection /> */}
-          <FaqSection />
-          {/* <NewsletterSection /> */}
+          <ContentWrapper>
+            <Banner />
+            {!endTime && <CountDownSection deadline={deadline} />}
+            <KeyFeatures />
+            <ChooseUs />
+            <Experiences />
+            <FeatureSlider />
+            <Testimonials />
+            <AvailableStore />
+            <Faqs />
+            <CallToAction />
+          </ContentWrapper>
           <Footer />
-        </AgencyWrapper>
-        {/* End of agency wrapper section */}
+        </AppWrapper>
+        {/* end of app creative landing */}
       </Fragment>
     </ThemeProvider>
   );
-};
-export default Main;
+}

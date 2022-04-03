@@ -1,46 +1,47 @@
-import React from 'react';
-import Fade from 'react-reveal/Fade';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
-import Button from 'common/components/Button';
-import Image from 'common/components/Image';
-import Container from 'common/components/UI/Container';
-import { openModal, closeModal } from '@redq/reuse-modal';
-import NormalClock from './timer';
-import SearchPanel from 'containers/Agency/SearchPanel';
-import LoginModal from 'containers/Agency/LoginModal';
-import JuramModal from 'containers/Agency/JuramModal';
+import React from "react";
+import Fade from "react-reveal/Fade";
+import Text from "common/components/Text";
+import Heading from "common/components/Heading";
+import Button from "common/components/Button";
+import Image from "common/components/Image";
+import Container from "common/components/UI/Container";
+import { openModal, closeModal } from "@redq/reuse-modal";
+import NormalClock from "./timer";
+import SearchPanel from "containers/Agency/SearchPanel";
+import LoginModal from "containers/Agency/LoginModal";
+import JuramModal from "containers/Agency/JuramModal";
 
 // Дуусах хугацаа
 const deadline2 = new Date("2021-11-02 18:00:00");
 
-import SectionWrapper, { ContentWrapper } from './countdown.style';
+import SectionWrapper, { ContentWrapper } from "./countdown.style";
+import { SectionHeader } from "containers/AppCreative/appCreative.style";
+import ParticlesComponent from "containers/Crypto/Particle";
 
 const CountDownSection = ({ deadline }) => {
-
   const JuramModalHandle = () => {
     openModal({
       config: {
-        className: 'search-modal',
+        className: "search-modal",
         disableDragging: true,
-        width: '100%',
-        height: '100%',
-        animationFrom: { transform: 'translateY(100px)' }, // react-spring <Spring from={}> props value
-        animationTo: { transform: 'translateY(0)' }, //  react-spring <Spring to={}> props value
+        width: "100%",
+        height: "100%",
+        animationFrom: { transform: "translateY(100px)" }, // react-spring <Spring from={}> props value
+        animationTo: { transform: "translateY(0)" }, //  react-spring <Spring to={}> props value
         transition: {
           mass: 1,
           tension: 180,
           friction: 26,
         },
       },
-      component: JuramModal ,
+      component: JuramModal,
       componentProps: {},
       closeComponent: CloseModalButtonAlt,
       closeOnClickOutside: false,
     });
-  }
+  };
 
-    // Alt close button for modal
+  // Alt close button for modal
   const CloseModalButtonAlt = () => (
     <Button
       className="modalCloseBtn alt"
@@ -50,17 +51,16 @@ const CountDownSection = ({ deadline }) => {
     />
   );
 
-
-   // Search modal handler
-   const handleSearchModal = () => {
+  // Search modal handler
+  const handleSearchModal = () => {
     openModal({
       config: {
-        className: 'search-modal',
+        className: "search-modal",
         disableDragging: true,
-        width: '100%',
-        height: '100%',
-        animationFrom: { transform: 'translateY(100px)' }, // react-spring <Spring from={}> props value
-        animationTo: { transform: 'translateY(0)' }, //  react-spring <Spring to={}> props value
+        width: "100%",
+        height: "100%",
+        animationFrom: { transform: "translateY(100px)" }, // react-spring <Spring from={}> props value
+        animationTo: { transform: "translateY(0)" }, //  react-spring <Spring to={}> props value
         transition: {
           mass: 1,
           tension: 180,
@@ -74,25 +74,38 @@ const CountDownSection = ({ deadline }) => {
     });
   };
 
-
   return (
     <SectionWrapper id="normalCount">
       <Container>
         <ContentWrapper>
-          <Heading style={{ color: '#10AC84', fontSize: 30,
-            fontWeight: 300,
-            lineHeight: 1.31,
-            letterSpacing: -0.025}} 
-            content="Бүртгэл хаагдахад: " />
+          <SectionHeader>
+            <Fade up>
+              <Heading
+                as="h1"
+                content={`"Dev Hackathon-2022" бүртгэл хаагдахад`}
+              />
+              {/* <Text content={slogan} /> */}
+            </Fade>
+          </SectionHeader>
           <Fade up>
             <div className="timerCount">
               <NormalClock countdown={deadline} divider="true" />
             </div>
           </Fade>
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <Button onClick={handleSearchModal} className="secondary" title="Бүртгүүлэх" />
-          <Button style={{ marginLeft: 10 }} onClick={JuramModalHandle} className="primary" title="Бүртгэлийн хураамж" />
-            </div>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <Button
+              onClick={handleSearchModal}
+              className="secondary"
+              title="Бүртгүүлэх"
+            />
+            <ParticlesComponent />
+            {/* <Button
+              style={{ marginLeft: 10 }}
+              onClick={JuramModalHandle}
+              className="primary"
+              title="Бүртгэлийн хураамж"
+            /> */}
+          </div>
         </ContentWrapper>
       </Container>
     </SectionWrapper>

@@ -1,23 +1,24 @@
-import React from 'react';
-import Fade from 'react-reveal/Fade';
-import { Icon } from 'react-icons-kit';
-import { playCircle } from 'react-icons-kit/fa/playCircle';
-import { openModal, closeModal } from '@redq/reuse-modal';
-import Text from 'common/components/Text';
-import NextImage from 'common/components/NextImage';
-import Button from 'common/components/Button';
-import Heading from 'common/components/Heading';
-import Container from 'common/components/UI/Container';
+import React from "react";
+import Fade from "react-reveal/Fade";
+import { Icon } from "react-icons-kit";
+import { playCircle } from "react-icons-kit/fa/playCircle";
+import { openModal, closeModal } from "@redq/reuse-modal";
+import Text from "common/components/Text";
+import NextImage from "common/components/NextImage";
+import Button from "common/components/Button";
+import Heading from "common/components/Heading";
+import Container from "common/components/UI/Container";
 import BannerWrapper, {
   BannerContent,
   BannerImage,
   BannerImageMobile,
   ButtonGroup,
   VideoWrapper,
-} from './banner.style';
+} from "./banner.style";
 
-import bannerImg from 'common/assets/image/appCreative/bannerImg.png';
-import bannerImgMobile from 'common/assets/image/appCreative/availableThumb.png';
+import bannerImg from "common/assets/image/appCreative/bannerImg.png";
+import bannerImgMobile from "common/assets/image/appCreative/availableThumb.png";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 // close button for modal
 const CloseModalButton = () => (
@@ -44,11 +45,11 @@ const Banner = () => {
   const handleVideoModal = () => {
     openModal({
       config: {
-        className: 'video-modal',
+        className: "video-modal",
         disableDragging: true,
         default: {
-          width: 'auto',
-          height: 'auto',
+          width: "auto",
+          height: "auto",
           x: 0,
           y: 0,
         },
@@ -64,24 +65,32 @@ const Banner = () => {
       <Container>
         <BannerContent>
           <Fade up delay={100}>
-            <Heading
-              as="h1"
-              content="Your trusted mobile app to make days beautiful 😘"
-            />
+            <Heading as="h1" content={`"Dev Student Hackathon - 2022"`} />
           </Fade>
           <Fade up delay={200}>
-            <Text content="There will be a day–in our lifetime–when we get to celebrate every person on the planet having access." />
+            <Text
+              style={{
+                lineHeight: "1.6",
+              }}
+              content={`Мэдээллийн технологиор суралцаж буй оюутан залуучуудын идэвх санаачлагыг нэмэгдүүлж, хөгжилд нөлөөлөхүйц бүтээлүүдийг технологийн шийдлээр бий болгохыг зорин "FINANCIAL TECHNOLOGY" сэдэвтэйгээр зохион байгуулах гэж байна`}
+            />
           </Fade>
           <Fade up delay={300}>
             <ButtonGroup>
-              <Button className="primary" title="Start 14-days free trail" />
+              <AnchorLink className="primary" href="#normalCount" offset={73}>
+                <Button
+                  href="#normalCount"
+                  className="primary"
+                  title="Тэмцээнд бүртгүүлэх"
+                />
+              </AnchorLink>
               <div onClick={handleVideoModal}>
                 <Button
                   className="text"
                   variant="textButton"
                   icon={<Icon icon={playCircle} />}
                   iconPosition="left"
-                  title="How it works"
+                  title="Хакатон гэж юу вэ?"
                 />
               </div>
             </ButtonGroup>
