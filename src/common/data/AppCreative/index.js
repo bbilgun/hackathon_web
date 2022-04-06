@@ -1,7 +1,7 @@
 /* ------------------------------------ */
 // Navbar data section
 /* ------------------------------------ */
-import logo from '../../assets/image/appCreative/logo.png';
+import logo from '../../assets/image/appCreative/Modern_Sys&CoLogo.png';
 export const navbar = {
   logoImage: logo,
   navMenu: [
@@ -47,37 +47,37 @@ import keyFeature3 from '../../assets/image/appCreative/key_feature/3.svg';
 import keyFeature4 from '../../assets/image/appCreative/key_feature/4.svg';
 
 export const keyFeatures = {
-  title: 'Business start with great features',
+  title: 'Шинэ технологи, програмчлалын хэл',
   slogan:
-    'Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents.',
+    'Ашигласан бол давуу тал болох болно.',
   features: [
     {
       id: 1,
       icon: keyFeature1,
-      title: 'Make Snap real',
+      title: 'AI',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart solutions.',
+        '',
     },
     {
       id: 2,
       icon: keyFeature2,
-      title: 'Total Virtual Reality',
+      title: 'Block Chain',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart online solutions.',
+        '',
     },
     {
       id: 3,
       icon: keyFeature3,
-      title: 'Full 360 View',
+      title: 'VR',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart solutions.',
+        '',
     },
     {
       id: 4,
       icon: keyFeature4,
-      title: 'Artificial Intelligence',
+      title: 'Deep learning',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart solutions.',
+        '',
     },
   ],
 };
