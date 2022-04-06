@@ -15,9 +15,19 @@ import LoginModal from "containers/Agency/LoginModal";
 import HackathonTeam from "containers/Agency/HackathonTeam";
 import HackathonUserForm from "containers/Agency/HackathonUserForm";
 import HackathonPayment from "containers/Agency/HackathonPayment";
+import { users } from "react-icons-kit/fa/users";
+import { userCircleO } from "react-icons-kit/fa/userCircleO";
+import { creditCard } from "react-icons-kit/fa/creditCard";
 
 const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
+  const [activeKey, setActiveKey] = useState("1");
   const [forms, setForms] = useState([0]);
+  const [validTeam, setValidTeam] = useState(false);
+  const [validUsers, setValidUsers] = useState(false);
+
+  const onChange = (index) => {
+    setActiveKey(String(index));
+  };
 
   return (
     <SectionWrapper id="screenshot_section">
@@ -29,24 +39,48 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
             content={`"Dev Hackathon-2022" бүртгүүлэх`}
           />
         </Box>
-        <Tabs className="update-screen-tab">
-          {SCREENSHOTS.map((item, index) => (
-            <TabPane
-              tab={
-                <>
-                  <Icon icon={item.icon} size={24} />
-                  {item.title}
-                </>
-              }
-              key={index + 1}
-            >
-              {index === 0 && <HackathonTeam />}
-              {index === 1 && (
-                <HackathonUserForm forms={forms} setForms={setForms} />
-              )}
-              {index === 2 && <HackathonPayment />}
-            </TabPane>
-          ))}
+        <Tabs
+          className="update-screen-tab"
+          activeKey={activeKey}
+          onChange={onChange}
+        >
+          <TabPane
+            tab={
+              <>
+                <Icon
+                  icon={userCircleO}
+                  size={20}
+                  style={{ marginRight: 10 }}
+                />
+                Алхам 1
+              </>
+            }
+            key="1"
+          >
+            <HackathonTeam />
+          </TabPane>
+          <TabPane
+            tab={
+              <>
+                <Icon icon={users} size={20} style={{ marginRight: 10 }} />
+                Алхам 2
+              </>
+            }
+            key="2"
+          >
+            <HackathonUserForm />
+          </TabPane>
+          <TabPane
+            tab={
+              <>
+                <Icon icon={creditCard} size={20} style={{ marginRight: 10 }} />
+                Хураамж
+              </>
+            }
+            key="3"
+          >
+            <HackathonPayment />
+          </TabPane>
         </Tabs>
       </Container>
     </SectionWrapper>

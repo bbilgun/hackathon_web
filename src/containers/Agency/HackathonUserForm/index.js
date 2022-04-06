@@ -32,15 +32,9 @@ const HackathonUserForm = ({
   row,
   col,
   btnStyle,
-  logoStyle,
-  titleStyle,
   contentWrapper,
   outlineBtnStyle,
-  descriptionStyle,
-  googleButtonStyle,
   contentWrapper2,
-  secHeading,
-  iconStyle,
 }) => {
   const [forms, setForms] = useState([0]);
   const LoginButtonGroup = () => (

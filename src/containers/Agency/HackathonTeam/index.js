@@ -75,7 +75,6 @@ const HackathonTeam = ({
               </Box>
             </Box>
           </Box>
-          <LoginButtonGroup />
         </Box>
       </form>
     </LoginModalWrapper>
