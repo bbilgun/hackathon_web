@@ -17,6 +17,7 @@ import Faqs from "containers/AppCreative/Faq";
 import CallToAction from "containers/AppCreative/CallToAction";
 import FeatureSlider from "containers/AppCreative/FeatureSlider";
 import Footer from "containers/AppCreative/Footer";
+import UpdateScreen from "containers/SaasClassic/UpdateScreen";
 import GlobalStyle, {
   AppWrapper,
   ContentWrapper,
@@ -60,6 +61,7 @@ export default function () {
           <ContentWrapper>
             <Banner />
             {!endTime && <CountDownSection deadline={deadline} />}
+            <UpdateScreen />
             <KeyFeatures />
             <ChooseUs />
             <Experiences />
