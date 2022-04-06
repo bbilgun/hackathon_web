@@ -41,10 +41,10 @@ export const navbar = {
 /* ------------------------------------ */
 // Key Features data section
 /* ------------------------------------ */
-import keyFeature1 from '../../assets/image/appCreative/key_feature/1.svg';
-import keyFeature2 from '../../assets/image/appCreative/key_feature/2.svg';
-import keyFeature3 from '../../assets/image/appCreative/key_feature/3.svg';
-import keyFeature4 from '../../assets/image/appCreative/key_feature/4.svg';
+import keyFeature1 from '../../assets/image/appCreative/key_feature/ai.svg';
+import keyFeature2 from '../../assets/image/appCreative/key_feature/blockchain.svg';
+import keyFeature3 from '../../assets/image/appCreative/key_feature/vr.svg';
+import keyFeature4 from '../../assets/image/appCreative/key_feature/Deep_learning.svg';
 
 export const keyFeatures = {
   title: 'Шинэ технологи, програмчлалын хэл',
@@ -75,7 +75,7 @@ export const keyFeatures = {
     {
       id: 4,
       icon: keyFeature4,
-      title: 'Deep learning',
+      title: 'Deep Learning',
       description:
         '',
     },
@@ -406,8 +406,8 @@ import reviewer2 from '../../assets/image/appCreative/client/client-avatar-2.jpg
 import reviewer3 from '../../assets/image/appCreative/client/client-avatar-3.jpg';
 
 export const testimonial = {
-  title: 'What our clients say about us',
-  slogan: 'Some inspirational feedback from our customers on twitter',
+  title: 'Шүүгч, Ментор-уудтай танилцна уу.',
+  slogan: '',
   reviews: [
     {
       id: 1,
@@ -473,34 +473,34 @@ export const testimonial = {
 import availableThumb from '../../assets/image/appCreative/availableThumb.png';
 
 export const availableStore = {
-  title: 'We are available in both play store & app store ✌️',
+  title: '',
   description:
-    'There will be a day–in our lifetime–when we get to celebrate every person on the planet having access.',
+    '',
   thumb: availableThumb,
   numberPrefix: [
     {
-      label: '+13',
-      value: '13',
+      label: '',
+      value: '',
     },
     {
-      label: '+14',
-      value: '14',
+      label: '',
+      value: '',
     },
     {
-      label: '+15',
-      value: '15',
+      label: '',
+      value: '',
     },
     {
-      label: '+16',
-      value: '16',
+      label: '',
+      value: '',
     },
     {
-      label: '+17',
-      value: '17',
+      label: '',
+      value: '',
     },
     {
-      label: '+18',
-      value: '18',
+      label: '',
+      value: '',
     },
   ],
 };

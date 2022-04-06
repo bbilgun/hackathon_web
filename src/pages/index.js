@@ -64,7 +64,8 @@ export default function () {
             <UpdateScreen />
             <KeyFeatures />
             <ChooseUs />
-            <Experiences />
+            {/* Ивээн тэтгэгч */}
+            <Experiences /> 
             <FeatureSlider />
             <Testimonials />
             <AvailableStore />
