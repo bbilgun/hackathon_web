@@ -61,16 +61,16 @@ export default function () {
           <ContentWrapper>
             <Banner />
             {!endTime && <CountDownSection deadline={deadline} />}
+            <Experiences />
             <UpdateScreen />
             <KeyFeatures />
             <ChooseUs />
             {/* Ивээн тэтгэгч */}
-            <Experiences /> 
             <FeatureSlider />
             <Testimonials />
-            <AvailableStore />
+            {/* <AvailableStore /> */}
             <Faqs />
-            <CallToAction />
+            {/* <CallToAction /> */}
           </ContentWrapper>
           <Footer />
         </AppWrapper>
