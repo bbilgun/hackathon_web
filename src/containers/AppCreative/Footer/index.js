@@ -24,7 +24,7 @@ const Footer = () => {
             <Fade up delay={100}>
               <NextImage src={footerWidget.logo} alt="Logo" />
               <p>
-                © 2020 Team
+                © 2022 Team
                 <Link href={footerWidget.siteUrl}>
                   <a>{footerWidget.siteName}</a>
                 </Link>
