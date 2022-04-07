@@ -1,7 +1,7 @@
 /* ------------------------------------ */
 // Navbar data section
 /* ------------------------------------ */
-import logo from '../../assets/image/appCreative/logo.png';
+import logo from '../../assets/image/appCreative/залгаас.png';
 export const navbar = {
   logoImage: logo,
   navMenu: [
@@ -41,43 +41,43 @@ export const navbar = {
 /* ------------------------------------ */
 // Key Features data section
 /* ------------------------------------ */
-import keyFeature1 from '../../assets/image/appCreative/key_feature/1.svg';
-import keyFeature2 from '../../assets/image/appCreative/key_feature/2.svg';
-import keyFeature3 from '../../assets/image/appCreative/key_feature/3.svg';
-import keyFeature4 from '../../assets/image/appCreative/key_feature/4.svg';
+import keyFeature1 from '../../assets/image/appCreative/key_feature/ai.svg';
+import keyFeature2 from '../../assets/image/appCreative/key_feature/blockchain.svg';
+import keyFeature3 from '../../assets/image/appCreative/key_feature/vr.svg';
+import keyFeature4 from '../../assets/image/appCreative/key_feature/Deep_learning.svg';
 
 export const keyFeatures = {
-  title: 'Business start with great features',
+  title: 'Шинэ технологи, програмчлалын хэл',
   slogan:
-    'Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents.',
+    'Ашигласан бол давуу тал болох болно.',
   features: [
     {
       id: 1,
       icon: keyFeature1,
-      title: 'Make Snap real',
+      title: 'AI',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart solutions.',
+        '',
     },
     {
       id: 2,
       icon: keyFeature2,
-      title: 'Total Virtual Reality',
+      title: 'Block Chain',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart online solutions.',
+        '',
     },
     {
       id: 3,
       icon: keyFeature3,
-      title: 'Full 360 View',
+      title: 'VR',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart solutions.',
+        '',
     },
     {
       id: 4,
       icon: keyFeature4,
-      title: 'Artificial Intelligence',
+      title: 'Deep Learning',
       description:
-        'We’re driven beyond just finishing the projects. We want to find smart solutions.',
+        '',
     },
   ],
 };
@@ -88,26 +88,26 @@ export const keyFeatures = {
 import chooseThumb from '../../assets/image/appCreative/chooseThumb.png';
 
 export const chooseUs = {
-  title: 'Why you choose Custom app for your daily use?',
+  title: 'Шагналын сан ',
   thumb: chooseThumb,
   features: [
     {
       id: 1,
-      title: 'Front-end Development',
+      title: '1-р байр Цом, Өргөмжлөл, 1,000,000₮.',
       description:
-        'We’re driven beyond just finishing the projects. We want to find solutions.',
+        '',
     },
     {
       id: 2,
-      title: 'Front-end Development',
+      title: '2-р байр Өргөмжлөл, 700,000₮.',
       description:
-        'We’re driven beyond just finishing the projects. We want to find solutions.',
+        '',
     },
     {
       id: 3,
-      title: 'Front-end Development',
+      title: '3-р байр Өргөмжлөл, 500,000₮.',
       description:
-        'We’re driven beyond just finishing the projects. We want to find solutions.',
+        '',
     },
   ],
 };
@@ -138,7 +138,7 @@ export const experiences = {
     {
       id: 1,
       icon: expIcon1,
-      title: 'Professional Environment',
+      title: 'Fibo Clouds',
       description:
         'We enjoy office retreats and visit famous places of our country and abroad also! We have planned to extend our business.',
     },
@@ -215,51 +215,50 @@ import Image5 from '../../assets/image/appCreative/feature/slide5.png';
 import Image6 from '../../assets/image/appCreative/feature/slide6.png';
 
 export const features = {
-  title: 'Meet our all exciting features',
-  slogan:
-    'Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents.',
+  title: 'Асуух зүйл байна уу?',
+  slogan:'',
   items: [
     {
       id: 1,
       thumbnail: Image1,
-      title: 'Professional Environment',
+      title: 'Хакатон хаана зохиогдох вэ?',
       description:
-        'We enjoy office retreats and visit famous places of our country and abroad also.',
+        'ШУТИС-ийн Эрдэм шинжилгээ, инновацийн төв байр (VIII байр) -ны 12 давхарт Олон улсын эрдэм шинжилгээний хурлын танхим',
     },
     {
       id: 2,
       thumbnail: Image2,
-      title: 'Professional Environment',
+      title: 'Хакатон хэзээ зохиогдох вэ?',
       description:
-        'We enjoy office retreats and visit famous places of our country and abroad also.',
+        '2022-04-23 -ны ** цагт',
     },
     {
       id: 3,
       thumbnail: Image3,
-      title: 'Professional Environment',
+      title: 'Хакатонд хэн оролцож болох вэ?',
       description:
-        'We enjoy office retreats and visit famous places of our country and abroad also.',
+        'Шинийг илэрхийлдэг, өөрийгөө сорих хүсэлтэй, мэдээллийн технологийн чиглэлээр их дээд сургуульд суралцаж буй бүх оюутнууд',
     },
     {
       id: 4,
       thumbnail: Image4,
-      title: 'Professional Environment',
+      title: 'Ямар чадвартай хүмүүс багт байх хэрэгтэй вэ? ',
       description:
-        'We enjoy office retreats and visit famous places of our country and abroad also.',
+        'Хакатон бол багийн тоглолт. Тиймээс багаа бүрдүүлэхдээ олон төрлийн чадвартай, "солонгон" баг бүрдүүлэхийг зөвлөж байна. Жишээ нь: илтгэл сайн тавьдаг, UX/UI зурдаг, back-end хөгжүүлэлт хийдэг гэх мэт.',
     },
     {
       id: 5,
       thumbnail: Image5,
-      title: 'Professional Environment',
+      title: 'Очихдоо юу авч очих вэ?',
       description:
-        'We enjoy office retreats and visit famous places of our country and abroad also.',
+        'Лаптопоо бүтээлч сэтгэлгээтэйгээ цуг цүнхлээд ирэхэд л болно :) Нээрээ цэнэглэгчээ мартав аа',
     },
     {
       id: 6,
       thumbnail: Image6,
-      title: 'Professional Environment',
+      title: '36 цаг гэхээр тэмцээний байран дээр хононо гэсэн үг үү?',
       description:
-        'We enjoy office retreats and visit famous places of our country and abroad also.',
+        'Үгүй дээ, өглөө ТЭДЭЭС орой ТЭД хүртэл багийнхантайгаа ажиллаад, гэртээ харьж, маргааш нь шүүлт болоод хаалтын ажиллагаандаа оролцоно. Харин шөнө унтах эсэх нь таны мэдэх хэрэг шүү ;)',
     },
   ],
 };
@@ -406,8 +405,8 @@ import reviewer2 from '../../assets/image/appCreative/client/client-avatar-2.jpg
 import reviewer3 from '../../assets/image/appCreative/client/client-avatar-3.jpg';
 
 export const testimonial = {
-  title: 'What our clients say about us',
-  slogan: 'Some inspirational feedback from our customers on twitter',
+  title: 'Шүүгч, Ментор-уудтай танилцна уу.',
+  slogan: '',
   reviews: [
     {
       id: 1,
@@ -473,34 +472,34 @@ export const testimonial = {
 import availableThumb from '../../assets/image/appCreative/availableThumb.png';
 
 export const availableStore = {
-  title: 'We are available in both play store & app store ✌️',
+  title: '',
   description:
-    'There will be a day–in our lifetime–when we get to celebrate every person on the planet having access.',
+    '',
   thumb: availableThumb,
   numberPrefix: [
     {
-      label: '+13',
-      value: '13',
+      label: '',
+      value: '',
     },
     {
-      label: '+14',
-      value: '14',
+      label: '',
+      value: '',
     },
     {
-      label: '+15',
-      value: '15',
+      label: '',
+      value: '',
     },
     {
-      label: '+16',
-      value: '16',
+      label: '',
+      value: '',
     },
     {
-      label: '+17',
-      value: '17',
+      label: '',
+      value: '',
     },
     {
-      label: '+18',
-      value: '18',
+      label: '',
+      value: '',
     },
   ],
 };
@@ -509,44 +508,44 @@ export const availableStore = {
 // Faq data section
 /* ------------------------------------ */
 export const faq = {
-  title: 'Frequently Ask Question',
-  slogan: 'What are you looking for and find the solution on our FAQ page',
+  title: '',
+  slogan: '',
   faqs: [
     {
       id: 1,
-      question: 'Which domain should I purchase?',
+      question: '',
       answer:
-        "We make it easy to move to CometNine. Simply contact us and we'll move your hosting account from any other provider, regardless of the control panel. If at anytime your website is down for more than 0.1% result",
+        "",
     },
     {
       id: 2,
-      question: 'Can I upgrade or downgrade my web hosting plan',
+      question: '',
       answer:
-        'The pricing made me a little hesitant at first but I have been pleasantly surprised by the level of care given by CometNine.',
+        '',
     },
     {
       id: 3,
-      question: 'How do I upgrade the storage capacity of my hosting plan?',
+      question: '',
       answer:
-        'Stop your viewers from getting distracted. Publish videos to your own Channel and rest easy knowing viewers won’t be annoyed by ads or pulled down a rabbit hole of unrelated videos.',
+        '',
     },
     {
       id: 4,
-      question: 'What are some tips when choosing a name?',
+      question: '',
       answer:
-        'Get your website tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news. Get your blood tests delivered at the home collect a sample from management news.',
+        '',
     },
     {
       id: 5,
-      question: 'What is in Motion Hosting’s uptime rate?',
+      question: '',
       answer:
-        'Designed with beginners in mind and packed with advanced features developers will love. Start with a quick and simple install',
+        '',
     },
     {
       id: 6,
-      question: 'What if I need help choosing the right domain?',
+      question: '',
       answer:
-        'Create a hub for cross-functional work that also works with all your other tools. Centralize and standardize communication with Miro. All premium functional are included here with updates.',
+        '',
     },
     {
       id: 7,

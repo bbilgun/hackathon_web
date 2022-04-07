@@ -103,7 +103,7 @@ const Experiences = () => {
         </ExperienceMainWrap>
         <ClientWrapper>
           <div className="client__text">
-            <Text as="span" content={'Companies who worked with us proudly'} />
+            <Text as="span" content={'Ивээн тэтгэгч байгууллагууд'} />
           </div>
           <ImageSlider>
             <ImageSlide>

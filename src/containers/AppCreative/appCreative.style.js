@@ -91,8 +91,8 @@ export const AppWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  flex: 1 0 auto;
-  width: 100%;
+  // flex: 1 0 auto;
+  // width: 100%;
 `;
 
 export const SectionHeader = styled.header`
