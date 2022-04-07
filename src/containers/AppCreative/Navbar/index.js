@@ -1,17 +1,17 @@
-import React, { useState, useRef } from 'react';
-import Fade from 'react-reveal/Fade';
-import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
-import Scrollspy from 'react-scrollspy';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Icon } from 'react-icons-kit';
-import { menu } from 'react-icons-kit/feather/menu';
-import { x } from 'react-icons-kit/feather/x';
-import Logo from 'common/components/UIElements/Logo';
-import Button from 'common/components/Button';
-import Container from 'common/components/UI/Container';
-import NavbarWrapper, { MenuArea, MobileMenu } from './navbar.style';
+import React, { useState, useRef } from "react";
+import Fade from "react-reveal/Fade";
+import ScrollSpyMenu from "common/components/ScrollSpyMenu";
+import Scrollspy from "react-scrollspy";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Icon } from "react-icons-kit";
+import { menu } from "react-icons-kit/feather/menu";
+import { x } from "react-icons-kit/feather/x";
+import Logo from "common/components/UIElements/Logo";
+import Button from "common/components/Button";
+import Container from "common/components/UI/Container";
+import NavbarWrapper, { MenuArea, MobileMenu } from "./navbar.style";
 
-import { navbar } from 'common/data/AppCreative';
+import { navbar } from "common/data/AppCreative";
 
 const Navbar = () => {
   const { logoImage, navMenu } = navbar;
@@ -20,7 +20,7 @@ const Navbar = () => {
   });
 
   const toggleHandler = (type) => {
-    if (type === 'menu') {
+    if (type === "menu") {
       setState({
         ...state,
         mobileMenu: !state.mobileMenu,
@@ -45,9 +45,9 @@ const Navbar = () => {
     <NavbarWrapper className="navbar">
       <Container>
         <Logo
-          href="/appcreative"
+          href="/"
           logoSrc={logoImage}
-          title="App Creative"
+          title="Sys&CoTech"
           className="main-logo"
         />
         {/* end of logo */}
@@ -69,13 +69,13 @@ const Navbar = () => {
             }
             color="#0F2137"
             variant="textButton"
-            onClick={() => toggleHandler('menu')}
+            onClick={() => toggleHandler("menu")}
           />
         </MenuArea>
       </Container>
 
       {/* start mobile menu */}
-      <MobileMenu className={`mobile-menu ${state.mobileMenu ? 'active' : ''}`}>
+      <MobileMenu className={`mobile-menu ${state.mobileMenu ? "active" : ""}`}>
         <Container>
           <Scrollspy
             className="menu"
