@@ -28,8 +28,8 @@ const NavbarWrapper = styled.nav`
     .main-logo {
       flex-shrink: 0;
       img {
-        min-width: 92px;
-        max-width: 145px;
+        min-width: 220px;
+        max-width: 220px;
         height: auto;
       }
     }

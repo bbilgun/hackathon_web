@@ -92,12 +92,13 @@ const CountDownSection = ({ deadline }) => {
               <NormalClock countdown={deadline} divider="true" />
             </div>
           </Fade>
-          <div style={{ display: "flex", flexDirection: "row" }}>
+          <div style={{ display: "flex", flexDirection: "row"}}>
             <Button
               onClick={handleSearchModal}
               className="secondary"
               title="Бүртгүүлэх"
             />
+
             <ParticlesComponent />
             {/* <Button
               style={{ marginLeft: 10 }}
