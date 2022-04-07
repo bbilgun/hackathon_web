@@ -26,9 +26,25 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
   const [validUsers, setValidUsers] = useState(false);
 
   const onChange = (index) => {
+    if (index === "3") {
+      setActiveKey(String(index));
+      return;
+    }
+
+    if (validTeam) {
+      setActiveKey(String(index));
+      return;
+    }
     setActiveKey(String(index));
   };
 
+  const sucessTeam = () => {
+    setValidTeam(true);
+    let interval = setTimeout(() => {
+      setActiveKey(String("2"));
+      clearTimeout(interval);
+    }, 1000);
+  };
   return (
     <SectionWrapper id="screenshot_section">
       <Container>
@@ -57,7 +73,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
             }
             key="1"
           >
-            <HackathonTeam />
+            <HackathonTeam validTeam={validTeam} setValidTeam={sucessTeam} />
           </TabPane>
           <TabPane
             tab={

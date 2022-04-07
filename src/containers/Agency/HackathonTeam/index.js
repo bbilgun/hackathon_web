@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Box from "common/components/Box";
 import Heading from "common/components/Heading";
-import Input from "common/components/Input";
 import Button from "common/components/Button";
 import LoginModalWrapper from "./loginModal.style";
 import "rc-tabs/assets/index.css";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import Icon from "react-icons-kit";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const HackathonTeamSchema = Yup.object().shape({
-  teamName: Yup.string()
+  name: Yup.string()
     .min(2, "Багийн нэрээ оруулна уу!")
     .required("Багийн нэрээ оруулна уу!"),
   email: Yup.string()
@@ -93,6 +94,7 @@ const FormComponent = ({
   errorMsg,
   type = "text",
   contentType = "input",
+  disabled = false,
 }) => {
   return (
     <div>
@@ -104,9 +106,17 @@ const FormComponent = ({
           value={value}
           onChange={onChange}
           error={error}
+          disabled={disabled}
         />
       ) : (
-        <Select name={name} value={value} onChange={onChange} error={error}>
+        <Select
+          name={name}
+          value={value}
+          defaultValue="ШУТИС"
+          onChange={onChange}
+          error={error}
+          disabled={disabled}
+        >
           <Option value="ШУТИС">ШУТИС</Option>
           <Option value="МУТС">МУТС</Option>
         </Select>
@@ -123,9 +133,11 @@ const HackathonTeam = ({
   contentWrapper,
   outlineBtnStyle,
   contentWrapper2,
+  validTeam,
+  setValidTeam,
 }) => {
   const initialValues = {
-    teamName: "",
+    name: "",
     email: "",
     phoneNumber: "",
     schoolName: "",
@@ -142,12 +154,56 @@ const HackathonTeam = ({
     </Fragment>
   );
 
+  const registerHackathonTeam = async (data) => {
+    toast.promise(
+      axios.post(
+        "https://syscotech-api.herokuapp.com/api/v1/hackathons/6244704f9596e1540c109b06/teams",
+        data,
+        {
+          headers: {
+            "Access-Control-Allow-Headers": "*",
+          },
+        }
+      ),
+      {
+        pending: "Бүртгэл хийгдэж байна... ",
+        success: {
+          render(data) {
+            setValidTeam();
+            return `Амжилттай бүртгэгдлээ. `;
+          },
+        },
+        error: {
+          render(data) {
+            return `Бүртгэх үед алдаа гарлаа. `;
+          },
+        },
+      }
+    );
+  };
+
   return (
     <LoginModalWrapper>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        draggable
+        style={{ zIndex: 1000, top: 100 }}
+      />
       <Formik
         initialValues={initialValues}
         validationSchema={HackathonTeamSchema}
-        onSubmit={(values) => console.log("submit", values)}
+        onSubmit={(values) => {
+          if (values.schoolName === "") {
+            values.schoolName = "ШУТИС";
+            registerHackathonTeam(values);
+            return;
+          }
+          registerHackathonTeam(values);
+        }}
       >
         {({ values, errors, touched, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
@@ -159,11 +215,12 @@ const HackathonTeam = ({
                     <Space />
                     <FormComponent
                       label="Багийн нэр:"
-                      name="teamName"
-                      value={values.teamName}
+                      name="name"
+                      value={values.name}
                       onChange={handleChange}
-                      error={errors.teamName && touched.teamName}
-                      errorMsg={errors.teamName}
+                      error={errors.name && touched.name}
+                      errorMsg={errors.name}
+                      disabled={validTeam}
                     />
                     <Space />
                     <FormComponent
@@ -174,6 +231,7 @@ const HackathonTeam = ({
                       error={errors.schoolName && touched.schoolName}
                       errorMsg={errors.schoolName}
                       contentType="select"
+                      disabled={validTeam}
                     />
                     <Space />
                   </Box>
@@ -189,6 +247,7 @@ const HackathonTeam = ({
                       onChange={handleChange}
                       error={errors.email && touched.email}
                       errorMsg={errors.email}
+                      disabled={validTeam}
                     />
                     <Space />
                     <FormComponent
@@ -199,6 +258,7 @@ const HackathonTeam = ({
                       onChange={handleChange}
                       error={errors.phoneNumber && touched.phoneNumber}
                       errorMsg={errors.phoneNumber}
+                      disabled={validTeam}
                     />
                     <Space />
                   </Box>
@@ -206,7 +266,7 @@ const HackathonTeam = ({
               </Box>
               <Space />
               <Space />
-              <SignupButtonGroup />
+              {!validTeam && <SignupButtonGroup />}
             </Box>
           </form>
         )}
