@@ -55,6 +55,16 @@ const Navbar = () => {
         <MenuArea>
           <ScrollSpyMenu className="menu" menuItems={navMenu} offset={-84} />
           {/* end of main menu */}
+          <AnchorLink href="#screenshot_section" offset={-84}>
+            <Button
+              className="menubarRegitser"
+              title="Бүртгүүлэх"
+              color="#6C247E"
+              borderRadius="60px"
+              minHeight="40px"
+              variant="outlined"
+            />
+          </AnchorLink>
 
           <Button
             className="menubar"
@@ -94,6 +104,23 @@ const Navbar = () => {
                 </AnchorLink>
               </li>
             ))}
+
+            <li key={`menu_key_1000`}>
+              <AnchorLink
+                href="#screenshot_section"
+                offset={-84}
+                onClick={handleRemoveMenu}
+              >
+                <Button
+                  right={0}
+                  title="Бүртгүүлэх"
+                  color="#6C247E"
+                  borderRadius="60px"
+                  minHeight="40px"
+                  variant="outlined"
+                />
+              </AnchorLink>
+            </li>
           </Scrollspy>
           <Button title="Try for Free" />
         </Container>

@@ -17,6 +17,7 @@ const deadline2 = new Date("2021-11-02 18:00:00");
 import SectionWrapper, { ContentWrapper } from "./countdown.style";
 import { SectionHeader } from "containers/AppCreative/appCreative.style";
 import ParticlesComponent from "containers/Crypto/Particle";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const CountDownSection = ({ deadline }) => {
   const JuramModalHandle = () => {
@@ -93,11 +94,9 @@ const CountDownSection = ({ deadline }) => {
             </div>
           </Fade>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <Button
-              onClick={handleSearchModal}
-              className="secondary"
-              title="Бүртгүүлэх"
-            />
+            <AnchorLink href="#screenshot_section" offset="80">
+              <Button className="secondary" title="Бүртгүүлэх" />
+            </AnchorLink>
 
             <ParticlesComponent />
             {/* <Button

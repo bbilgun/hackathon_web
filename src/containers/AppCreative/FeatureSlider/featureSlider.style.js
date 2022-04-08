@@ -1,7 +1,7 @@
-import styled, { keyframes } from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
-import { rgba } from 'polished';
-import Mockup from 'common/assets/image/appCreative/feature/screenMockup.png';
+import styled, { keyframes } from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
+import { rgba } from "polished";
+import Mockup from "common/assets/image/appCreative/feature/screenMockup.png";
 
 const rotate360 = keyframes`
   from {
@@ -58,7 +58,7 @@ export const ImageGalleryWrap = styled.div`
     display: none;
   }
   &::before {
-    content: '';
+    content: "";
     background-image: url(${Mockup?.src});
     position: absolute;
     width: 100%;
@@ -78,7 +78,6 @@ export const ImageGalleryWrap = styled.div`
     @media only screen and (max-width: 1219px) {
       width: 172px;
       left: -25px;
-      top: 8px;
     }
     .swiper-slide img {
       width: 100%;
@@ -157,9 +156,9 @@ export const FeatureItemWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: ${rgba('#6C247E', 0.1)};
-      color: ${themeGet('colors.primary')};
-      font-family: 'Work Sans', sans-serif;
+      background-color: ${rgba("#6C247E", 0.1)};
+      color: ${themeGet("colors.primary")};
+      font-family: "Work Sans", sans-serif;
       font-weight: 600;
       position: relative;
       @media only screen and (max-width: 1219px) {
@@ -172,12 +171,12 @@ export const FeatureItemWrapper = styled.div`
         font-size: 20px;
       }
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 100%;
         border-radius: inherit;
-        border: 3px solid ${themeGet('colors.primary')};
+        border: 3px solid ${themeGet("colors.primary")};
         border-right-color: transparent;
         box-sizing: border-box;
         visibility: hidden;
@@ -199,7 +198,7 @@ export const FeatureItemWrapper = styled.div`
       font-weight: 700;
       font-size: 18px;
       line-height: 1.5;
-      color: ${themeGet('colors.headingColor', '#0F2137')};
+      color: ${themeGet("colors.headingColor", "#0F2137")};
       @media only screen and (max-width: 768px) {
         line-height: 1.45;
         margin: 5px 0 15px;
@@ -207,7 +206,7 @@ export const FeatureItemWrapper = styled.div`
     }
 
     p {
-      color: ${themeGet('colors.textColor')};
+      color: ${themeGet("colors.textColor")};
       font-size: 15px;
       line-height: 1.9;
       margin: 0;

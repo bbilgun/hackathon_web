@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import SwiperCore, { Thumbs, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'common/components/Image';
-import FeatureBlock from 'common/components/FeatureBlock';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
-import Container from 'common/components/UI/Container';
-import { SectionHeader } from '../appCreative.style';
+import React, { useState } from "react";
+import SwiperCore, { Thumbs, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "common/components/Image";
+import FeatureBlock from "common/components/FeatureBlock";
+import Text from "common/components/Text";
+import Heading from "common/components/Heading";
+import Container from "common/components/UI/Container";
+import { SectionHeader } from "../appCreative.style";
 import SectionWrapper, {
   ImageGalleryWrap,
   FeatureContactWrapper,
   FeatureItemWrapper,
-} from './featureSlider.style';
+} from "./featureSlider.style";
 
-import { features } from 'common/data/AppCreative';
+import { features } from "common/data/AppCreative";
 
 SwiperCore.use([Thumbs, Autoplay]);
 
@@ -23,7 +23,7 @@ const FeatureSlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <SectionWrapper>
+    <SectionWrapper id="mentor">
       <Container>
         <SectionHeader>
           <Heading content={title} />

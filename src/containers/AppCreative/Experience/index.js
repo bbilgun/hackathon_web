@@ -1,15 +1,15 @@
-import React from 'react';
-import Logo from 'common/components/UIElements/Logo';
-import { Icon } from 'react-icons-kit';
-import { ic_play_arrow } from 'react-icons-kit/md/ic_play_arrow';
-import { openModal, closeModal } from '@redq/reuse-modal';
-import Button from 'common/components/Button';
-import Container from 'common/components/UI/Container';
-import NextImage from 'common/components/NextImage';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
-import { SectionHeader } from '../appCreative.style';
-import FeatureBlock from 'common/components/FeatureBlock';
+import React from "react";
+import Logo from "common/components/UIElements/Logo";
+import { Icon } from "react-icons-kit";
+import { ic_play_arrow } from "react-icons-kit/md/ic_play_arrow";
+import { openModal, closeModal } from "@redq/reuse-modal";
+import Button from "common/components/Button";
+import Container from "common/components/UI/Container";
+import NextImage from "common/components/NextImage";
+import Text from "common/components/Text";
+import Heading from "common/components/Heading";
+import { SectionHeader } from "../appCreative.style";
+import FeatureBlock from "common/components/FeatureBlock";
 
 import SectionWrapper, {
   ExperienceMainWrap,
@@ -19,8 +19,8 @@ import SectionWrapper, {
   ClientWrapper,
   ImageSlider,
   ImageSlide,
-} from './experience.style';
-import { experiences } from 'common/data/AppCreative';
+} from "./experience.style";
+import { experiences } from "common/data/AppCreative";
 
 // close button for modal
 const CloseModalButton = () => (
@@ -49,11 +49,11 @@ const Experiences = () => {
   const handleVideoModal = () => {
     openModal({
       config: {
-        className: 'video-modal',
+        className: "video-modal",
         disableDragging: true,
         default: {
-          width: 'auto',
-          height: 'auto',
+          width: "auto",
+          height: "auto",
           x: 0,
           y: 0,
         },
@@ -103,7 +103,7 @@ const Experiences = () => {
         </ExperienceMainWrap>
         <ClientWrapper>
           <div className="client__text">
-            <Text as="span" content={'Ивээн тэтгэгч байгууллагууд'} />
+            <Text as="span" content={"Ивээн тэтгэгч байгууллагууд"} />
           </div>
           <ImageSlider>
             <ImageSlide>

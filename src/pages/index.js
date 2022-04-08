@@ -63,13 +63,12 @@ export default function () {
             {!endTime && <CountDownSection deadline={deadline} />}
             <Experiences />
             <UpdateScreen />
-            <KeyFeatures />
             <ChooseUs />
             {/* Ивээн тэтгэгч */}
             <FeatureSlider />
             <Testimonials />
             {/* <AvailableStore /> */}
-            <Faqs />
+            {/* <Faqs /> */}
             {/* <CallToAction /> */}
           </ContentWrapper>
           <Footer />

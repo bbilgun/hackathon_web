@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 const NavbarWrapper = styled.nav`
   width: 100%;
@@ -14,7 +14,7 @@ const NavbarWrapper = styled.nav`
     padding: 15px 0;
   }
   @media only screen and (max-width: 1199px) {
-    border-bottom: 1px solid ${themeGet('colors.borderColor')};
+    border-bottom: 1px solid ${themeGet("colors.borderColor")};
   }
   > div.container {
     display: flex;
@@ -37,17 +37,17 @@ const NavbarWrapper = styled.nav`
   ul {
     li {
       a {
-        color: ${themeGet('colors.menu', '#02073E')};
+        color: ${themeGet("colors.menu", "#02073E")};
         font-size: 15px;
         font-weight: 500;
         transition: all 0.3s ease;
         &:hover {
-          color: ${themeGet('colors.primary', '#6C247E')};
+          color: ${themeGet("colors.primary", "#6C247E")};
         }
       }
       &.is-current {
         a {
-          color: ${themeGet('colors.primary', '#6C247E')};
+          color: ${themeGet("colors.primary", "#6C247E")};
         }
       }
     }
@@ -124,7 +124,7 @@ export const MenuArea = styled.div`
         svg {
           width: 22px;
           height: auto;
-          stroke: ${themeGet('colors.menu', '0D233E')};
+          stroke: ${themeGet("colors.menu", "0D233E")};
           @media only screen and (max-width: 991px) {
             width: 24px;
           }
@@ -152,7 +152,20 @@ export const MenuArea = styled.div`
         padding: 0;
         justify-content: flex-end;
         min-width: 35px;
-        color: ${themeGet('colors.primary', '#6C247E')};
+        color: ${themeGet("colors.primary", "#6C247E")};
+        svg {
+          width: 27px;
+          height: auto;
+        }
+      }
+    }
+    &.menubarRegitser {
+      @media only screen and (max-width: 991px) {
+        display: none;
+        padding: 0;
+        justify-content: flex-end;
+        min-width: 35px;
+        color: ${themeGet("colors.primary", "#6C247E")};
         svg {
           width: 27px;
           height: auto;
@@ -174,14 +187,14 @@ export const MobileMenu = styled.div`
     position: absolute;
     top: 82px;
     flex-direction: column;
-    background-color: ${themeGet('colors.white', '#ffffff')};
+    background-color: ${themeGet("colors.white", "#ffffff")};
     transition: all 0.3s ease;
-    color: ${themeGet('colors.secondary', '#000')};
+    color: ${themeGet("colors.secondary", "#000")};
     &.active {
       opacity: 1;
       visibility: visible;
       box-shadow: 0 3px 12px
-        ${themeGet('colors.shadow', 'rgba(38, 78, 118, 0.1)')};
+        ${themeGet("colors.shadow", "rgba(38, 78, 118, 0.1)")};
     }
     .container {
       width: 100%;
@@ -198,12 +211,12 @@ export const MobileMenu = styled.div`
           padding: 13px 0;
           border-radius: 5px;
           transition: all 0.3s ease;
-          color: ${themeGet('colors.secondary', '#000')};
+          color: ${themeGet("colors.secondary", "#000")};
         }
         &:hover {
           a {
             padding: 13px 10px;
-            color: ${themeGet('colors.primary')};
+            color: ${themeGet("colors.primary")};
           }
         }
       }
