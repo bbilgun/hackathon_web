@@ -83,6 +83,7 @@ const Experiences = () => {
           <ExperienceWrapper>
             {features.map((item, index) => (
               <FeatureBlock
+                logo
                 key={`post_key-${index}`}
                 id={`post_id-${item.id}`}
                 className="experience__item"

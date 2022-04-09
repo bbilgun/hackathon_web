@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
-import Head from 'next/head';
-import ErrorSec from 'containers/Error';
-import ResetCSS from 'common/assets/css/style';
+/* eslint-disable @next/next/no-page-custom-font */
+import React, { Fragment } from "react";
+import Head from "next/head";
+import ErrorSec from "containers/Error";
+import ResetCSS from "common/assets/css/style";
 export default function Error({ statusCode }) {
   return (
     <Fragment>

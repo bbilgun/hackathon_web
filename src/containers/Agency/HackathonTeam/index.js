@@ -24,12 +24,12 @@ const HackathonTeamSchema = Yup.object().shape({
     .required("Утасны дугаар хоосон байна"),
 });
 
-const Space = styled.div`
+export const Space = styled.div`
   height: 10px;
   width: 100%;
 `;
 
-const FormLabel = styled.label`
+export const FormLabel = styled.label`
   display: block;
   color: #767676;
   font-size: 16px;
@@ -39,7 +39,7 @@ const FormLabel = styled.label`
   transition: 0.2s ease all;
 `;
 
-const FormInput = styled.input`
+export const FormInput = styled.input`
   font-size: 16px;
   padding: 11px;
   display: block;
@@ -56,12 +56,12 @@ const FormInput = styled.input`
   }
 `;
 
-const FormError = styled.p`
+export const FormError = styled.p`
   color: #e55353;
   margin-top: 5px;
 `;
 
-const Select = styled.select`
+export const Select = styled.select`
   font-size: 16px;
   padding: 11px;
   display: block;
@@ -76,7 +76,7 @@ const Select = styled.select`
   background-color: #fff;
 `;
 
-const Option = styled.option`
+export const Option = styled.option`
   color: black;
   background: white;
   display: flex;
@@ -85,7 +85,7 @@ const Option = styled.option`
   padding: 0px 2px 1px;
 `;
 
-const FormComponent = ({
+export const FormComponent = ({
   value,
   onChange,
   name,

@@ -7,6 +7,7 @@ import FeatureBlockWrapper, {
 } from "./featureBlock.style";
 
 const FeatureBlock = ({
+  logo = false,
   className,
   icon,
   title,
@@ -46,10 +47,11 @@ const FeatureBlock = ({
       {...wrapperStyle}
       {...props}
     >
+      {!logo && Icon}
       {title || description || button ? (
         <Fragment>
           <ContentWrapper className="content__wrapper" {...contentStyle}>
-            {Icon}
+            {logo && Icon}
             {title}
             {description}
             {button && (
