@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import styled, { keyframes } from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 const slideShow = keyframes`
   from {
@@ -37,8 +37,8 @@ const SectionWrapper = styled.section`
     left: 0;
     width: 100%;
     height: 80.5%;
-    background-color: ${themeGet('colors.light', '#FAF7FA')};
-    content: '';
+    background-color: ${themeGet("colors.light", "#FAF7FA")};
+    content: "";
   }
   .container {
     @media only screen and (min-width: 1367px) {
@@ -91,7 +91,7 @@ export const VideoArea = styled.div`
       line-height: 60px;
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       z-index: 0;
       left: 50%;
@@ -100,7 +100,7 @@ export const VideoArea = styled.div`
       display: block;
       width: 80px;
       height: 80px;
-      background: ${themeGet('colors.white', '#925B9F')};
+      background: ${themeGet("colors.white", "#925B9F")};
       border-radius: 50%;
       animation: ${playPluse} 1.5s ease-out infinite;
     }
@@ -108,7 +108,7 @@ export const VideoArea = styled.div`
       color: white;
       position: relative;
       z-index: 5;
-      background-color: ${themeGet('colors.primaryLight', '#925B9F')};
+      background-color: ${themeGet("colors.primaryLight", "#925B9F")};
       display: block;
       border-radius: inherit;
       height: 100%;
@@ -129,7 +129,7 @@ export const VideoWrapper = styled.div`
   position: relative;
   width: 900px;
   &:before {
-    content: '';
+    content: "";
     display: block;
     padding-top: 56.25%;
   }
@@ -161,23 +161,23 @@ export const ClientWrapper = styled.div`
     justify-content: center;
     &:before {
       position: absolute;
-      content: '';
+      content: "";
       height: 1px;
       width: 100%;
-      background-color: ${themeGet('colors.borderColorTwo', '#EAE9F2')};
+      background-color: ${themeGet("colors.borderColorTwo", "#EAE9F2")};
       top: 50%;
       left: 0;
     }
     span {
       position: relative;
       font-size: 16px;
-      background-color: ${themeGet('colors.light', '#FAF7FA')};
+      background-color: ${themeGet("colors.light", "#FAF7FA")};
       margin-bottom: 0;
       z-index: 2;
       padding: 0 30px;
       line-height: 1.8;
       text-align: center;
-      color: ${themeGet('colors.secondary', '#696871')};
+      color: ${themeGet("colors.secondary", "#696871")};
       @media only screen and (max-width: 768px) {
         padding: 0 15px;
       }
@@ -232,7 +232,7 @@ export const ExperienceWrapper = styled.div`
       font-weight: 700;
       font-size: 18px;
       line-height: 1.6;
-      color: ${themeGet('colors.headingColor', '#0F2137')};
+      color: ${themeGet("colors.headingColor", "#0F2137")};
       @media only screen and (max-width: 768px) {
         text-align: center;
         line-height: 1.45;
@@ -241,7 +241,7 @@ export const ExperienceWrapper = styled.div`
     }
 
     p {
-      color: ${themeGet('colors.textColor')};
+      color: ${themeGet("colors.textColor")};
       font-size: 15px;
       line-height: 1.9;
       margin: 0;
@@ -268,7 +268,7 @@ export const ImageSlider = styled.div`
   }
   &::before,
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 50px;
     height: 100%;

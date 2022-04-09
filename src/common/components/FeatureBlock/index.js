@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import FeatureBlockWrapper, {
   IconWrapper,
   ContentWrapper,
   ButtonWrapper,
-} from './featureBlock.style';
+} from "./featureBlock.style";
 
 const FeatureBlock = ({
   className,
@@ -21,7 +21,7 @@ const FeatureBlock = ({
   ...props
 }) => {
   // Add all classs to an array
-  const addAllClasses = ['feature__block'];
+  const addAllClasses = ["feature__block"];
 
   // Add icon position class
   if (iconPosition) {
@@ -42,15 +42,14 @@ const FeatureBlock = ({
 
   return (
     <FeatureBlockWrapper
-      className={addAllClasses.join(' ')}
+      className={addAllClasses.join(" ")}
       {...wrapperStyle}
       {...props}
     >
-      {Icon}
-
       {title || description || button ? (
         <Fragment>
           <ContentWrapper className="content__wrapper" {...contentStyle}>
+            {Icon}
             {title}
             {description}
             {button && (
@@ -62,7 +61,7 @@ const FeatureBlock = ({
           {additionalContent}
         </Fragment>
       ) : (
-        ''
+        ""
       )}
     </FeatureBlockWrapper>
   );
@@ -82,7 +81,7 @@ FeatureBlock.propTypes = {
   button: PropTypes.element,
 
   /** Set icon position of the FeatureBlock */
-  iconPosition: PropTypes.oneOf(['top', 'left', 'right']),
+  iconPosition: PropTypes.oneOf(["top", "left", "right"]),
 
   /** wrapperStyle prop contain these style system props:  display, flexWrap, width, height, alignItems,
    * justifyContent, position, overflow, space, color, borders, borderColor, boxShadow and borderRadius. */
@@ -101,7 +100,7 @@ FeatureBlock.propTypes = {
 };
 
 FeatureBlock.defaultProps = {
-  iconPosition: 'top',
+  iconPosition: "top",
 };
 
 export default FeatureBlock;

@@ -118,38 +118,24 @@ import fiboCloud from "../../assets/image/appCreative/client_logo/1.png";
 import syscotechIcon from "../../assets/image/appCreative/client_logo/2.png";
 
 export const experiences = {
-  title: "Listen our user experience stories",
+  title: "Зохион байгуулагч",
   slogan:
-    "Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents.",
+    "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
   video_theme: videoTheme,
   features: [
     {
       id: 1,
-      icon: expIcon1,
-      title: "Fibo Clouds",
+      icon: syscotechIcon,
+      title: "Sys&CoTech Club",
       description:
-        "We enjoy office retreats and visit famous places of our country and abroad also! We have planned to extend our business.",
+        "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
     },
     {
       id: 2,
-      icon: expIcon2,
-      title: "Worked with experienced team",
+      icon: fiboCloud,
+      title: "Fibo Cloud",
       description:
-        "With more than 100,000 users, we are is growing fast. Currently, we are a team of 65+ people",
-    },
-    {
-      id: 3,
-      icon: expIcon3,
-      title: "Ultimate skill development",
-      description:
-        "Life is what happens when you’re busy working. We make sure you enjoy it with ultimate experience.",
-    },
-    {
-      id: 4,
-      icon: expIcon4,
-      title: "Professional Environment",
-      description:
-        "We build amazing things that work with awesome people who are WordPress enthusiasts, talented, eager to learn and team players.",
+        "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
     },
   ],
   clients: [

@@ -90,8 +90,10 @@ const Experiences = () => {
                   <NextImage
                     src={item.icon}
                     alt={`Icon ${item.id}`}
-                    objectFit="cover"
+                    objectFit="contain"
                     className="experience__image"
+                    width={200}
+                    height={90}
                   />
                 }
                 iconPosition="left"
