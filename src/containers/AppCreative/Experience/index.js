@@ -113,6 +113,7 @@ const Experiences = () => {
                   href={item.link}
                   logoSrc={item.logo}
                   title={item.name}
+                  logoStyle={{ height: 60 }}
                 />
               ))}
             </ImageSlide>
@@ -123,6 +124,18 @@ const Experiences = () => {
                   href={item.link}
                   logoSrc={item.logo}
                   title={item.name}
+                  logoStyle={{ height: 60 }}
+                />
+              ))}
+            </ImageSlide>
+            <ImageSlide>
+              {clients.map((item) => (
+                <Logo
+                  key={`slide3__key${item.id}`}
+                  href={item.link}
+                  logoSrc={item.logo}
+                  title={item.name}
+                  logoStyle={{ height: 60 }}
                 />
               ))}
             </ImageSlide>

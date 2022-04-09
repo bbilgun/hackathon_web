@@ -114,12 +114,8 @@ import expIcon4 from "../../assets/image/appCreative/experience/4.png";
 import videoTheme from "../../assets/image/appCreative/experienceVideo.png";
 
 // Client Logo
-import geekwire from "../../assets/image/appCreative/client_logo/1.png";
-import slack from "../../assets/image/appCreative/client_logo/2.png";
-import envato from "../../assets/image/appCreative/client_logo/3.png";
-import usaToday from "../../assets/image/appCreative/client_logo/4.png";
-import forbes from "../../assets/image/appCreative/client_logo/5.png";
-import evernote from "../../assets/image/appCreative/client_logo/6.png";
+import fiboCloud from "../../assets/image/appCreative/client_logo/1.png";
+import syscotechIcon from "../../assets/image/appCreative/client_logo/2.png";
 
 export const experiences = {
   title: "Listen our user experience stories",
@@ -159,39 +155,15 @@ export const experiences = {
   clients: [
     {
       id: 1,
-      logo: geekwire,
-      name: "geekwire",
-      link: "#1",
+      logo: fiboCloud,
+      name: "FiboCloud",
+      link: "https://fibo.cloud",
     },
     {
       id: 2,
-      logo: slack,
-      name: "slack",
-      link: "#2",
-    },
-    {
-      id: 3,
-      logo: envato,
-      name: "envato",
-      link: "#3",
-    },
-    {
-      id: 4,
-      logo: usaToday,
-      name: "usa today",
-      link: "#4",
-    },
-    {
-      id: 5,
-      logo: forbes,
-      name: "forbes",
-      link: "#5",
-    },
-    {
-      id: 6,
-      logo: evernote,
-      name: "evernote",
-      link: "#6",
+      logo: syscotechIcon,
+      name: "SyscoTech",
+      link: "https://www.syscotech.club",
     },
   ],
 };
