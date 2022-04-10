@@ -15,7 +15,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { FormComponent } from "../HackathonTeam";
 
-const Space = styled.div`
+export const Space = styled.div`
   height: 10px;
   width: 100%;
 `;
@@ -204,6 +204,7 @@ const HackathonUserForm = ({
                 />
                 <Space />
                 <FormComponent
+                  type="number"
                   name="phoneNumber"
                   value={values.phoneNumber}
                   label="Утасны дугаар: "

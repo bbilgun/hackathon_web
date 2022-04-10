@@ -61,8 +61,8 @@ export default function () {
             <UpdateScreen />
             <ChooseUs />
             {/* Ивээн тэтгэгч */}
-            <FeatureSlider />
             <Testimonials />
+            <FeatureSlider />
             {/* <AvailableStore /> */}
             {/* <Faqs /> */}
             {/* <CallToAction /> */}

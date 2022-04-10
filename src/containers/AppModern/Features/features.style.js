@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 const SectionWrapper = styled.section`
   padding: 350px 0 75px;
@@ -90,7 +90,7 @@ export const FeatureWrapper = styled.div`
       @media only screen and (max-width: 767px) {
       }
       h3 {
-        color: ${themeGet('colors.heading')};
+        color: ${themeGet("colors.heading")};
         font-size: 19px;
         line-height: 30px;
         font-weight: 500;
@@ -101,7 +101,7 @@ export const FeatureWrapper = styled.div`
         }
       }
       p {
-        color: ${themeGet('colors.textColor')};
+        color: ${themeGet("colors.textColor")};
         font-size: 15px;
         line-height: 28px;
         margin: 0;
@@ -135,16 +135,16 @@ export const Wrappper = styled.div`
   margin: -12px 0 -30px;
 
   > div {
-    width: calc(100% / 3 - 34px);
+    width: 70%;
     margin: 38px 0 30px;
     @media only screen and (max-width: 1366px) {
-      width: calc(100% / 3 - 30px);
+      width: 70%;
     }
     @media only screen and (max-width: 991px) {
-      width: calc(100% / 2 - 30px);
+      width: 100%;
     }
     @media only screen and (max-width: 767px) {
-      width: calc(100% / 2 - 15px);
+      width: 100%;
     }
     @media only screen and (max-width: 480px) {
       width: 100%;
@@ -202,7 +202,7 @@ export const Wrappper = styled.div`
         padding: 20px 0 0;
       }
       h3 {
-        color: ${themeGet('colors.heading')};
+        color: ${themeGet("colors.heading")};
         font-size: 19px;
         line-height: 30px;
         font-weight: 500;
@@ -213,7 +213,7 @@ export const Wrappper = styled.div`
         }
       }
       p {
-        color: ${themeGet('colors.textColor')};
+        color: ${themeGet("colors.textColor")};
         font-size: 15px;
         line-height: 28px;
         margin: 0;

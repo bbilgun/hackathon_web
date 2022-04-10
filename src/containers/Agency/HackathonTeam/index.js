@@ -8,7 +8,7 @@ import LoginModalWrapper from "./loginModal.style";
 import "rc-tabs/assets/index.css";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 

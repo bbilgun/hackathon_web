@@ -179,7 +179,7 @@ export const features = {
       id: 2,
       thumbnail: Image2,
       title: "Хакатон хэзээ зохиогдох вэ?",
-      description: "2022-04-23 -ны ** цагт",
+      description: "ШУТИС-ийн Эрдэм шинжилгээ, инновацийн төв байр (VIII байр)",
     },
     {
       id: 3,
@@ -354,7 +354,7 @@ import reviewer2 from "../../assets/image/appCreative/client/client-avatar-2.jpg
 import reviewer3 from "../../assets/image/appCreative/client/client-avatar-3.jpg";
 
 export const testimonial = {
-  title: "Шүүгч, Ментор-уудтай танилцна уу.",
+  title: "Шүүгч, Ментор-уудтай танилцана уу",
   slogan: "",
   reviews: [
     {
