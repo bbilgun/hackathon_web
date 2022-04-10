@@ -44,7 +44,7 @@ export const ImageGalleryWrap = styled.div`
   position: absolute;
   height: 670px;
   width: 485px;
-  bottom: 0;
+  bottom: 280px;
   left: 52%;
   transform: translateX(-50%);
   @media only screen and (max-width: 1366px) {

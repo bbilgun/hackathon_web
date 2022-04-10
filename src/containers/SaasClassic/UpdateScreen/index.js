@@ -8,6 +8,7 @@ import Text from "common/components/Text";
 import Heading from "common/components/Heading";
 import NextImage from "common/components/NextImage";
 import Container from "common/components/UI/Container";
+import ParticlesComponent from "containers/Crypto/Particle";
 
 import SectionWrapper from "./updateScreen.style";
 import { SCREENSHOTS } from "common/data/SaasClassic";
@@ -54,6 +55,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
 
   return (
     <SectionWrapper id="screenshot_section">
+      <ParticlesComponent />
       <Container>
         <Box {...secTitleWrapper}>
           <Text {...secText} content="Sys&CoTech club" />

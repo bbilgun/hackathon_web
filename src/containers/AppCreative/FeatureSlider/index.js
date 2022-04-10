@@ -6,6 +6,7 @@ import FeatureBlock from "common/components/FeatureBlock";
 import Text from "common/components/Text";
 import Heading from "common/components/Heading";
 import Container from "common/components/UI/Container";
+import ParticlesComponent from "containers/Crypto/Particle";
 import { SectionHeader } from "../appCreative.style";
 import SectionWrapper, {
   ImageGalleryWrap,
@@ -24,6 +25,7 @@ const FeatureSlider = () => {
 
   return (
     <SectionWrapper id="mentor">
+      <ParticlesComponent />
       <Container>
         <SectionHeader>
           <Heading content={title} />
