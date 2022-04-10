@@ -21,7 +21,6 @@ import { creditCard } from "react-icons-kit/fa/creditCard";
 
 const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
   const [activeKey, setActiveKey] = useState("1");
-  const [forms, setForms] = useState([0]);
   const [validTeam, setValidTeam] = useState(false);
   const [validUsers, setValidUsers] = useState(false);
 
@@ -45,6 +44,14 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
       clearTimeout(interval);
     }, 1000);
   };
+
+  const backTeamRegister = () => {
+    let interval = setTimeout(() => {
+      setActiveKey(String("1"));
+      clearTimeout(interval);
+    }, 1500);
+  };
+
   return (
     <SectionWrapper id="screenshot_section">
       <Container>
@@ -84,7 +91,10 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
             }
             key="2"
           >
-            <HackathonUserForm />
+            <HackathonUserForm
+              validTeam={validTeam}
+              setValidTeam={backTeamRegister}
+            />
           </TabPane>
           <TabPane
             tab={

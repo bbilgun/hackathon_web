@@ -95,6 +95,7 @@ export const FormComponent = ({
   type = "text",
   contentType = "input",
   disabled = false,
+  options = [],
 }) => {
   return (
     <div>
@@ -108,6 +109,21 @@ export const FormComponent = ({
           error={error}
           disabled={disabled}
         />
+      ) : options.length > 0 ? (
+        <Select
+          name={name}
+          value={value}
+          defaultValue={options[0]}
+          onChange={onChange}
+          error={error}
+          disabled={disabled}
+        >
+          {options.map((option) => (
+            <Option key={option} value={option}>
+              {option}
+            </Option>
+          ))}
+        </Select>
       ) : (
         <Select
           name={name}
@@ -169,6 +185,8 @@ const HackathonTeam = ({
         pending: "Бүртгэл хийгдэж байна... ",
         success: {
           render(data) {
+            const requestData = data.data.data;
+            localStorage.setItem("teamId", JSON.stringify(requestData.data.id));
             setValidTeam();
             return `Амжилттай бүртгэгдлээ. `;
           },
@@ -184,15 +202,6 @@ const HackathonTeam = ({
 
   return (
     <LoginModalWrapper>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={true}
-        newestOnTop={false}
-        closeOnClick
-        draggable
-        style={{ zIndex: 1000, top: 100 }}
-      />
       <Formik
         initialValues={initialValues}
         validationSchema={HackathonTeamSchema}
