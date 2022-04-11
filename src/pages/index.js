@@ -20,6 +20,7 @@ import GlobalStyle, {
 } from "containers/AppCreative/appCreative.style";
 import CountDownSection from "containers/CryptoModern/CountDown";
 import moment from "moment";
+import Team from "containers/Interior/Team";
 
 // Дуусах хугацаа
 const deadline = moment("2022-04-22");
@@ -61,7 +62,8 @@ export default function () {
             <UpdateScreen />
             <ChooseUs />
             {/* Ивээн тэтгэгч */}
-            <Testimonials />
+            <Team />
+            {/* <Testimonials /> */}
             <FeatureSlider />
             {/* <AvailableStore /> */}
             {/* <Faqs /> */}

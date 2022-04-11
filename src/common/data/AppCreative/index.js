@@ -14,7 +14,7 @@ export const navbar = {
     {
       id: 4,
       label: "Ментор",
-      path: "#testimonial",
+      path: "#team",
       offset: "73",
     },
     {
@@ -116,6 +116,7 @@ import videoTheme from "../../assets/image/appCreative/experienceVideo.png";
 // Client Logo
 import fiboCloud from "../../assets/image/appCreative/client_logo/1.png";
 import syscotechIcon from "../../assets/image/appCreative/client_logo/2.png";
+import zochilIcon from "../../assets/image/appCreative/client_logo/5.png";
 
 export const experiences = {
   title: "Зохион байгуулагч",
@@ -124,16 +125,16 @@ export const experiences = {
   video_theme: videoTheme,
   features: [
     {
-      id: 1,
-      icon: syscotechIcon,
-      title: "Sys&CoTech Club",
+      id: 2,
+      icon: fiboCloud,
+      title: "Fibo Cloud",
       description:
         "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
     },
     {
-      id: 2,
-      icon: fiboCloud,
-      title: "Fibo Cloud",
+      id: 1,
+      icon: zochilIcon,
+      title: "Zochil.mn",
       description:
         "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
     },
@@ -147,9 +148,9 @@ export const experiences = {
     },
     {
       id: 2,
-      logo: syscotechIcon,
-      name: "SyscoTech",
-      link: "https://www.syscotech.club",
+      logo: zochilIcon,
+      name: "Zochil.mn",
+      link: "https://zochil.mn",
     },
   ],
 };

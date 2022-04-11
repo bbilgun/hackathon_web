@@ -10,7 +10,6 @@ import Text from "common/components/Text";
 import Heading from "common/components/Heading";
 import { SectionHeader } from "../appCreative.style";
 import FeatureBlock from "common/components/FeatureBlock";
-
 import SectionWrapper, {
   ExperienceMainWrap,
   ExperienceWrapper,
@@ -80,6 +79,10 @@ const Experiences = () => {
               icon={<Icon className="plus" icon={ic_play_arrow} />}
             />
           </VideoArea>
+          <SectionHeader>
+            <Heading content="Ерөнхий ивээн тэтгэгч" />
+            <Text content={slogan} />
+          </SectionHeader>
           <ExperienceWrapper>
             {features.map((item, index) => (
               <FeatureBlock

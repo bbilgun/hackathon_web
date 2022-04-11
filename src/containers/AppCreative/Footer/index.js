@@ -1,19 +1,19 @@
-import React from 'react';
-import Fade from 'react-reveal/Fade';
-import Link from 'next/link';
-import Container from 'common/components/UI/Container';
-import Heading from 'common/components/Heading';
-import NextImage from 'common/components/NextImage';
-import Text from 'common/components/Text';
+import React from "react";
+import Fade from "react-reveal/Fade";
+import Link from "next/link";
+import Container from "common/components/UI/Container";
+import Heading from "common/components/Heading";
+import NextImage from "common/components/NextImage";
+import Text from "common/components/Text";
 
 import FooterWrapper, {
   FooterInner,
   CopyrightInfo,
   FooterWidget,
   Nav,
-} from './footer.style';
+} from "./footer.style";
 
-import { footerWidget } from 'common/data/AppCreative';
+import { footerWidget } from "common/data/AppCreative";
 
 const Footer = () => {
   return (
@@ -22,14 +22,14 @@ const Footer = () => {
         <FooterInner>
           <CopyrightInfo>
             <Fade up delay={100}>
-              <NextImage src={footerWidget.logo} alt="Logo" />
-              <p>
-                © 2022 Team
-                <Link href={footerWidget.siteUrl}>
-                  <a>{footerWidget.siteName}</a>
-                </Link>
-              </p>
-              <Text className="copyright" content="All rights reserved." />
+              <NextImage
+                width={200}
+                height={50}
+                src={footerWidget.logo}
+                alt="Logo"
+              />
+              <p>©2022 Made by SyscoTech Club ❤️</p>
+              <br />
               <Nav className="social__share">
                 {footerWidget.socialLinks.map((item) => (
                   <Link key={item.id} href={item.link}>
