@@ -59,6 +59,7 @@ export const ImageGalleryWrap = styled.div`
   }
   &::before {
     content: "";
+    margin-left: 30px;
     background-image: url(${Mockup?.src});
     position: absolute;
     width: 100%;

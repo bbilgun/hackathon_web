@@ -48,9 +48,9 @@ export const ThumbWrapper = styled.div`
 
 export const TextWrapper = styled.div`
   width: 440px;
-  margin-top: 15px;
+  margin-top: 70px;
   @media only screen and (max-width: 1219px) {
-    margin-top: 0;
+    margin-top: 0px;
     width: 425px;
   }
   @media only screen and (max-width: 991px) {

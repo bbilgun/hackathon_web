@@ -164,14 +164,12 @@ export const ClientWrapper = styled.div`
       content: "";
       height: 1px;
       width: 100%;
-      background-color: ${themeGet("colors.borderColorTwo", "#EAE9F2")};
       top: 50%;
       left: 0;
     }
     span {
       position: relative;
       font-size: 16px;
-      background-color: ${themeGet("colors.light", "#FAF7FA")};
       margin-bottom: 0;
       z-index: 2;
       padding: 0 30px;
@@ -274,7 +272,6 @@ export const ImageSlider = styled.div`
     height: 100%;
     position: absolute;
     top: 0;
-    background: linear-gradient(to right, #faf7fa, rgba(255, 255, 255, 0));
     z-index: 1;
   }
 

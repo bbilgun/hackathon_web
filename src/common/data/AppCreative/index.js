@@ -53,7 +53,7 @@ export const keyFeatures = {
     {
       id: 1,
       icon: keyFeature1,
-      title: "AI",
+      title: "Artificial intelligence",
       description: "",
     },
     {
@@ -65,7 +65,7 @@ export const keyFeatures = {
     {
       id: 3,
       icon: keyFeature3,
-      title: "VR",
+      title: "Virtual reality",
       description: "",
     },
     {
@@ -101,6 +101,11 @@ export const chooseUs = {
       title: "3-р байр Өргөмжлөл, 500,000₮.",
       description: "",
     },
+    {
+      id: 4,
+      title: "Тусгай байр Шилдэг дизайн, Шилдэг санаа.",
+      description: "",
+    },
   ],
 };
 
@@ -117,7 +122,7 @@ import videoTheme from "../../assets/image/appCreative/experienceVideo.png";
 import fiboCloud from "../../assets/image/appCreative/client_logo/1.png";
 import syscotechIcon from "../../assets/image/appCreative/client_logo/2.png";
 import zochilIcon from "../../assets/image/appCreative/client_logo/5.png";
-
+import naashaaIcon from "../../assets/image/appCreative/client_logo/4.png";
 export const experiences = {
   title: "Зохион байгуулагч",
   slogan:
@@ -152,18 +157,24 @@ export const experiences = {
       name: "Zochil.mn",
       link: "https://zochil.mn",
     },
+    {
+      id: 2,
+      logo: naashaaIcon,
+      name: "Zochil.mn",
+      link: "https://zochil.mn",
+    },
   ],
 };
 
 /* ------------------------------------ */
 // Features data section
 /* ------------------------------------ */
-import Image1 from "../../assets/image/appCreative/feature/slide1.png";
-import Image2 from "../../assets/image/appCreative/feature/slide2.png";
-import Image3 from "../../assets/image/appCreative/feature/slide3.png";
-import Image4 from "../../assets/image/appCreative/feature/slide4.png";
-import Image5 from "../../assets/image/appCreative/feature/slide5.png";
-import Image6 from "../../assets/image/appCreative/feature/slide6.png";
+import Image1 from "../../assets/image/appCreative/feature/logo1.png";
+import Image2 from "../../assets/image/appCreative/feature/logo2.png";
+import Image3 from "../../assets/image/appCreative/feature/logo3.png";
+import Image4 from "../../assets/image/appCreative/feature/logo4.png";
+import Image5 from "../../assets/image/appCreative/feature/logo5.png";
+import Image6 from "../../assets/image/appCreative/feature/logo3.png";
 
 export const features = {
   title: "Түгээмэл асуултууд",
