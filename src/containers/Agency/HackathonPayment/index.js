@@ -180,7 +180,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                         }}
                       >
                         <CopyToClipboard
-                          text="3000"
+                          text="5000"
                           onCopy={() => toast.success("Хуулагдлаа")}
                         >
                           <Icon

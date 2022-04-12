@@ -28,15 +28,10 @@ const Footer = () => {
                 src={footerWidget.logo}
                 alt="Logo"
               />
-              <p>©2022 Made by SyscoTech Club ❤️</p>
+              <p>ШУТИС-МХТС 400 тоот</p>
+              <p>+976 9435 1314</p>
               <br />
-              <Nav className="social__share">
-                {footerWidget.socialLinks.map((item) => (
-                  <Link key={item.id} href={item.link}>
-                    <a className={item.name}>{item.icon}</a>
-                  </Link>
-                ))}
-              </Nav>
+              <p>©2022 Made by SyscoTech Club ❤️</p>
             </Fade>
           </CopyrightInfo>
 

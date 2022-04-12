@@ -61,8 +61,8 @@ export default function () {
             <Experiences />
             <UpdateScreen />
             <ChooseUs />
-            {/* Ивээн тэтгэгч */}
-            <Team />
+            {/* Ментор */}
+            {/* <Team /> */}
             {/* <Testimonials /> */}
             <FeatureSlider />
             {/* <AvailableStore /> */}

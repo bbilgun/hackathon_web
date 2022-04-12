@@ -11,12 +11,12 @@ export const navbar = {
       path: "#home",
       offset: "80",
     },
-    {
-      id: 4,
-      label: "Ментор",
-      path: "#team",
-      offset: "73",
-    },
+    // {
+    //   id: 4,
+    //   label: "Ментор",
+    //   path: "#team",
+    //   offset: "73",
+    // },
     {
       id: 3,
       label: "Ивээн тэтгэгч",
@@ -555,98 +555,53 @@ export const footerWidget = {
   logo: footerLogo,
   siteName: "RedQ, Inc",
   siteUrl: "#",
-  socialLinks: [
-    {
-      id: 1,
-      icon: <Icon icon={facebook} />,
-      name: "facebook",
-      link: "#",
-    },
-    {
-      id: 2,
-      icon: <Icon icon={twitter} />,
-      name: "twitter",
-      link: "#",
-    },
-    {
-      id: 3,
-      icon: <Icon icon={dribbble} />,
-      name: "dribbble",
-      link: "#",
-    },
-  ],
   aboutUs: {
-    title: "About Us",
+    title: "Бидэнтэй холбогдох",
     menuItems: [
       {
         id: 1,
-        url: "#",
-        text: "Support Center",
+        url: "https://www.facebook.com/SysAndCoTech",
+        text: "Facebook хуудас",
       },
       {
         id: 2,
-        url: "#",
-        text: "Customer Support",
+        url: "tel:+97694351314",
+        text: "Холбогдох утас",
       },
       {
         id: 3,
-        url: "#",
-        text: "About Us",
-      },
-      {
-        id: 4,
-        url: "#",
-        text: "Copyright",
+        url: "https://www.google.com/maps/place/School+of+Information+and+Telecommunication+Technology/@47.9206203,106.9661372,19z/data=!4m5!3m4!1s0x5d9691f3ab1910cd:0x26a53c35c8113432!8m2!3d47.9206526!4d106.9662756",
+        text: "Хаяг байршил",
       },
     ],
   },
   ourInformation: {
-    title: "Our Information",
+    title: "Мэдээлэл",
     menuItems: [
       {
         id: 1,
-        url: "#",
-        text: "Return Policy",
+        url: "https://www.syscotech.club/",
+        text: "Үйл ажиллагаа",
       },
       {
         id: 2,
-        url: "#",
-        text: "Privacy Policy",
-      },
-      {
-        id: 3,
-        url: "#",
-        text: "Terms & Conditions",
-      },
-      {
-        id: 4,
-        url: "#",
-        text: "Site Map",
+        url: "#mentor",
+        text: "Түгээмэл асуулт хариулт",
       },
     ],
   },
   myAccount: {
-    title: "My Account",
+    title: "Клубын бодлого",
     menuItems: [
       {
         id: 1,
         url: "#",
-        text: "Press inquiries",
+        text: "Гишүүний эрх, үүрэг",
       },
       {
         id: 2,
         url: "#",
-        text: "Social media",
-      },
-      {
-        id: 3,
-        url: "#",
-        text: "Directories",
-      },
-      {
-        id: 4,
-        url: "#",
-        text: "Permissions",
+        text: "Клубийн журам",
       },
     ],
   },

@@ -142,6 +142,26 @@ export const FormComponent = ({
   );
 };
 
+const schoolData = [
+  "ШУТИС",
+  "СЭЗИС",
+  "МУИС",
+  "ХУИС",
+  "МУБИС",
+  "ИЗОИС",
+  "Этүгэн их сургууль",
+  "Мандах их сургууль",
+  "Улаанбаатар их сургууль",
+  "МҮИС",
+  "Шинэ Монгол ТДС",
+  "Чингис-Соосэ",
+  "ХААИС",
+  "Letu University",
+  "MIU",
+  "Ider University",
+  "Бусад",
+];
+
 const HackathonTeam = ({
   row,
   col,
@@ -156,7 +176,7 @@ const HackathonTeam = ({
     name: "",
     email: "",
     phoneNumber: "",
-    schoolName: "",
+    schoolName: schoolData[0],
   };
 
   const SignupButtonGroup = () => (
@@ -241,6 +261,7 @@ const HackathonTeam = ({
                       errorMsg={errors.schoolName}
                       contentType="select"
                       disabled={validTeam}
+                      options={schoolData}
                     />
                     <Space />
                   </Box>
