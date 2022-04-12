@@ -128,6 +128,15 @@ const HackathonUserForm = ({
   contentWrapper2,
   setValidTeam,
 }) => {
+  const [forms, setForms] = useState([]);
+  const [rolesData, setRolesData] = useState([
+    "Ахлагч",
+    "Хөгжүүлэгч",
+    "Дизайнер",
+    "Шинжээч",
+    "Гишүүн",
+  ]);
+
   const initialValues = {
     firstname: "",
     lastname: "",
@@ -137,9 +146,9 @@ const HackathonUserForm = ({
     class: "",
     course: 1,
     schoolName: schoolData[0],
+    role: rolesData[0],
   };
 
-  const [forms, setForms] = useState([]);
   const createUserForm = () => {
     toast.warn("Багийн мэдээлэл олдсонгүй !!", {
       position: "top-center",
@@ -178,9 +187,11 @@ const HackathonUserForm = ({
         pending: `Оролцогч ${id} бүртгэж байна... `,
         success: {
           render(data) {
+            const index = rolesData.indexOf(formData.role);
+            rolesData.splice(index, 1);
+            setRolesData([...rolesData]);
             forms.push(formData);
             setForms([...forms]);
-            console.log("Bnuuu", forms);
             return `Оролцогч ${id} амжилттай бүртгэгдлээ.`;
           },
         },
@@ -334,13 +345,7 @@ const HackathonUserForm = ({
                   errorMsg={errors.role}
                   contentType="select"
                   disabled={validTeam}
-                  options={[
-                    "Ахлагч",
-                    "Хөгжүүлэгч",
-                    "Дизайнер",
-                    "Шинжээч",
-                    "Гишүүн",
-                  ]}
+                  options={rolesData}
                 />
                 <Space />
               </Box>
