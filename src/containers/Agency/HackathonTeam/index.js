@@ -193,7 +193,7 @@ const HackathonTeam = ({
   const registerHackathonTeam = async (data) => {
     toast.promise(
       axios.post(
-        "https://syscotech-api.herokuapp.com/api/v1/hackathons/6244704f9596e1540c109b06/teams",
+        "https://syscotech-api.herokuapp.com/api/v1/hackathons/6255f6fbbaf0fa4aebde4072/teams",
         data,
         {
           headers: {
