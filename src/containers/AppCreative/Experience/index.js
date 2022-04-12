@@ -19,7 +19,8 @@ import SectionWrapper, {
   ImageSlider,
   ImageSlide,
 } from "./experience.style";
-import { experiences } from "common/data/AppCreative";
+import { experiences, event } from "common/data/AppCreative";
+import PricingPolicy from "containers/AppModern/PricingPolicy";
 
 // close button for modal
 const CloseModalButton = () => (
@@ -69,7 +70,7 @@ const Experiences = () => {
       <Container>
         <SectionHeader>
           <Heading content={title} />
-          <Text content={slogan} />
+          <Text content="ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил, үйл ажиллагааг удирдан зохион байгуулж явуулсаар байна." />
         </SectionHeader>
         <ExperienceMainWrap>
           <VideoArea onClick={handleVideoModal}>
@@ -81,6 +82,31 @@ const Experiences = () => {
           </VideoArea>
           <SectionHeader>
             <Heading content="Ерөнхий ивээн тэтгэгч" />
+            <Text
+              content={`"Dev Student Hackathon - 2022" тэмцээний ерөнхий ивээн тэтгэгч`}
+            />
+            <PricingPolicy>
+              <FeatureBlock
+                logo
+                className="experience__item"
+                icon={
+                  <NextImage
+                    src={event.icon}
+                    alt={`Icon ${event.id}`}
+                    objectFit="contain"
+                    className="experience__image"
+                    width={200}
+                    height={90}
+                  />
+                }
+                iconPosition="left"
+                title={<Heading as="h4" content={event.title} />}
+                description={<Text content={event.description} />}
+              />
+            </PricingPolicy>
+          </SectionHeader>
+          <SectionHeader>
+            <Heading content="Ивээн тэтгэгч" />
             <Text content={slogan} />
           </SectionHeader>
           <ExperienceWrapper>

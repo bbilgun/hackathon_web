@@ -120,28 +120,48 @@ import videoTheme from "../../assets/image/appCreative/experienceVideo.png";
 
 // Client Logo
 import fiboCloud from "../../assets/image/appCreative/client_logo/1.png";
-import syscotechIcon from "../../assets/image/appCreative/client_logo/2.png";
+import puzzleIcon from "../../assets/image/appCreative/client_logo/6.png";
 import zochilIcon from "../../assets/image/appCreative/client_logo/5.png";
+import tomyoIcon from "../../assets/image/appCreative/client_logo/7.png";
 import naashaaIcon from "../../assets/image/appCreative/client_logo/4.png";
+export const event = {
+  icon: fiboCloud,
+  title: "Fibo Cloud",
+  description:
+    "Үүлэн  технологийн чиглэлээр дагнаж үйл ажиллагаа явуулдаг Монгол дахь цор ганц компани FIBO CLOUD.",
+};
 export const experiences = {
   title: "Зохион байгуулагч",
-  slogan:
-    "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
+  slogan: `Sys&CoTech клубээс зохион байгуулж буй "Dev Student Hackathon - 2022" тэмцээний ивээн тэтгэгч байгуулагууд`,
   video_theme: videoTheme,
   features: [
     {
-      id: 2,
-      icon: fiboCloud,
-      title: "Fibo Cloud",
+      id: 1,
+      icon: naashaaIcon,
+      title: "Nasha Tech",
       description:
-        "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
+        "Internet болон E-Commerce нь улс үндэстэн болон байршлаас үл хамааран бүгдэд адил боломжийг олгодог бөгөөд энэ боломжоо алдалгүй ашиглахад бид танд тусална.",
     },
     {
-      id: 1,
+      id: 2,
       icon: zochilIcon,
-      title: "Zochil.mn",
+      title: "Zochil Shop",
       description:
-        "ШУТИС-МХТС Sys&CoTech клуб нь 2009 оноос хойш мэдээллийн технологийн чиглэлийн оюутнуудад зориулсан олон ажил.",
+        "Онлайн худалдааны бизнес эрхлэгчдэд зориулан илүү бага зардлаар, илүү хялбар технологийг ашиглаж, захиалга, хүргэлт, худалдааг автоматжуулах боломжийг онлайн худалдааны ZOCHIL платформ зах зээлд нэвтрүүлээд байна.",
+    },
+    {
+      id: 3,
+      icon: tomyoIcon,
+      title: "TomYoEdTech LLC",
+      description:
+        "TomYo Edtech нь дэлхийн түвшний боломжуудыг хөгжиж буй орнуудын залуучуудын гарт шууд олгох зорилготой боловсролын технологийн компани юм.",
+    },
+    {
+      id: 4,
+      icon: puzzleIcon,
+      title: "Urgoo Puzzle",
+      description:
+        "Бүтээлч сэтгэхүйг ирээдүйд уриан дор бид сэтгэхүй хөгжүүлэх болон шинэ содон бараа бүтээгдэхүүнийг хөгжүүлэн гаргаж байна.",
     },
   ],
   clients: [
@@ -152,16 +172,28 @@ export const experiences = {
       link: "https://fibo.cloud",
     },
     {
-      id: 2,
+      id: 3,
       logo: zochilIcon,
       name: "Zochil.mn",
       link: "https://zochil.mn",
     },
     {
-      id: 2,
+      id: 4,
       logo: naashaaIcon,
       name: "Zochil.mn",
-      link: "https://zochil.mn",
+      link: "https://www.nashatech.com",
+    },
+    {
+      id: 4,
+      logo: tomyoIcon,
+      name: "Zochil.mn",
+      link: "https://tomyo.mn",
+    },
+    {
+      id: 5,
+      logo: puzzleIcon,
+      name: "Zochil.mn",
+      link: "https://www.facebook.com/urgoopuzzle",
     },
   ],
 };
