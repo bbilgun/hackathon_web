@@ -15,6 +15,72 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { FormComponent } from "../HackathonTeam";
 
+const schoolData = [
+  "ШУТИС",
+  "СЭЗИС",
+  "МУИС",
+  "ХУИС",
+  "МУБИС",
+  "ИЗОИС",
+  "Этүгэн их сургууль",
+  "Мандах их сургууль",
+  "Улаанбаатар их сургууль",
+  "МҮИС",
+  "Шинэ Монгол ТДС",
+  "Чингис-Соосэ",
+  "ХААИС",
+  "Letu University",
+  "MIU",
+  "Ider University",
+  "Бусад",
+];
+
+const schoolValidation = (schoolName, value) => {
+  switch (schoolName) {
+    case "ШУТИС":
+      // B180930008
+      return /^[Bb]{1}[1-2]{1}[0-9]{8}$/.test(value);
+    case "СЭЗИС":
+      // b20fc1106
+      return /^[Bb]{1}[1-2]{1}[0-9]{1}[Ff]{1}[Cc]{1}[0-9]{4}$/.test(value);
+    case "МУИС":
+      // SE19D011
+      return /^[Ss]{1}[Ee]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
+    case "ХУИС":
+      // E.PT20D141
+      return /^[Ee]{1}[.]{1}[Pp]{1}[Tt]{1}[0-9]{2}[Dd]{1}[0-9]{3}$/.test(value);
+    case "ИЗОИС":
+      // ET21B178
+      return /^[Ee]{1}[Tt]{1}[1-2]{1}[0-9]{1}[Bb]{1}[0-9]{3}$/.test(value);
+    case "Этүгэн их сургууль":
+      // MMS19D123
+      return /^[Mm]{2}[Ss]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
+    case "Мандах их сургууль":
+      // M.AB16D
+      return /^[Mm]{2}[.]{1}[Aa]{1}[Bb]{1}[0-9]{2}[Dd]{1}$/.test(value);
+    case "МҮИС":
+      // d12345678
+      return /^[Dd]{1}[0-9]{8}$/.test(value);
+    case "Шинэ Монгол ТДС":
+      //A.AR10D725
+      return /^[Aa]{1}[.]{1}[Aa]{1}[Rr]{1}[0-9]{2}[Dd]{1}[0-9]{3}$/.test(value);
+    case "Чингис-Соосэ":
+      //SO21B026
+      return /^[Aa]{1}[0-9]{3}[Bb]{1}[0-9]{3}$/.test(value);
+    case "ХААИС":
+      //3520008
+      return /^[0-9]{7}$/.test(value);
+    case "Letu University":
+      //18121
+      return /^[0-9]{5}$/.test(value);
+    case "Улаанбаатар их сургууль":
+      //ID21D001
+      return /^[Ii]{1}[Dd]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
+    default:
+      return value ? value.length > 2 : false;
+  }
+};
+
 export const Space = styled.div`
   height: 10px;
   width: 100%;
@@ -33,8 +99,13 @@ const HackathonUsersSchema = Yup.object().shape({
     .min(2, "Оролцогчийн овог хоосон байна!")
     .required("Заавал оруулах"),
   studentCode: Yup.string()
-    .min(8, "Оюутаны кодоо зөв оруулна уу!")
-    .required("Заавал оруулах"),
+    .required("Заавал оруулах")
+    .test("student-code", "Оюутаны код буруу байна!", (value, data) => {
+      const {
+        parent: { schoolName },
+      } = data;
+      return schoolValidation(schoolName, value);
+    }),
   email: Yup.string()
     .email("И-мэйл хаяг буруу байна!")
     .required("Заавал оруулах"),
@@ -65,6 +136,7 @@ const HackathonUserForm = ({
     phoneNumber: "",
     class: "",
     course: 1,
+    schoolName: schoolData[0],
   };
 
   const [forms, setForms] = useState([]);
@@ -184,12 +256,51 @@ const HackathonUserForm = ({
                 />
                 <Space />
                 <FormComponent
+                  label="Сургуулийн нэр:"
+                  name="schoolName"
+                  value={values.schoolName}
+                  onChange={handleChange}
+                  error={errors.schoolName && touched.schoolName}
+                  errorMsg={errors.schoolName}
+                  contentType="select"
+                  disabled={validTeam}
+                  options={schoolData}
+                />
+                <Space />
+                <FormComponent
                   name="studentCode"
                   value={values.studentCode}
                   label="Оюутны код: "
                   onChange={handleChange}
                   error={errors.studentCode && touched.studentCode}
                   errorMsg={errors.studentCode}
+                  disabled={validTeam}
+                />
+                <Space />
+                <FormComponent
+                  name="course"
+                  value={values.course}
+                  label="Курс: "
+                  onChange={handleChange}
+                  error={errors.course && touched.course}
+                  errorMsg={errors.course}
+                  disabled={validTeam}
+                  type="number"
+                />
+                <Space />
+                <Space />
+              </Box>
+            </Box>
+            <Box className="col" {...col}>
+              <Box {...contentWrapper2}>
+                <Space />
+                <FormComponent
+                  name="class"
+                  value={values.class}
+                  label="Ямар мэргэжлээр суралцдаг вэ:"
+                  onChange={handleChange}
+                  error={errors.class && touched.class}
+                  errorMsg={errors.class}
                   disabled={validTeam}
                 />
                 <Space />
@@ -212,32 +323,6 @@ const HackathonUserForm = ({
                   error={errors.phoneNumber && touched.phoneNumber}
                   errorMsg={errors.phoneNumber}
                   disabled={validTeam}
-                />
-                <Space />
-              </Box>
-            </Box>
-            <Box className="col" {...col}>
-              <Box {...contentWrapper2}>
-                <Space />
-                <FormComponent
-                  name="class"
-                  value={values.class}
-                  label="Ямар мэргэжлээр суралцдаг вэ:"
-                  onChange={handleChange}
-                  error={errors.class && touched.class}
-                  errorMsg={errors.class}
-                  disabled={validTeam}
-                />
-                <Space />
-                <FormComponent
-                  name="course"
-                  value={values.course}
-                  label="Курс: "
-                  onChange={handleChange}
-                  error={errors.course && touched.course}
-                  errorMsg={errors.course}
-                  disabled={validTeam}
-                  type="number"
                 />
                 <Space />
                 <FormComponent
