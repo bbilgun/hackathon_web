@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
-import { rgba } from 'polished';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
+import { rgba } from "polished";
 
 const SectionWrapper = styled.section`
   padding: 75px 0 40px;
@@ -26,17 +26,23 @@ const SectionWrapper = styled.section`
 `;
 
 export const ThumbWrapper = styled.div`
-  width: calc(100% - 510px);
+  width: calc(100% - 710px);
+  margin-right: 200px;
+  margin-bottom: 100px;
   @media only screen and (max-width: 1219px) {
-    width: calc(100% - 425px);
+    width: calc(100% - 525px);
+    margin-right: 60px;
+    margin-bottom: 0px;
   }
   @media only screen and (max-width: 991px) {
-    width: calc(100% - 350px);
+    width: calc(100% - 400px);
+    margin-right: 50px;
   }
   @media only screen and (max-width: 624px) {
     width: 80%;
+    margin: auto;
     margin-top: 40px;
-    margin-bottom: -35px;
+    margin-bottom: 35px;
   }
 `;
 
@@ -54,7 +60,7 @@ export const TextWrapper = styled.div`
     width: 100%;
   }
   h2 {
-    color: ${themeGet('colors.headingColor', '#000000')};
+    color: ${themeGet("colors.headingColor", "#000000")};
     font-size: 36px;
     line-height: 1.5;
     font-weight: 700;
@@ -70,7 +76,7 @@ export const TextWrapper = styled.div`
     }
   }
   p {
-    color: ${themeGet('colors.textColor', 'rgba(52, 61, 72, 0.8)')};
+    color: ${themeGet("colors.textColor", "rgba(52, 61, 72, 0.8)")};
     font-size: 15px;
     line-height: 28px;
     margin-bottom: 0;
@@ -83,7 +89,7 @@ export const TextWrapper = styled.div`
       padding-right: 0;
     }
     h3 {
-      color: ${themeGet('colors.headingColor', '#000000')};
+      color: ${themeGet("colors.headingColor", "#000000")};
       font-size: 17px;
       line-height: 28px;
       font-weight: 700;
@@ -94,11 +100,11 @@ export const TextWrapper = styled.div`
       }
     }
     .icon__wrapper span {
-      color: ${rgba('#09131F', 0.2)};
+      color: ${rgba("#09131F", 0.2)};
       font-size: 64px;
       margin-right: 30px;
       line-height: 1em;
-      font-family: 'Work Sans', sans-serif;
+      font-family: "Work Sans", sans-serif;
       @media only screen and (max-width: 991px) {
         font-size: 52px;
         margin-right: 20px;
