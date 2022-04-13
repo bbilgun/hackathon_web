@@ -65,7 +65,7 @@ const Banner = () => {
       <Container>
         <BannerContent>
           <Fade up delay={100}>
-            <Heading as="h1" content={`"Dev Student Hackathon - 2022"`} />
+            <Heading as="h1" content={`"Dev Hackathon Student - 2022"`} />
           </Fade>
           <Fade up delay={200}>
             <Text

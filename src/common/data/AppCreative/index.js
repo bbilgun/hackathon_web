@@ -132,7 +132,7 @@ export const event = {
 };
 export const experiences = {
   title: "Зохион байгуулагч",
-  slogan: `Sys&CoTech клубээс зохион байгуулж буй "Dev Student Hackathon - 2022" тэмцээний ивээн тэтгэгч байгуулагууд`,
+  slogan: `Sys&CoTech клубээс зохион байгуулж буй "Dev Hackathon Student - 2022" тэмцээний ивээн тэтгэгч байгуулагууд`,
   video_theme: videoTheme,
   features: [
     {

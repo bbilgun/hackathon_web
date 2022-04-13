@@ -53,7 +53,7 @@ const Team = () => {
       <Container width="1360px">
         <Fade bottom>
           <SectionHeader>
-            <Heading as="h5" content="Dev Student Hackathon - 2022" />
+            <Heading as="h5" content="Dev Hackathon Student - 2022" />
             <Heading content="Шүүгч, Ментор-ууд" />
           </SectionHeader>
         </Fade>
