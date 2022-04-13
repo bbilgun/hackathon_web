@@ -61,7 +61,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
           <Text {...secText} content="Sys&CoTech club" />
           <Heading
             {...secHeading}
-            content={`"Dev Hackathon-2022" бүртгүүлэх`}
+            content={`"Dev Hackathon Student - 2022" бүртгүүлэх`}
           />
         </Box>
         <Tabs
