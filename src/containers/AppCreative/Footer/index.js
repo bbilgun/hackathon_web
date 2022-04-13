@@ -29,7 +29,7 @@ const Footer = () => {
                 alt="Logo"
               />
               <p>ШУТИС-МХТС 400 тоот</p>
-              <p>+976 9435 1314</p>
+              <p>+976 8655 0963</p>
               <br />
               <p>©2022 Made by SyscoTech Club ❤️</p>
             </Fade>
@@ -62,7 +62,7 @@ const Footer = () => {
           </FooterWidget>
 
           <FooterWidget>
-            <Fade up delay={400}>
+            {/* <Fade up delay={400}>
               <Heading as="h4" content={footerWidget.myAccount.title} />
               <Nav>
                 {footerWidget.myAccount.menuItems.map((item) => (
@@ -71,7 +71,7 @@ const Footer = () => {
                   </Link>
                 ))}
               </Nav>
-            </Fade>
+            </Fade> */}
           </FooterWidget>
         </FooterInner>
       </Container>

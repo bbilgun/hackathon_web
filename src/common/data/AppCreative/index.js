@@ -565,7 +565,7 @@ export const footerWidget = {
       },
       {
         id: 2,
-        url: "tel:+97694351314",
+        url: "tel:+97686550963",
         text: "Холбогдох утас",
       },
       {
