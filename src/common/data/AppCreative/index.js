@@ -59,7 +59,7 @@ export const keyFeatures = {
     {
       id: 2,
       icon: keyFeature2,
-      title: "Block Chain",
+      title: "BlockChain",
       description: "",
     },
     {
