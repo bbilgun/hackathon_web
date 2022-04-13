@@ -51,6 +51,14 @@ export const AppWrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
 
+  .menubarRegitser {
+    margin-left: 30px;
+    color: #ffffff;
+  }
+
+  .sticky-active .menubarRegitser {
+    color: rgb(108, 36, 126);
+  }
   .sticky-active {
     .navbar {
       padding: 20px 0 21px;

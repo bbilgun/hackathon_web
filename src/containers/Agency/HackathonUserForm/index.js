@@ -244,7 +244,7 @@ const HackathonUserForm = ({
           </HeadingContainer>
           <Box className="row" {...row}>
             <Box className="col" {...col}>
-              <Box {...contentWrapper2}>
+              <Box className="formComponent">
                 <Space />
                 <FormComponent
                   name="firstname"
@@ -303,7 +303,7 @@ const HackathonUserForm = ({
               </Box>
             </Box>
             <Box className="col" {...col}>
-              <Box {...contentWrapper2}>
+              <Box className="formComponent">
                 <Space />
                 <FormComponent
                   name="class"
@@ -366,7 +366,7 @@ const HackathonUserForm = ({
       </HeadingContainer>
       <Box className="row" {...row}>
         <Box className="col" {...col}>
-          <Box {...contentWrapper2}>
+          <Box className="formComponent">
             <Space />
             <FormComponent
               name="firstname"
@@ -406,7 +406,7 @@ const HackathonUserForm = ({
           </Box>
         </Box>
         <Box className="col" {...col}>
-          <Box {...contentWrapper2}>
+          <Box className="formComponent">
             <Space />
             <FormComponent
               name="class"

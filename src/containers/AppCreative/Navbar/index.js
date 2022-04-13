@@ -122,7 +122,6 @@ const Navbar = () => {
               </AnchorLink>
             </li>
           </Scrollspy>
-          <Button title="Try for Free" />
         </Container>
       </MobileMenu>
       {/* end of mobile menu */}

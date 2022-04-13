@@ -240,7 +240,7 @@ const HackathonTeam = ({
               <Heading content="Багийн мэдээлэл" />
               <Box className="row" {...row}>
                 <Box className="col" {...col}>
-                  <Box {...contentWrapper2}>
+                  <Box className="formComponent">
                     <Space />
                     <FormComponent
                       label="Багийн нэр:"
@@ -267,7 +267,7 @@ const HackathonTeam = ({
                   </Box>
                 </Box>
                 <Box className="col" {...col}>
-                  <Box {...contentWrapper2}>
+                  <Box className="formComponent">
                     <Space />
                     <FormComponent
                       label="И-мэйл хаяг: "
@@ -359,9 +359,6 @@ HackathonTeam.defaultProps = {
     pb: ["32px", "56px"],
   },
 
-  contentWrapper2: {
-    pr: "32px",
-  },
   // Default button style
   btnStyle: {
     minWidth: "156px",

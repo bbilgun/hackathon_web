@@ -34,7 +34,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                 borderRadius: 10,
               }}
             >
-              <Fade up delay={100 * 6}>
+              <Fade up delay={50}>
                 <Heading as="h2" content="Голомт банк" />
                 <div
                   style={{
