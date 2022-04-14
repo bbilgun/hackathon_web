@@ -11,6 +11,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import Alert from "common/components/Alert";
 
 const HackathonTeamSchema = Yup.object().shape({
   name: Yup.string()
@@ -22,6 +23,22 @@ const HackathonTeamSchema = Yup.object().shape({
   phoneNumber: Yup.number()
     .min(8, "Утасны дугаар аа зөв оруулан уу")
     .required("Утасны дугаар хоосон байна"),
+  subSchoolName: Yup.string().test(
+    "sub-school",
+    "Суралцаж буй сургуулийн нэрийг бичнэ үү!",
+    (value, data) => {
+      const {
+        parent: { schoolName },
+      } = data;
+
+      if (schoolName === "Бусад") {
+        if (value && value.length > 1) {
+          return true;
+        }
+      }
+      return false;
+    }
+  ),
 });
 
 export const Space = styled.div`
@@ -171,12 +188,14 @@ const HackathonTeam = ({
   contentWrapper2,
   validTeam,
   setValidTeam,
+  setTeamId,
 }) => {
   const initialValues = {
     name: "",
     email: "",
     phoneNumber: "",
     schoolName: schoolData[0],
+    subSchoolName: "",
   };
 
   const SignupButtonGroup = () => (
@@ -191,6 +210,9 @@ const HackathonTeam = ({
   );
 
   const registerHackathonTeam = async (data) => {
+    if (data.schoolName === "Бусад") {
+      data.schoolName = data.subSchoolName;
+    }
     toast.promise(
       axios.post(
         "https://syscotech-api.herokuapp.com/api/v1/hackathons/6255f6fbbaf0fa4aebde4072/teams",
@@ -206,7 +228,7 @@ const HackathonTeam = ({
         success: {
           render(data) {
             const requestData = data.data.data;
-            localStorage.setItem("teamId", JSON.stringify(requestData.data.id));
+            setTeamId(requestData.data.id);
             setValidTeam();
             return `Амжилттай бүртгэгдлээ. `;
           },
@@ -237,6 +259,34 @@ const HackathonTeam = ({
         {({ values, errors, touched, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <Box {...contentWrapper}>
+              {validTeam ? (
+                <Alert
+                  style={{
+                    borderColor: "#badbcc",
+                    backgroundColor: "#d1e7dd",
+                    color: "#0f5132",
+                    marginBottom: 30,
+                  }}
+                >
+                  Багийн мэдээлэл амжилттай бүртгэгдлээ. Бүртгэлтэй холбоотой
+                  асууж тодоруулах зүйл гарвал манай сошиал хаягууд руу хандан
+                  уу!
+                </Alert>
+              ) : (
+                <Alert
+                  style={{
+                    borderColor: "#ffecb5",
+                    backgroundColor: "#fff3cd",
+                    color: "#664d03",
+                    marginBottom: 30,
+                  }}
+                >
+                  Нэг баг нь 3-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд
+                  багийн гишүүний тоо хүрээгүй тохиолдолд тэмцээнд оролцох
+                  боломжгүйг анхаарна уу!
+                </Alert>
+              )}
+
               <Heading content="Багийн мэдээлэл" />
               <Box className="row" {...row}>
                 <Box className="col" {...col}>
@@ -264,6 +314,20 @@ const HackathonTeam = ({
                       options={schoolData}
                     />
                     <Space />
+                    {values.schoolName === "Бусад" && (
+                      <>
+                        <FormComponent
+                          label="Суралцаж буй сургууль:"
+                          name="subSchoolName"
+                          value={values.subSchoolName}
+                          onChange={handleChange}
+                          error={errors.subSchoolName && touched.subSchoolName}
+                          errorMsg={errors.subSchoolName}
+                          disabled={validTeam}
+                        />
+                        <Space />
+                      </>
+                    )}
                   </Box>
                 </Box>
                 <Box className="col" {...col}>

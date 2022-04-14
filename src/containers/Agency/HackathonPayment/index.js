@@ -10,12 +10,24 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import { clipboard } from "react-icons-kit/typicons/clipboard";
 import Icon from "react-icons-kit";
 import { toast } from "react-toastify";
+import Alert from "common/components/Alert";
 
 const HackathonPayment = ({ contentWrapper }) => {
   return (
     <LoginModalWrapper>
       <form onSubmit={() => {}}>
         <Box {...contentWrapper}>
+          <Alert
+            style={{
+              borderColor: "#ffecb5",
+              backgroundColor: "#fff3cd",
+              color: "#664d03",
+              marginBottom: 30,
+            }}
+          >
+            Бүртгэлийн хураамж багийн гишүүн тус бүр 5000 төгрөг. Доорх заавраар
+            4.21-ны дотор илгээж бүртгэлээ баталгаажуулна уу.
+          </Alert>
           <Wrappper>
             <style jsx>{`
               .shadow-color {
@@ -206,7 +218,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                         mt="-5px"
                         as="h3"
                         fontWeight="500"
-                        content="Багийн нэр, утасны дугаар"
+                        content="Багийн нэр, өөрийн нэр, утасны дугаар"
                       />
                     </div>
                   </div>

@@ -3,7 +3,7 @@ import { themeGet } from "@styled-system/theme-get";
 
 const LoginModalWrapper = styled.div`
   width: 80%;
-  margin: 71px auto;
+  margin: auto;
   border-radius: 5px;
   overflow: hidden;
   background-color: ${themeGet("colors.white", "#ffffff")};

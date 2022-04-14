@@ -14,6 +14,7 @@ import { plusCircle } from "react-icons-kit/fa/plusCircle";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { FormComponent } from "../HackathonTeam";
+import Alert from "common/components/Alert";
 
 const schoolData = [
   "ШУТИС",
@@ -34,6 +35,8 @@ const schoolData = [
   "Ider University",
   "Бусад",
 ];
+
+const courseList = ["1", "2", "3", "4", "5", "6", "7", "8"];
 
 const schoolValidation = (schoolName, value) => {
   switch (schoolName) {
@@ -113,10 +116,26 @@ const HackathonUsersSchema = Yup.object().shape({
     .min(8, "Утасны дугаар аа зөв оруулан уу")
     .required("Утасны дугаар хоосон байна"),
   class: Yup.string()
-    .min(8, "Суралцаж буй мэргэжил ээ бичнэ үү!!")
+    .min(2, "Суралцаж буй мэргэжил ээ бичнэ үү!!")
     .required("Заавал оруулах"),
-  course: Yup.number().min(1, "Заавал оруулах").required("Заавал оруулах"),
+  course: Yup.string().required("Заавал оруулах"),
   role: Yup.string().required("Заавал оруулах"),
+  subSchoolName: Yup.string().test(
+    "sub-school",
+    "Суралцаж буй сургуулийн нэрийг бичнэ үү!",
+    (value, data) => {
+      const {
+        parent: { schoolName },
+      } = data;
+
+      if (schoolName === "Бусад") {
+        if (value && value.length > 1) {
+          return true;
+        }
+      }
+      return false;
+    }
+  ),
 });
 
 const HackathonUserForm = ({
@@ -127,6 +146,8 @@ const HackathonUserForm = ({
   outlineBtnStyle,
   contentWrapper2,
   setValidTeam,
+  teamId,
+  setTeamId,
 }) => {
   const [forms, setForms] = useState([]);
   const [rolesData, setRolesData] = useState([
@@ -144,9 +165,10 @@ const HackathonUserForm = ({
     email: "",
     phoneNumber: "",
     class: "",
-    course: 1,
+    course: courseList[0],
     schoolName: schoolData[0],
     role: rolesData[0],
+    subSchoolName: "",
   };
 
   const createUserForm = () => {
@@ -163,7 +185,9 @@ const HackathonUserForm = ({
 
   const registerHackathonUser = async (data, id) => {
     const formData = data;
-    const teamId = await localStorage.getItem("teamId");
+    if (formData.schoolName === "Бусад") {
+      formData.schoolName = formData.subSchoolName;
+    }
 
     if (!teamId) {
       createUserForm();
@@ -173,9 +197,7 @@ const HackathonUserForm = ({
 
     toast.promise(
       axios.post(
-        `https://syscotech-api.herokuapp.com/api/v1/hackathonteams/${JSON.parse(
-          teamId
-        )}/users`,
+        `https://syscotech-api.herokuapp.com/api/v1/hackathonteams/${teamId}/users`,
         data,
         {
           headers: {
@@ -278,6 +300,20 @@ const HackathonUserForm = ({
                   options={schoolData}
                 />
                 <Space />
+                {values.schoolName === "Бусад" && (
+                  <>
+                    <FormComponent
+                      label="Суралцаж буй сургууль:"
+                      name="subSchoolName"
+                      value={values.subSchoolName}
+                      onChange={handleChange}
+                      error={errors.subSchoolName && touched.subSchoolName}
+                      errorMsg={errors.subSchoolName}
+                      disabled={validTeam}
+                    />
+                    <Space />
+                  </>
+                )}
                 <FormComponent
                   name="studentCode"
                   value={values.studentCode}
@@ -296,7 +332,8 @@ const HackathonUserForm = ({
                   error={errors.course && touched.course}
                   errorMsg={errors.course}
                   disabled={validTeam}
-                  type="number"
+                  options={courseList}
+                  contentType="select"
                 />
                 <Space />
                 <Space />
@@ -397,9 +434,9 @@ const HackathonUserForm = ({
             />
             <Space />
             <FormComponent
-              name="phoneNumber"
-              value={value.phoneNumber}
-              label="Утасны дугаар: "
+              name="schoolName"
+              value={value.schoolName}
+              label="Сургуулийн нэр: "
               disabled={validTeam}
             />
             <Space />
@@ -407,6 +444,13 @@ const HackathonUserForm = ({
         </Box>
         <Box className="col" {...col}>
           <Box className="formComponent">
+            <Space />
+            <FormComponent
+              name="phoneNumber"
+              value={value.phoneNumber}
+              label="Утасны дугаар: "
+              disabled={validTeam}
+            />
             <Space />
             <FormComponent
               name="class"
@@ -440,6 +484,34 @@ const HackathonUserForm = ({
   return (
     <LoginModalWrapper>
       <Box {...contentWrapper}>
+        {forms.length > 3 ? (
+          <Alert
+            style={{
+              borderColor: "#badbcc",
+              backgroundColor: "#d1e7dd",
+              color: "#0f5132",
+              marginBottom: 30,
+            }}
+          >
+            - Бүртгэлийн хураамжийг төлснөөр тэмцээнд оролцох эрх баталгаажих
+            болно. <br /> - Бүртгэлтэй холбоотой асууж тодоруулах зүйл гарвал
+            манай сошиал хаягууд руу хандан уу!
+          </Alert>
+        ) : (
+          <Alert
+            style={{
+              borderColor: "#ffecb5",
+              backgroundColor: "#fff3cd",
+              color: "#664d03",
+              marginBottom: 30,
+            }}
+          >
+            Нэг баг нь 3-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд багийн
+            гишүүний тоо хүрээгүй тохиолдолд тэмцээнд оролцох боломжгүйг
+            анхаарна уу!
+          </Alert>
+        )}
+
         {forms.map((form, index) => {
           return (
             <>

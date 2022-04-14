@@ -22,6 +22,7 @@ import { creditCard } from "react-icons-kit/fa/creditCard";
 
 const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
   const [activeKey, setActiveKey] = useState("1");
+  const [teamId, setTeamId] = useState(null);
   const [validTeam, setValidTeam] = useState(false);
   const [validUsers, setValidUsers] = useState(false);
 
@@ -82,7 +83,12 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
             }
             key="1"
           >
-            <HackathonTeam validTeam={validTeam} setValidTeam={sucessTeam} />
+            <HackathonTeam
+              teamId={teamId}
+              setTeamId={setTeamId}
+              validTeam={validTeam}
+              setValidTeam={sucessTeam}
+            />
           </TabPane>
           <TabPane
             tab={
@@ -94,6 +100,8 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
             key="2"
           >
             <HackathonUserForm
+              teamId={teamId}
+              setTeamId={setTeamId}
               validTeam={validTeam}
               setValidTeam={backTeamRegister}
             />
