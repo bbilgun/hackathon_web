@@ -24,7 +24,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
   const [activeKey, setActiveKey] = useState("1");
   const [teamId, setTeamId] = useState(null);
   const [validTeam, setValidTeam] = useState(false);
-  const [validUsers, setValidUsers] = useState(false);
+  const [registerSuccess, setRegisterSuceess] = useState(false);
 
   const onChange = (index) => {
     if (index === "3") {
@@ -37,21 +37,6 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
       return;
     }
     setActiveKey(String(index));
-  };
-
-  const sucessTeam = () => {
-    setValidTeam(true);
-    let interval = setTimeout(() => {
-      setActiveKey(String("2"));
-      clearTimeout(interval);
-    }, 1000);
-  };
-
-  const backTeamRegister = () => {
-    let interval = setTimeout(() => {
-      setActiveKey(String("1"));
-      clearTimeout(interval);
-    }, 1500);
   };
 
   return (
@@ -78,33 +63,23 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
                   size={20}
                   style={{ marginRight: 10 }}
                 />
-                Алхам 1
+                Бүртгэл
               </>
             }
             key="1"
           >
             <HackathonTeam
-              teamId={teamId}
-              setTeamId={setTeamId}
+              registerSuccess={registerSuccess}
               validTeam={validTeam}
-              setValidTeam={sucessTeam}
+              setValidTeam={setValidTeam}
             />
-          </TabPane>
-          <TabPane
-            tab={
-              <>
-                <Icon icon={users} size={20} style={{ marginRight: 10 }} />
-                Алхам 2
-              </>
-            }
-            key="2"
-          >
-            <HackathonUserForm
-              teamId={teamId}
-              setTeamId={setTeamId}
-              validTeam={validTeam}
-              setValidTeam={backTeamRegister}
-            />
+            {validTeam && (
+              <HackathonUserForm
+                registerSuccess={registerSuccess}
+                setRegisterSuceess={setRegisterSuceess}
+                validTeam={validTeam}
+              />
+            )}
           </TabPane>
           <TabPane
             tab={
@@ -113,7 +88,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
                 Хураамж
               </>
             }
-            key="3"
+            key="2"
           >
             <HackathonPayment />
           </TabPane>

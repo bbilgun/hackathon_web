@@ -185,11 +185,9 @@ const HackathonTeam = ({
   col,
   btnStyle,
   contentWrapper,
-  outlineBtnStyle,
-  contentWrapper2,
   validTeam,
   setValidTeam,
-  setTeamId,
+  registerSuccess,
 }) => {
   const initialValues = {
     name: "",
@@ -206,17 +204,16 @@ const HackathonTeam = ({
         className="default"
         title="Багийн гишүүн нэмэх"
         {...btnStyle}
+        style={{ borderRadius: 5 }}
       />
     </Fragment>
   );
 
-  const registerHackathonTeam = async (data) => {
-    if (data.schoolName === "Бусад") {
-      data.schoolName = data.subSchoolName;
-    }
+  const checkTeamName = (data) => {
+    const formData = data;
     toast.promise(
       axios.post(
-        "https://syscotech-api.herokuapp.com/api/v1/hackathons/6255f6fbbaf0fa4aebde4072/teams",
+        "https://syscotech-api.herokuapp.com/api/v1/hackathonteams/check",
         data,
         {
           headers: {
@@ -225,22 +222,29 @@ const HackathonTeam = ({
         }
       ),
       {
-        pending: "Бүртгэл хийгдэж байна... ",
+        pending: "Багийн мэдээллийг шалгаж байна... ",
         success: {
           render(data) {
-            const requestData = data.data.data;
-            setTeamId(requestData.data.id);
-            setValidTeam();
-            return `Амжилттай бүртгэгдлээ. `;
+            localStorage.setItem("hackathonTeam", JSON.stringify(formData));
+            setValidTeam(true);
+            return "Тэмцээнд бүртгүүлэх боломжтой.";
           },
         },
         error: {
           render(data) {
-            return `Бүртгэх үед алдаа гарлаа. `;
+            return `${formData.name} нэртэй баг бүртгэлтэй байна!!!`;
           },
         },
       }
     );
+  };
+
+  const registerHackathonTeam = async (data) => {
+    if (data.schoolName === "Бусад") {
+      data.schoolName = data.subSchoolName;
+    }
+
+    await checkTeamName(data);
   };
 
   return (
@@ -248,19 +252,12 @@ const HackathonTeam = ({
       <Formik
         initialValues={initialValues}
         validationSchema={HackathonTeamSchema}
-        onSubmit={(values) => {
-          if (values.schoolName === "") {
-            values.schoolName = "ШУТИС";
-            registerHackathonTeam(values);
-            return;
-          }
-          registerHackathonTeam(values);
-        }}
+        onSubmit={(values) => registerHackathonTeam(values)}
       >
         {({ values, errors, touched, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <Box {...contentWrapper}>
-              {validTeam ? (
+            <Box style={{ paddingBottom: 32 }} {...contentWrapper}>
+              {registerSuccess ? (
                 <Alert
                   style={{
                     borderColor: "#badbcc",
@@ -269,9 +266,9 @@ const HackathonTeam = ({
                     marginBottom: 30,
                   }}
                 >
-                  Багийн мэдээлэл амжилттай бүртгэгдлээ. Бүртгэлтэй холбоотой
-                  асууж тодоруулах зүйл гарвал манай сошиал хаягууд руу хандан
-                  уу!
+                  - Бүртгэлийн хураамжийг төлснөөр тэмцээнд оролцох эрх
+                  баталгаажих болно. <br /> - Бүртгэлтэй холбоотой асууж
+                  тодоруулах зүйл гарвал манай сошиал хаягууд руу хандан уу!
                 </Alert>
               ) : (
                 <Alert
@@ -287,7 +284,6 @@ const HackathonTeam = ({
                   боломжгүйг анхаарна уу!
                 </Alert>
               )}
-
               <Heading content="Багийн мэдээлэл" />
               <Box className="row" {...row}>
                 <Box className="col" {...col}>
@@ -359,9 +355,13 @@ const HackathonTeam = ({
                   </Box>
                 </Box>
               </Box>
-              <Space />
-              <Space />
-              {!validTeam && <SignupButtonGroup />}
+              {!validTeam && (
+                <>
+                  <Space />
+                  <Space />
+                  <SignupButtonGroup />
+                </>
+              )}
             </Box>
           </form>
         )}

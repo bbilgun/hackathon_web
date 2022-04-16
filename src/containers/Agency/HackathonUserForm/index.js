@@ -8,13 +8,13 @@ import LoginModalWrapper from "./loginModal.style";
 import "rc-tabs/assets/index.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { minusCircle } from "react-icons-kit/fa/minusCircle";
 import axios from "axios";
 import Icon from "react-icons-kit";
 import { plusCircle } from "react-icons-kit/fa/plusCircle";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { FormComponent } from "../HackathonTeam";
-import Alert from "common/components/Alert";
 
 const schoolData = [
   "ШУТИС",
@@ -144,12 +144,10 @@ const HackathonUserForm = ({
   col,
   btnStyle,
   contentWrapper,
-  outlineBtnStyle,
-  contentWrapper2,
-  setValidTeam,
-  teamId,
-  setTeamId,
+  registerSuccess = false,
+  setRegisterSuceess,
 }) => {
+  const [lastUser, setLastUser] = useState(true);
   const [forms, setForms] = useState([]);
   const [rolesData, setRolesData] = useState([
     "Ахлагч",
@@ -170,35 +168,13 @@ const HackathonUserForm = ({
     schoolName: schoolData[0],
     role: rolesData[0],
     subSchoolName: "",
+    isSubmit: false,
   };
 
-  const createUserForm = () => {
-    toast.warn("Багийн мэдээлэл олдсонгүй !!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
-
-  const registerHackathonUser = async (data, id) => {
-    const formData = data;
-    if (formData.schoolName === "Бусад") {
-      formData.schoolName = formData.subSchoolName;
-    }
-
-    if (!teamId) {
-      createUserForm();
-      setValidTeam();
-      return;
-    }
-
+  const registerUsers = (hackathonTeamId, data, id) => {
     toast.promise(
       axios.post(
-        `https://syscotech-api.herokuapp.com/api/v1/hackathonteams/${teamId}/users`,
+        `https://syscotech-api.herokuapp.com/api/v1/hackathonteams/${hackathonTeamId}/users`,
         data,
         {
           headers: {
@@ -210,11 +186,6 @@ const HackathonUserForm = ({
         pending: `Оролцогч ${id} бүртгэж байна... `,
         success: {
           render(data) {
-            const index = rolesData.indexOf(formData.role);
-            rolesData.splice(index, 1);
-            setRolesData([...rolesData]);
-            forms.push(formData);
-            setForms([...forms]);
             return `Оролцогч ${id} амжилттай бүртгэгдлээ.`;
           },
         },
@@ -227,7 +198,114 @@ const HackathonUserForm = ({
     );
   };
 
-  const handleRemove = (values, id) => {
+  const teamRegister = async (data) => {
+    toast.promise(
+      axios.post(
+        "https://syscotech-api.herokuapp.com/api/v1/hackathons/6255f6fbbaf0fa4aebde4072/teams",
+        data,
+        {
+          headers: {
+            "Access-Control-Allow-Headers": "*",
+          },
+        }
+      ),
+      {
+        pending: "Багийн бүртгэл хийгдэж байна... ",
+        success: {
+          render(data) {
+            const requestData = data.data.data;
+            promises(requestData.data.id);
+            return `Амжилттай бүртгэгдлээ. `;
+          },
+        },
+        error: {
+          render(data) {
+            return `Бүртгэх үед алдаа гарлаа. `;
+          },
+        },
+      }
+    );
+  };
+
+  const checkStudentCode = (data, id) => {
+    const formData = data;
+    const isSubmit = formData.isSubmit;
+    toast.promise(
+      axios.post(
+        "https://syscotech-api.herokuapp.com/api/v1/hackathonusers/check",
+        data,
+        {
+          headers: {
+            "Access-Control-Allow-Headers": "*",
+          },
+        }
+      ),
+      {
+        pending: `Оролцогч #${id} мэдээллийг шалгаж байна... `,
+        success: {
+          render(data) {
+            if (isSubmit) {
+              setLastUser(false);
+            }
+            const index = rolesData.indexOf(formData.role);
+            rolesData.splice(index, 1);
+            setRolesData([...rolesData]);
+            forms.push(formData);
+            setForms([...forms]);
+            return `Оролцогч ${id}-ийг бүртгэх боломжтой.`;
+          },
+        },
+        error: {
+          render(data) {
+            return `${formData.studentCode} оюутны код бүртгэлтэй байна.!!!`;
+          },
+        },
+      }
+    );
+  };
+  async function promises(id) {
+    const unresolved = forms.map(async (data, index) => {
+      await registerUsers(id, data, index + 1);
+      return data;
+    });
+
+    await Promise.all(unresolved);
+  }
+
+  const createUserForm = async () => {
+    const data = await localStorage.getItem("hackathonTeam");
+    const hackathonTeam = JSON.parse(data);
+
+    if (!hackathonTeam) {
+      toast.warn("Багийн мэдээлэл олдсонгүй !!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+
+    setRegisterSuceess(true);
+    await teamRegister(hackathonTeam);
+  };
+
+  const registerHackathonUser = async (data, id) => {
+    const formData = data;
+    const isSubmit = formData.isSubmit;
+    if (formData.schoolName === "Бусад") {
+      formData.schoolName = formData.subSchoolName;
+    }
+
+    await checkStudentCode(formData, id);
+    if (isSubmit) {
+      createUserForm();
+    }
+  };
+
+  const handleRemove = async (values, id) => {
     const confirmed = window.confirm(`Багийн гишүүн #${id} - ийг нэмэх ?`);
 
     if (confirmed) {
@@ -241,7 +319,9 @@ const HackathonUserForm = ({
     }
   };
 
-  const SignupButtonGroup = () => (
+  const submitBtnDisaled = forms.length >= 2;
+
+  const SignupButtonGroup = ({ setFieldValue }) => (
     <Fragment>
       <Button
         type="submit"
@@ -250,9 +330,66 @@ const HackathonUserForm = ({
         iconPosition={"left"}
         title="Багийн гишүүн нэмэх"
         {...btnStyle}
+        style={{ borderRadius: 5 }}
+        onClick={() => {
+          setFieldValue("isSubmit", false);
+        }}
+      />
+
+      <Button
+        type="submit"
+        className="default"
+        title="Бүртгүүлэх"
+        disabled={!submitBtnDisaled}
+        style={{
+          marginLeft: 30,
+          backgroundColor: !submitBtnDisaled ? "grey" : "green",
+          borderRadius: 5,
+        }}
+        {...btnStyle}
+        onClick={() => {
+          setFieldValue("isSubmit", true);
+        }}
       />
     </Fragment>
   );
+
+  const MainGroupBtn = () => (
+    <Fragment>
+      <Button
+        type="submit"
+        icon={<Icon className="close" icon={plusCircle} />}
+        className="default"
+        iconPosition={"left"}
+        title="Багийн гишүүн нэмэх"
+        {...btnStyle}
+        onClick={() => {
+          setLastUser(true);
+        }}
+        style={{ borderRadius: 5 }}
+      />
+      <Button
+        className="default"
+        title="Бүртгүүлэх"
+        disabled={!submitBtnDisaled}
+        style={{
+          marginLeft: 30,
+          backgroundColor: !submitBtnDisaled ? "grey" : "green",
+          borderRadius: 5,
+        }}
+        onClick={createUserForm}
+        {...btnStyle}
+      />
+    </Fragment>
+  );
+
+  const handleRemoveUsers = (id) => {
+    const confirmed = window.confirm(`Багийн гишүүн #${id} - ийг устгах ?`);
+
+    if (confirmed) {
+      setLastUser(false);
+    }
+  };
 
   const UserForm = ({ id, validTeam = false }) => (
     <Formik
@@ -260,10 +397,34 @@ const HackathonUserForm = ({
       validationSchema={HackathonUsersSchema}
       onSubmit={(values) => handleRemove(values, id)}
     >
-      {({ values, errors, touched, handleChange, handleSubmit }) => (
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleSubmit,
+        setFieldValue,
+      }) => (
         <form onSubmit={handleSubmit}>
           <HeadingContainer>
             <Heading content={`Багийн гишүүн #${id}`} />
+            {id !== 1 && (
+              <div
+                style={{
+                  marginLeft: "10px",
+                  marginTop: "2px",
+                  cursor: "pointer",
+                }}
+                onClick={() => handleRemoveUsers(id)}
+              >
+                <Icon
+                  color="#6C247E"
+                  size={20}
+                  className="close btn-icon"
+                  icon={minusCircle}
+                />
+              </div>
+            )}
           </HeadingContainer>
           <Box className="row" {...row}>
             <Box className="col" {...col}>
@@ -390,14 +551,21 @@ const HackathonUserForm = ({
             </Box>
             <Space />
             <Space />
-            {!validTeam && <SignupButtonGroup />}
+            {!validTeam && !registerSuccess && (
+              <SignupButtonGroup setFieldValue={setFieldValue} />
+            )}
           </Box>
         </form>
       )}
     </Formik>
   );
 
-  const SuccessUsers = ({ id, value, validTeam = true }) => (
+  const SuccessUsers = ({
+    id,
+    value,
+    validTeam = true,
+    visibleBtn = false,
+  }) => (
     <>
       <HeadingContainer>
         <Heading content={`Багийн гишүүн #${id}`} />
@@ -478,51 +646,42 @@ const HackathonUserForm = ({
         </Box>
         <Space />
         <Space />
+        {!lastUser && visibleBtn && !registerSuccess && <MainGroupBtn />}
+        {visibleBtn && forms.length === 5 && !registerSuccess && (
+          <Button
+            type="submit"
+            className="default"
+            title="Бүртгүүлэх"
+            disabled={!submitBtnDisaled}
+            style={{
+              backgroundColor: !submitBtnDisaled ? "grey" : "green",
+              borderRadius: 5,
+            }}
+            {...btnStyle}
+            onClick={createUserForm}
+          />
+        )}
       </Box>
     </>
   );
 
   return (
     <LoginModalWrapper>
-      <Box {...contentWrapper}>
-        {forms.length > 3 ? (
-          <Alert
-            style={{
-              borderColor: "#badbcc",
-              backgroundColor: "#d1e7dd",
-              color: "#0f5132",
-              marginBottom: 30,
-            }}
-          >
-            - Бүртгэлийн хураамжийг төлснөөр тэмцээнд оролцох эрх баталгаажих
-            болно. <br /> - Бүртгэлтэй холбоотой асууж тодоруулах зүйл гарвал
-            манай сошиал хаягууд руу хандан уу!
-          </Alert>
-        ) : (
-          <Alert
-            style={{
-              borderColor: "#ffecb5",
-              backgroundColor: "#fff3cd",
-              color: "#664d03",
-              marginBottom: 30,
-            }}
-          >
-            Нэг баг нь 3-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд багийн
-            гишүүний тоо хүрээгүй тохиолдолд тэмцээнд оролцох боломжгүйг
-            анхаарна уу!
-          </Alert>
-        )}
-
+      <Box style={{ paddingTop: 0 }} {...contentWrapper}>
         {forms.map((form, index) => {
           return (
             <>
-              <SuccessUsers value={form} id={index + 1} />
+              <SuccessUsers
+                value={form}
+                id={index + 1}
+                visibleBtn={forms.length === index + 1}
+              />
               <Space />
               <Space />
             </>
           );
         })}
-        {forms.length < 5 && <UserForm id={forms.length + 1} />}
+        {forms.length < 5 && lastUser && <UserForm id={forms.length + 1} />}
         <Space />
         <Space />
         {/* <SignupButtonGroup /> */}
