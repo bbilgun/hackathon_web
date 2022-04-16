@@ -65,7 +65,7 @@ const schoolValidation = (schoolName, value) => {
       return /^[Mm]{2}[Ss]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
     case "Мандах их сургууль":
       // M.AB16D
-      return /^[Mm]{2}[.]{1}[Aa]{1}[Bb]{1}[0-9]{2}[Dd]{1}$/.test(value);
+      return /^[Mm]{1}[.]{1}[Aa]{1}[Bb]{1}[0-9]{2}[Dd]{1}$/.test(value);
     case "МҮИС":
       // d12345678
       return /^[Dd]{1}[0-9]{8}$/.test(value);
