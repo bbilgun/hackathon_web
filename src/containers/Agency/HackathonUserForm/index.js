@@ -48,7 +48,9 @@ const schoolValidation = (schoolName, value) => {
       return /^[Bb]{1}[1-2]{1}[0-9]{1}[Ff]{1}[Cc]{1}[0-9]{4}$/.test(value);
     case "МУИС":
       // 21b1num0595
-      return /^[2]{2}[Bb]{1}[0-9]{1}[Nn]{1}[Uu]{1}[Mm]{1}[0-9]{4}$/.test(value);
+      return /^[0-9]{2}[Bb]{1}[0-9]{1}[Nn]{1}[Uu]{1}[Mm]{1}[0-9]{4}$/.test(
+        value
+      );
     case "ХУИС":
       // SE19D011
       return /^[Ss]{1}[Ee]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
