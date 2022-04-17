@@ -45,36 +45,50 @@ const schoolValidation = (schoolName, value) => {
       return /^[Bb]{1}[1-2]{1}[0-9]{8}$/.test(value);
     case "СЭЗИС":
       // b20fc1106
-      return /^[Bb]{1}[1-2]{1}[0-9]{1}[Ff]{1}[Cc]{1}[0-9]{4}$/.test(value);
+      return /^[a-zA-Z]{1}[1-2]{1}[0-9]{1}[a-zA-Z]{1}[a-zA-Z]{1}[0-9]{4}$/.test(
+        value
+      );
     case "МУИС":
       // 21b1num0595
-      return /^[0-9]{2}[Bb]{1}[0-9]{1}[Nn]{1}[Uu]{1}[Mm]{1}[0-9]{4}$/.test(
+      return /^[0-9]{2}[a-zA-Z]{1}[0-9]{1}[a-zA-Z]{1}[a-zA-Z]{1}[a-zA-Z]{1}[0-9]{4}$/.test(
         value
       );
     case "ХУИС":
       // SE19D011
-      return /^[Ss]{1}[Ee]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{1}[a-zA-Z]{1}[1-2]{1}[0-9]{1}[a-zA-Z]{1}[0-9]{3}$/.test(
+        value
+      );
     case "МУБИС":
       // E.PT20D141
-      return /^[Ee]{1}[.]{1}[Pp]{1}[Tt]{1}[0-9]{2}[Dd]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{1}[.]{1}[a-zA-Z]{1}[a-zA-Z]{1}[0-9]{2}[a-zA-Z]{1}[0-9]{3}$/.test(
+        value
+      );
     case "ИЗОИС":
       // ET21B178
-      return /^[Ee]{1}[Tt]{1}[1-2]{1}[0-9]{1}[Bb]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{1}[a-zA-Z]{1}[1-2]{1}[0-9]{1}[a-zA-Z]{1}[0-9]{3}$/.test(
+        value
+      );
     case "Этүгэн их сургууль":
       // MMS19D123
-      return /^[Mm]{2}[Ss]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{2}[a-zA-Z]{1}[1-2]{1}[0-9]{1}[a-zA-Z]{1}[0-9]{3}$/.test(
+        value
+      );
     case "Мандах их сургууль":
       // M.AB16D
-      return /^[Mm]{1}[.]{1}[Aa]{1}[Bb]{1}[0-9]{2}[Dd]{1}$/.test(value);
+      return /^[a-zA-Z]{1}[.]{1}[a-zA-Z]{1}[a-zA-Z]{1}[0-9]{2}[a-zA-Z]{1}$/.test(
+        value
+      );
     case "МҮИС":
       // d12345678
-      return /^[Dd]{1}[0-9]{8}$/.test(value);
+      return /^[a-zA-Z]{1}[0-9]{8}$/.test(value);
     case "Шинэ Монгол ТДС":
       //A.AR10D725
-      return /^[Aa]{1}[.]{1}[Aa]{1}[Rr]{1}[0-9]{2}[Dd]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{1}[.]{1}[a-zA-Z]{1}[a-zA-Z]{1}[0-9]{2}[a-zA-Z]{1}[0-9]{3}$/.test(
+        value
+      );
     case "Чингис-Соосэ":
       //SO21B026
-      return /^[Ss]{1}[Oo]{1}[0-9]{2}[Bb]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{1}[a-zA-Z]{1}[0-9]{2}[a-zA-Z]{1}[0-9]{3}$/.test(value);
     case "ХААИС":
       //3520008
       return /^[0-9]{7}$/.test(value);
@@ -83,7 +97,9 @@ const schoolValidation = (schoolName, value) => {
       return /^[0-9]{5}$/.test(value);
     case "Улаанбаатар их сургууль":
       //ID21D001
-      return /^[Ii]{1}[Dd]{1}[1-2]{1}[0-9]{1}[Dd]{1}[0-9]{3}$/.test(value);
+      return /^[a-zA-Z]{1}[a-zA-Z]{1}[1-2]{1}[0-9]{1}[a-zA-Z]{1}[0-9]{3}$/.test(
+        value
+      );
     default:
       return value ? value.length > 2 : false;
   }
