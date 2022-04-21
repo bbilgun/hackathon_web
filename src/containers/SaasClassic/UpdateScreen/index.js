@@ -19,8 +19,9 @@ import HackathonPayment from "containers/Agency/HackathonPayment";
 import { users } from "react-icons-kit/fa/users";
 import { userCircleO } from "react-icons-kit/fa/userCircleO";
 import { creditCard } from "react-icons-kit/fa/creditCard";
+import Alert from "common/components/Alert";
 
-const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
+const UpdateScreen = ({ secTitleWrapper, secText, secHeading, endTime }) => {
   const [activeKey, setActiveKey] = useState("1");
   const [teamId, setTeamId] = useState(null);
   const [validTeam, setValidTeam] = useState(false);
@@ -68,17 +69,32 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading }) => {
             }
             key="1"
           >
-            <HackathonTeam
-              registerSuccess={registerSuccess}
-              validTeam={validTeam}
-              setValidTeam={setValidTeam}
-            />
-            {validTeam && (
-              <HackathonUserForm
-                registerSuccess={registerSuccess}
-                setRegisterSuceess={setRegisterSuceess}
-                validTeam={validTeam}
-              />
+            {endTime ? (
+              <Alert
+                style={{
+                  borderColor: "#ffecb5",
+                  backgroundColor: "#fff3cd",
+                  color: "#664d03",
+                  margin: 30,
+                }}
+              >
+                {`"Dev Hackathon Student - 2022" тэмцээний бүртгэл хаагдсан.`}
+              </Alert>
+            ) : (
+              <>
+                <HackathonTeam
+                  registerSuccess={registerSuccess}
+                  validTeam={validTeam}
+                  setValidTeam={setValidTeam}
+                />
+                {validTeam && (
+                  <HackathonUserForm
+                    registerSuccess={registerSuccess}
+                    setRegisterSuceess={setRegisterSuceess}
+                    validTeam={validTeam}
+                  />
+                )}
+              </>
             )}
           </TabPane>
           <TabPane

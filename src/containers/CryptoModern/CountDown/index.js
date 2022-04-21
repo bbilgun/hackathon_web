@@ -18,8 +18,9 @@ import SectionWrapper, { ContentWrapper } from "./countdown.style";
 import { SectionHeader } from "containers/AppCreative/appCreative.style";
 import ParticlesComponent from "containers/Crypto/Particle";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Alert from "common/components/Alert";
 
-const CountDownSection = ({ deadline }) => {
+const CountDownSection = ({ deadline, endTime }) => {
   const JuramModalHandle = () => {
     openModal({
       config: {
@@ -88,24 +89,38 @@ const CountDownSection = ({ deadline }) => {
               {/* <Text content={slogan} /> */}
             </Fade>
           </SectionHeader>
-          <Fade up>
-            <div className="timerCount">
-              <NormalClock countdown={deadline} divider="true" />
-            </div>
-          </Fade>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <AnchorLink href="#screenshot_section" offset="80">
-              <Button className="secondary" title="Бүртгүүлэх" />
-            </AnchorLink>
-
-            <ParticlesComponent />
-            {/* <Button
+          {endTime ? (
+            <Alert
+              style={{
+                borderColor: "#ffecb5",
+                backgroundColor: "#fff3cd",
+                color: "#664d03",
+                margin: 30,
+              }}
+            >
+              {`"Dev Hackathon Student - 2022" тэмцээний бүртгэл хаагдсан.`}
+            </Alert>
+          ) : (
+            <>
+              <Fade up>
+                <div className="timerCount">
+                  <NormalClock countdown={deadline} divider="true" />
+                </div>
+              </Fade>
+              <div style={{ display: "flex", flexDirection: "row" }}>
+                <AnchorLink href="#screenshot_section" offset="80">
+                  <Button className="secondary" title="Бүртгүүлэх" />
+                </AnchorLink>
+                {/* <Button
               style={{ marginLeft: 10 }}
               onClick={JuramModalHandle}
               className="primary"
               title="Бүртгэлийн хураамж"
             /> */}
-          </div>
+              </div>
+            </>
+          )}
+          <ParticlesComponent />
         </ContentWrapper>
       </Container>
     </SectionWrapper>
