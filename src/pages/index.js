@@ -22,7 +22,7 @@ import CountDownSection from "containers/CryptoModern/CountDown";
 import moment from "moment";
 
 // Дуусах хугацаа
-const deadline = moment("2022-04-22");
+const deadline = moment("2022-04-21");
 const today = new Date();
 const endTime = today > deadline;
 
