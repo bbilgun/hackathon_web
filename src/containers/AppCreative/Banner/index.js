@@ -16,9 +16,10 @@ import BannerWrapper, {
   VideoWrapper,
 } from "./banner.style";
 
-import bannerImg from "common/assets/image/appCreative/bannerImg.png";
+import bannerImg from "common/assets/image/appCreative/main_logo.png";
 import bannerImgMobile from "common/assets/image/appCreative/availableThumb.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import backgroundImage from "common/assets/image/appCreative/1_1.png"
 
 // close button for modal
 const CloseModalButton = () => (
@@ -62,6 +63,14 @@ const Banner = () => {
   };
   return (
     <BannerWrapper id="home">
+        {/* <NextImage
+          layout='fill'
+          objectFit='cover'
+          src={backgroundImage}
+          alt="Picture of the author"
+          id="bakground_image"
+        /> */}
+        
       <Container>
         <BannerContent>
           <Fade up delay={100}>

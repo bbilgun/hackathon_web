@@ -21,11 +21,12 @@ const colors = {
   primaryLight: "#925B9F",
   headingColor: "#0F2137",
   quoteText: "#343D48",
-  menu: "#02073E",
+  menu: "#ffffff",
   twitterColor: "#6937F6",
   textColor: "#343D48",
   linkColor: "#02073E",
   shadow: "rgba(38, 78, 118, 0.1)",
+  back: "#111022",
 };
 
 export default colors;

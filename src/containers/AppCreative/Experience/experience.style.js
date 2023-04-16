@@ -22,7 +22,7 @@ const playPluse = keyframes`
 `;
 
 const SectionWrapper = styled.section`
-  width: 100%;
+width: 100%;
   padding-bottom: 70px;
   position: relative;
   @media only screen and (max-width: 991px) {
@@ -37,7 +37,6 @@ const SectionWrapper = styled.section`
     left: 0;
     width: 100%;
     height: 80.5%;
-    background-color: ${themeGet("colors.light", "#FAF7FA")};
     content: "";
   }
   .container {
@@ -45,6 +44,7 @@ const SectionWrapper = styled.section`
       max-width: 1290px;
     }
   }
+  
 `;
 export const ExperienceMainWrap = styled.div`
   margin-left: auto;
@@ -175,7 +175,7 @@ export const ClientWrapper = styled.div`
       padding: 0 30px;
       line-height: 1.8;
       text-align: center;
-      color: ${themeGet("colors.secondary", "#696871")};
+      color: ${themeGet("colors.white", "#ffffff")};
       @media only screen and (max-width: 768px) {
         padding: 0 15px;
       }
@@ -187,6 +187,10 @@ export const ExperienceWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 15px;
+  @media only screen and (max-width: 1219px) {
+    justify-content: center;
+    
+  }
   @media only screen and (max-width: 991px) {
     padding: 0;
   }
@@ -194,13 +198,18 @@ export const ExperienceWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     padding: 0px 70px;
-    width: 50%;
-    margin: 0 0 40px;
+    margin: 20px 40px 35px 0px;
+    width: 46%;
+    background-color: #383848;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     @media only screen and (max-width: 1366px) {
       padding: 0px 40px;
     }
     @media only screen and (max-width: 1219px) {
       padding: 0px 15px;
+      width: 60%;
+      margin: 20px 0px 35px 0px;
     }
     @media only screen and (max-width: 768px) {
       flex-direction: column;
@@ -208,6 +217,7 @@ export const ExperienceWrapper = styled.div`
       justify-content: center;
       text-align: center;
       padding: 0px 15px;
+      width: 100%;
     }
     @media only screen and (max-width: 624px) {
       padding: 0px 50px;
@@ -230,7 +240,7 @@ export const ExperienceWrapper = styled.div`
       font-weight: 700;
       font-size: 18px;
       line-height: 1.6;
-      color: ${themeGet("colors.headingColor", "#0F2137")};
+      color: ${themeGet("colors.white", "#ffffff")};
       @media only screen and (max-width: 768px) {
         text-align: center;
         line-height: 1.45;
@@ -239,7 +249,7 @@ export const ExperienceWrapper = styled.div`
     }
 
     p {
-      color: ${themeGet("colors.textColor")};
+      color: ${themeGet("colors.white", "#ffffff")};
       font-size: 15px;
       line-height: 1.9;
       margin: 0;

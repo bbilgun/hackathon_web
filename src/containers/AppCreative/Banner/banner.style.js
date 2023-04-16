@@ -7,6 +7,8 @@ const BannerWrapper = styled.div`
   min-height: 850px;
   overflow: hidden;
   position: relative;
+  width: 100%;
+    height: 100%;
   @media only screen and (max-width: 1199px) {
     min-height: auto;
   }
@@ -19,7 +21,7 @@ const BannerWrapper = styled.div`
     justify-content: space-between;
     min-height: calc(850px - 80px);
     @media only screen and (min-width: 1367px) {
-      max-width: 1290px;
+      max-width: 1380px;
     }
     @media only screen and (max-width: 1199px) {
       padding-top: 80px;
@@ -34,6 +36,15 @@ const BannerWrapper = styled.div`
       padding-bottom: 10px;
     }
   }
+  // .bakground_image{
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: contain;
+  //   object-position: center;
+  // }
 `;
 
 export const BannerContent = styled.div`
@@ -58,7 +69,7 @@ export const BannerContent = styled.div`
     font-size: 72px;
     line-height: 1.25;
     font-weight: 700;
-    color: ${themeGet('colors.headingColor', '#0F2137')};
+    color: ${themeGet('colors.white', '#ffffff')};
     margin-bottom: 20px;
     letter-spacing: -2px;
     @media only screen and (max-width: 1366px) {
@@ -79,7 +90,7 @@ export const BannerContent = styled.div`
   p {
     font-size: 20px;
     line-height: 2;
-    color: ${rgba('#02073e', 0.8)};
+    color: #ffffff;
     padding-right: 70px;
     @media only screen and (max-width: 1366px) {
       font-size: 18px;

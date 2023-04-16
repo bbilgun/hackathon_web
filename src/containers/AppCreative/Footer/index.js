@@ -24,7 +24,7 @@ const Footer = () => {
             <Fade up delay={100}>
               <NextImage
                 width={200}
-                height={50}
+                height={100}
                 src={footerWidget.logo}
                 alt="Logo"
               />

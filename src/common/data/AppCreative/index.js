@@ -80,7 +80,7 @@ export const keyFeatures = {
 /* ------------------------------------ */
 // Choose us data section
 /* ------------------------------------ */
-import chooseThumb from "../../assets/image/appCreative/chooseThumb.png";
+import chooseThumb from "../../assets/image/appCreative/bigLogo.png";
 
 export const chooseUs = {
   title: "Шагналын сан ",
@@ -204,9 +204,6 @@ export const experiences = {
 import Image1 from "../../assets/image/appCreative/feature/logo1.png";
 import Image2 from "../../assets/image/appCreative/feature/logo2.png";
 import Image3 from "../../assets/image/appCreative/feature/logo3.png";
-import Image4 from "../../assets/image/appCreative/feature/logo4.png";
-import Image5 from "../../assets/image/appCreative/feature/logo5.png";
-import Image6 from "../../assets/image/appCreative/feature/logo3.png";
 
 export const features = {
   title: "Түгээмэл асуултууд",
@@ -214,14 +211,14 @@ export const features = {
   items: [
     {
       id: 1,
-      thumbnail: Image1,
+      thumbnail: Image2,
       title: "Хакатон хаана зохиогдох вэ?",
       description:
         "ШУТИС-ийн Эрдэм шинжилгээ, инновацийн төв байр (VIII байр) -ны 12 давхарт Олон улсын эрдэм шинжилгээний хурлын танхим",
     },
     {
       id: 2,
-      thumbnail: Image2,
+      thumbnail: Image1,
       title: "Хакатон хэзээ зохиогдох вэ?",
       description:
         "2022-04-23 -аас 2022-04-24 өдрүүдэд  ШУТИС-ийн Эрдэм шинжилгээ, инновацийн төв байр (VIII байр)",
@@ -235,21 +232,21 @@ export const features = {
     },
     {
       id: 4,
-      thumbnail: Image4,
+      thumbnail: Image2,
       title: "Ямар чадвартай хүмүүс багт байх хэрэгтэй вэ? ",
       description:
         'Хакатон бол багийн тоглолт. Тиймээс багаа бүрдүүлэхдээ олон төрлийн чадвартай, "солонгон" баг бүрдүүлэхийг зөвлөж байна. Жишээ нь: илтгэл сайн тавьдаг, UX/UI зурдаг, back-end хөгжүүлэлт хийдэг гэх мэт.',
     },
     {
       id: 5,
-      thumbnail: Image5,
+      thumbnail: Image1,
       title: "Тэмцээнд юу авч очих вэ?",
       description:
         "Лаптопоо бүтээлч сэтгэлгээтэйгээ цуг цүнхлээд ирэхэд л болно :) Нээрээ цэнэглэгчээ мартав аа",
     },
     {
       id: 6,
-      thumbnail: Image6,
+      thumbnail: Image3,
       title: "24 цаг гэхээр тэмцээний байран дээр хононо гэсэн үг үү?",
       description:
         "Үгүй дээ, өглөө 09:00 цагаас орой 22:00 цаг хүртэл багийнхантайгаа ажиллаад, гэртээ харьж, маргааш нь шүүлт болоод хаалтын ажиллагаандаа оролцоно. Харин шөнө унтах эсэх нь таны мэдэх хэрэг шүү",

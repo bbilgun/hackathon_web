@@ -6,7 +6,10 @@ const LoginModalWrapper = styled.div`
   margin: auto;
   border-radius: 5px;
   overflow: hidden;
-  background-color: ${themeGet("colors.white", "#ffffff")};
+  background-color: #232334;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+    padding: 50px;
   @media only screen and (min-width: 1201px) {
     max-width: 1170px;
     width: 100%;

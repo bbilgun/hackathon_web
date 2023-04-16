@@ -7,6 +7,7 @@ const NavbarWrapper = styled.nav`
   position: fixed;
   z-index: 9999;
   transition: all 0.3s ease;
+  background-color: #111022;
   @media only screen and (max-width: 1366px) {
     padding: 20px 0 21px;
   }
@@ -35,19 +36,28 @@ const NavbarWrapper = styled.nav`
     }
   }
   ul {
+    background: #1C1C28;
+    border-radius: 100px;
+    padding: 8px !important;
     li {
       a {
-        color: ${themeGet("colors.menu", "#02073E")};
+        padding: 8px;
+        line-height: 32px;
+        border-radius: 100px;
+        color: #ffffff;
+        width: 160px;
+        justify-content: center;
         font-size: 15px;
         font-weight: 500;
         transition: all 0.3s ease;
         &:hover {
-          color: ${themeGet("colors.primary", "#6C247E")};
+          background: #383848;
         }
       }
       &.is-current {
         a {
-          color: ${themeGet("colors.primary", "#6C247E")};
+          background: linear-gradient(180deg, #7A50F2 0%, #6966F6 100%);
+          color: #ffffff !important;
         }
       }
     }
@@ -78,6 +88,9 @@ export const MenuArea = styled.div`
       margin: 0 20px;
       @media only screen and (max-width: 1620px) {
         margin: 0 17px;
+      }
+      @media only screen and (max-width: 1220px) {
+        margin: 0 0px;
       }
       &:first-child {
         margin-left: 0;
@@ -219,6 +232,9 @@ export const MobileMenu = styled.div`
             color: ${themeGet("colors.primary")};
           }
         }
+      }
+      @media only screen and (max-width: 992px) {
+        border-radius: 0px;
       }
     }
     .reusecore__button {

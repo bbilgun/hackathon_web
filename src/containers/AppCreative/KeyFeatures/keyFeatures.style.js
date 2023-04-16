@@ -67,14 +67,14 @@ export const FeatureWrapper = styled.div`
         max-width: 375px;
       }
       h3 {
-        color: ${themeGet('colors.headingColor', '#0F2137')};
+        color: ${themeGet('colors.white', '#ffffff')};
         font-size: 18px;
         line-height: 28px;
         font-weight: 700;
         margin-bottom: 10px;
       }
       p {
-        color: ${themeGet('colors.textColor')};
+        color: ${themeGet('colors.white')};
         font-size: 15px;
         line-height: 28px;
         padding: 0 10px;

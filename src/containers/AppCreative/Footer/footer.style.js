@@ -91,7 +91,7 @@ export const CopyrightInfo = styled.div`
 export const FooterWidget = styled.div`
   h4 {
     letter-spacing: -0.5px;
-    color: ${themeGet('colors.headingColor')};
+    color: ${themeGet('colors.white')};
     font-weight: 500;
     font-size: 17px;
     line-height: 30px;
@@ -104,7 +104,7 @@ export const FooterWidget = styled.div`
 
 export const Nav = styled.nav`
   a {
-    color: ${rgba('#02073E', 0.8)};
+    color: #ffffff;
     display: flex;
     align-items: center;
     font-size: 14px;

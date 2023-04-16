@@ -21,7 +21,7 @@ import SectionWrapper, {
 } from "./experience.style";
 import { experiences, event } from "common/data/AppCreative";
 import PricingPolicy from "containers/AppModern/PricingPolicy";
-
+import backgroundImage from "common/assets/image/appCreative/1_2.png"
 // close button for modal
 const CloseModalButton = () => (
   <Button
@@ -67,6 +67,7 @@ const Experiences = () => {
 
   return (
     <SectionWrapper id="experience">
+      
       <Container>
         <SectionHeader>
           <Heading content={title} />

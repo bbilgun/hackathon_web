@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const ResetCSS = createGlobalStyle`
   ::selection {
-    background: #333333;
+    background: #1f1e5a;
     color: #ffffff;
   }
 
@@ -76,7 +76,7 @@ const ResetCSS = createGlobalStyle`
     padding: 0 !important;
     &.demo_switcher_modal {
       border: 0 !important;
-      background-color: rgba(16, 30, 77, 0.9) !important;
+      background-color: #1f1e5a !important;
       .innerRndComponent {
         border-radius: 8px !important;
       }

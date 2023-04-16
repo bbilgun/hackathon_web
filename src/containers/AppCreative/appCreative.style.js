@@ -1,9 +1,21 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-
+import back from "common/assets/image/appCreative/bg.png";
+import back2 from "common/assets/image/appCreative/bg2.png";
+import back3 from "common/assets/image/appCreative/bg3.png";
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'DM Sans', sans-serif;
+    color: white;
+    background-image: url(${back.src}) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media only screen and (max-width: 992px) {
+      background-image: url(${back2.src}) ;
+      }
+    @media only screen and (max-width: 395px) {
+      background-image: url(${back3.src}) ;
+      }
   }
   .reuseModalParentWrapper,
   .reuseModalOverlay {
@@ -50,6 +62,7 @@ export const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  
 
   .menubarRegitser {
     margin-left: 30px;
@@ -57,12 +70,12 @@ export const AppWrapper = styled.div`
   }
 
   .sticky-active .menubarRegitser {
-    color: rgb(108, 36, 126);
+    color: ffffff;
   }
   .sticky-active {
     .navbar {
       padding: 20px 0 21px;
-      background-color: ${themeGet("colors.white", "#ffffff")};
+      
       box-shadow: 0px 3px 8px 0px rgba(43, 83, 135, 0.08);
       @media only screen and (max-width: 1366px) {
         padding: 15px 0 16px;
@@ -99,6 +112,7 @@ export const AppWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
+
   // flex: 1 0 auto;
   // width: 100%;
 `;
@@ -109,6 +123,9 @@ export const SectionHeader = styled.header`
   margin: 0 auto 50px;
   text-align: center;
   position: relative;
+  background-color: #383848;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   @media only screen and (max-width: 768px) {
     margin-bottom: 45px;
   }
@@ -117,7 +134,7 @@ export const SectionHeader = styled.header`
     font-weight: normal;
     line-height: 2.3;
     margin-bottom: 0px;
-    color: ${themeGet("colors.headingColor", "#000000")};
+    color: ${themeGet("colors.white", "#ffffff")};
     @media only screen and (max-width: 991px) {
       line-height: 2;
     }
@@ -126,7 +143,7 @@ export const SectionHeader = styled.header`
     font-size: 26px;
     line-height: 1.5;
     font-weight: 700;
-    color: ${themeGet("colors.headingColor", "#000000")};
+    color: ${themeGet("colors.white", "#ffffff")};
     margin-top: 0;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
@@ -143,5 +160,6 @@ export const SectionHeader = styled.header`
     }
   }
 `;
+
 
 export default GlobalStyle;

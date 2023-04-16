@@ -69,7 +69,7 @@ export const FooterWidget = styled.div`
       line-height: 2.5;
       font-weight: 500;
       &:hover {
-        color: #02073e;
+        color: #ffffff;
       }
     }
   }

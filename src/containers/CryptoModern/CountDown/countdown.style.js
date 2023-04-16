@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
-
 const SectionWrapper = styled.div`
   padding: 75px 0;
   overflow: hidden;
-
+  width: 100%;
+  height: 100%;
   @media only screen and (max-width: 1440px) {
     padding: 100px 0 50px;
   }

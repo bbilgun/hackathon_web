@@ -28,7 +28,7 @@ const KeyFeatures = () => {
               <FeatureBlock
                 icon={
                   <Fragment>
-                    <NextImage src={item.icon} alt={item.title} />
+                    <NextImage src={item.icon} alt={item.title}/>
                   </Fragment>
                 }
                 title={<Heading as="h3" content={item.title} />}

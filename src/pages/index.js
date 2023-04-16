@@ -22,14 +22,14 @@ import CountDownSection from "containers/CryptoModern/CountDown";
 import moment from "moment";
 
 // Дуусах хугацаа
-const deadline = moment("2022-04-21");
+const deadline = moment("2023-04-27");
 const today = new Date();
 const endTime = today > deadline;
 
-export default function () {
+export default function index() {
   return (
     <ThemeProvider theme={theme}>
-      <Fragment>
+      <Fragment >
         <Head>
           <title>Sys&CoTech club | SICT</title>
           <meta name="theme-color" content="#10ac84" />

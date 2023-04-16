@@ -19,6 +19,8 @@ import { SectionHeader } from "containers/AppCreative/appCreative.style";
 import ParticlesComponent from "containers/Crypto/Particle";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Alert from "common/components/Alert";
+import backgroundImage from "common/assets/image/appCreative/1_2.png"
+import NextImage from "common/components/NextImage";
 
 const CountDownSection = ({ deadline, endTime }) => {
   const JuramModalHandle = () => {
@@ -79,6 +81,13 @@ const CountDownSection = ({ deadline, endTime }) => {
   return (
     <SectionWrapper id="normalCount">
       <Container>
+      {/* <NextImage
+          layout='fill'
+          objectFit='cover'
+          src={backgroundImage}
+          alt="Picture of the author"
+          id="bakground_image"
+        /> */}
         <ContentWrapper>
           <SectionHeader>
             <Fade up>
@@ -120,6 +129,7 @@ const CountDownSection = ({ deadline, endTime }) => {
               </div>
             </>
           )}
+          
           <ParticlesComponent />
         </ContentWrapper>
       </Container>

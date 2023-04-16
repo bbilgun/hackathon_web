@@ -138,7 +138,7 @@ UpdateScreen.defaultProps = {
     textAlign: "center",
     fontSize: ["20px", "24px", "36px", "36px"],
     fontWeight: "700",
-    color: "#0f2137",
+    color: "#ffffff",
     letterSpacing: "-0.025em",
     mb: "0",
     ml: "auto",

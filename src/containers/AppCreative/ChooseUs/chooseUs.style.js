@@ -60,7 +60,7 @@ export const TextWrapper = styled.div`
     width: 100%;
   }
   h2 {
-    color: ${themeGet("colors.headingColor", "#000000")};
+    color: ${themeGet("colors.white", "#ffffff")};
     font-size: 36px;
     line-height: 1.5;
     font-weight: 700;
@@ -76,7 +76,7 @@ export const TextWrapper = styled.div`
     }
   }
   p {
-    color: ${themeGet("colors.textColor", "rgba(52, 61, 72, 0.8)")};
+    color: ${themeGet("colors.white", "#ffffff")};
     font-size: 15px;
     line-height: 28px;
     margin-bottom: 0;
@@ -89,7 +89,7 @@ export const TextWrapper = styled.div`
       padding-right: 0;
     }
     h3 {
-      color: ${themeGet("colors.headingColor", "#000000")};
+      color: ${themeGet("colors.white", "#ffffff")};
       font-size: 17px;
       line-height: 28px;
       font-weight: 700;
@@ -100,7 +100,7 @@ export const TextWrapper = styled.div`
       }
     }
     .icon__wrapper span {
-      color: ${rgba("#09131F", 0.2)};
+      color: #ffffff;
       font-size: 64px;
       margin-right: 30px;
       line-height: 1em;
