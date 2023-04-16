@@ -88,24 +88,19 @@ export const chooseUs = {
   features: [
     {
       id: 1,
-      title: "1-р байр Цом, Өргөмжлөл, 1,000,000₮.",
+      title: "1-р байр Цом, Өргөмжлөл, 1'500'000₮.",
       description: "",
     },
     {
       id: 2,
-      title: "2-р байр Өргөмжлөл, 700,000₮.",
+      title: "2-р байр Өргөмжлөл, 1'000'000₮.",
       description: "",
     },
     {
       id: 3,
-      title: "3-р байр Өргөмжлөл, 500,000₮.",
+      title: "3-р байр Өргөмжлөл, 500'000₮.",
       description: "",
-    },
-    {
-      id: 4,
-      title: "Тусгай байр, Шилдэг дизайн, Шилдэг санаа.",
-      description: "",
-    },
+    }
   ],
 };
 
@@ -119,43 +114,44 @@ import expIcon4 from "../../assets/image/appCreative/experience/4.png";
 import videoTheme from "../../assets/image/appCreative/experienceVideo.png";
 
 // Client Logo
-import fiboCloud from "../../assets/image/appCreative/client_logo/1.png";
+import CallPro from "../../assets/image/appCreative/client_logo/8.png";
 import puzzleIcon from "../../assets/image/appCreative/client_logo/6.png";
-import zochilIcon from "../../assets/image/appCreative/client_logo/5.png";
-import tomyoIcon from "../../assets/image/appCreative/client_logo/7.png";
+import SystemCenter from "../../assets/image/appCreative/client_logo/5.png";
+import fibo from "../../assets/image/appCreative/client_logo/1.png";
 import naashaaIcon from "../../assets/image/appCreative/client_logo/4.png";
 export const event = {
-  icon: fiboCloud,
-  title: "Fibo Cloud",
+  icon: CallPro,
+  title: "Call Pro",
   description:
-    "Үүлэн  технологийн чиглэлээр дагнаж үйл ажиллагаа явуулдаг Монгол дахь цор ганц компани FIBO CLOUD.",
+    "Бид технологийн тусламжтайгаар байгууллага, хэрэглэгч хоёрыг хооронд нь ухаалгаар холбож, уян хатан систем, бүрэн интеграцичлагдах боломжуудаар хангаж ажиллана.",
 };
 export const experiences = {
   title: "Зохион байгуулагч",
-  slogan: `Sys&CoTech клубээс зохион байгуулж буй "Dev Hackathon Student - 2022" тэмцээний ивээн тэтгэгч байгууллагууд`,
+  slogan: `Sys&CoTech клубээс зохион байгуулж буй "Dev Hackathon Vol3 - 2023" тэмцээний ивээн тэтгэгч байгууллагууд`,
   video_theme: videoTheme,
   features: [
     {
       id: 1,
+      icon: fibo,
+      title: "Fibo Cloud",
+      description:
+        "Үүлэн технологийн чиглэлээр дагнаж үйл ажиллагаа явуулдаг Монгол дахь цор ганц компани FIBO CLOUD.",
+    },
+    {
+      id: 2,
       icon: naashaaIcon,
       title: "Nasha Tech",
       description:
         "Internet болон E-Commerce нь улс үндэстэн болон байршлаас үл хамааран бүгдэд адил боломжийг олгодог бөгөөд энэ боломжоо алдалгүй ашиглахад бид танд тусална.",
     },
     {
-      id: 2,
-      icon: zochilIcon,
-      title: "Zochil Shop",
+      id: 3,
+      icon: SystemCenter,
+      title: "SystemCenter",
       description:
         "Онлайн худалдааны бизнес эрхлэгчдэд зориулан илүү бага зардлаар, илүү хялбар технологийг ашиглаж, захиалга, хүргэлт, худалдааг автоматжуулах боломжийг онлайн худалдааны ZOCHIL платформ зах зээлд нэвтрүүлээд байна.",
     },
-    {
-      id: 3,
-      icon: tomyoIcon,
-      title: "TomYoEdTech LLC",
-      description:
-        "TomYo Edtech нь дэлхийн түвшний боломжуудыг хөгжиж буй орнуудын залуучуудын гарт шууд олгох зорилготой боловсролын технологийн компани юм.",
-    },
+    
     {
       id: 4,
       icon: puzzleIcon,
@@ -167,27 +163,27 @@ export const experiences = {
   clients: [
     {
       id: 1,
-      logo: fiboCloud,
-      name: "FiboCloud",
+      logo: CallPro,
+      name: "CallPro",
+      link: "https://www.callpro.mn",
+    },
+    {
+      id: 2,
+      logo: fibo,
+      name: "Fibo.cloud",
       link: "https://fibo.cloud",
     },
     {
       id: 3,
-      logo: zochilIcon,
-      name: "Zochil.mn",
-      link: "https://zochil.mn",
-    },
-    {
-      id: 4,
       logo: naashaaIcon,
-      name: "Zochil.mn",
+      name: "Nasha Tech",
       link: "https://www.nashatech.com",
     },
     {
       id: 4,
-      logo: tomyoIcon,
-      name: "Zochil.mn",
-      link: "https://tomyo.mn",
+      logo: SystemCenter,
+      name: "SystemCenter",
+      link: "https://www.ict-training.mn/?fbclid=IwAR12KIpBUYODkWq85vwCtMwD1rW3KuO_-_UbWE7jOc06859-GqIwpLByOOM",
     },
     {
       id: 5,
@@ -221,7 +217,7 @@ export const features = {
       thumbnail: Image1,
       title: "Хакатон хэзээ зохиогдох вэ?",
       description:
-        "2022-04-23 -аас 2022-04-24 өдрүүдэд  ШУТИС-ийн Эрдэм шинжилгээ, инновацийн төв байр (VIII байр)",
+        "2023-04-28 -аас 2023-04-29 өдрүүдэд  ШУТИС-ийн Эрдэм шинжилгээ, инновацийн төв байр (VIII байр)",
     },
     {
       id: 3,

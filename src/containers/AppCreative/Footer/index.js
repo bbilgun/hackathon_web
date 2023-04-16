@@ -29,9 +29,9 @@ const Footer = () => {
                 alt="Logo"
               />
               <p>ШУТИС-МХТС 400 тоот</p>
-              <p>+976 8655 0963</p>
+              <p>+976 9114 5798</p>
               <br />
-              <p>©2022 Made by SyscoTech Club ❤️</p>
+              <p>©2023 Made by SyscoTech Club ❤️</p>
             </Fade>
           </CopyrightInfo>
 

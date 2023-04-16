@@ -68,7 +68,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                         mt="-5px"
                         as="h3"
                         fontWeight="500"
-                        content="1235121688"
+                        content="1105456517"
                       />
                     </div>
                     <div
@@ -92,7 +92,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                         }}
                       >
                         <CopyToClipboard
-                          text="1235121688"
+                          text="1105456517"
                           onCopy={() => toast.success("Хуулагдлаа")}
                         >
                           <Icon

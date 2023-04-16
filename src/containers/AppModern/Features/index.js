@@ -82,12 +82,12 @@ const Features = ({ content }) => {
                   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }} >
                     <div style={{ marginTop: 10 }}>
                       <Heading as="h4" content="ДАНСНЫ ДУГААР" />
-                      <Text content="1235121688" />
+                      <Text content="1105456517" />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                       <div style={{ 
                         display: 'flex', height: 40, width: 40, borderRadius: 20, backgroundColor: '#10ac84', justifyContent: 'center', alignItems: 'center' }}>
-                        <CopyToClipboard text="1235121688" onCopy={() =>  toast.success("Хуулагдлаа")}>
+                        <CopyToClipboard text="1105456517" onCopy={() =>  toast.success("Хуулагдлаа")}>
                           <Icon className="clipboard" icon={clipboard} size={20} style={{ color: 'white' }} />
                         </CopyToClipboard>
                       </div>
