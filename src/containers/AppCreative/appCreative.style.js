@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { themeGet } from "@styled-system/theme-get";
 import back from "common/assets/image/appCreative/bg.png";
 import back2 from "common/assets/image/appCreative/bg2.png";
-import back3 from "common/assets/image/appCreative/bg3.png";
+// import back3 from "common/assets/image/appCreative/bg3.png";
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'DM Sans', sans-serif;
@@ -12,9 +12,6 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
     @media only screen and (max-width: 992px) {
       background-image: url(${back2.src}) ;
-      }
-    @media only screen and (max-width: 395px) {
-      background-image: url(${back3.src}) ;
       }
   }
   .reuseModalParentWrapper,

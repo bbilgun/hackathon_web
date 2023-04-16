@@ -41,7 +41,6 @@ export const navbar = {
 /* ------------------------------------ */
 // Key Features data section
 /* ------------------------------------ */
-import keyFeature1 from "../../assets/image/appCreative/key_feature/ai.svg";
 import keyFeature2 from "../../assets/image/appCreative/key_feature/blockchain.svg";
 import keyFeature3 from "../../assets/image/appCreative/key_feature/vr.svg";
 import keyFeature4 from "../../assets/image/appCreative/key_feature/Deep_learning.svg";
