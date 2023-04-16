@@ -28,7 +28,7 @@ const FeatureSlider = () => {
       <ParticlesComponent />
       <Container>
         <SectionHeader>
-          <Heading content={title} />
+          <Heading content={title} style={{ marginBottom: 0 }} />
           <Text content={slogan} />
         </SectionHeader>
 

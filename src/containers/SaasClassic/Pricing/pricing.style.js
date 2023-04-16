@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
 
 export const PricingTableWrapper = styled.div`
   .glide__slides {
@@ -80,11 +80,11 @@ const SwitchWrapper = styled.div`
       color: #5c636c;
       cursor: pointer;
     }
-    input[type='checkbox'] {
+    input[type="checkbox"] {
       &:checked {
         + div {
           width: 40px !important;
-          background-color: ${themeGet('colors.primary')};
+          background-color: ${themeGet("colors.primary")};
           > div {
             left: 17px !important;
           }
@@ -121,7 +121,7 @@ const PricingButtonWrapper = styled.div`
     margin-top: 40px;
   }
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 1px;
@@ -134,7 +134,6 @@ const PricingButtonWrapper = styled.div`
     font-size: 18px;
     font-weight: 500;
     color: #90949b;
-    background: transparent;
     height: auto;
     min-width: 200px;
     border: none;
@@ -147,23 +146,23 @@ const PricingButtonWrapper = styled.div`
       font-size: 14px;
     }
     &:hover {
-      color: #ff4362;
+      color: #6c247e;
     }
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 2px;
       bottom: 0;
       left: 0;
       display: block;
-      background: #ff4362;
+      background: #6c247e;
       transform: scaleX(0);
       transform-origin: right center 0;
       transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0s;
     }
     &.active-item {
-      color: #ff4362;
+      color: #6c247e;
       &:after {
         transform: scaleX(1);
         transform-origin: left center 0;

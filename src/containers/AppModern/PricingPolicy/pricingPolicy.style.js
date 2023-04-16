@@ -83,10 +83,13 @@ export const InnerWrapper = styled.div`
 export const PricingCard = styled.div`
   width: calc(100%);
   max-width: 540px;
-  padding: 20px;
+  padding: 0px;
   border-radius: 15px;
   box-shadow: 0 6px 50px ${themeGet("colors.shadow", "rgba(38, 78, 118, 0.1)")};
   position: relative;
+  @media only screen and (min-width: 768px) {
+    padding: 20px;
+  }
   @media only screen and (max-width: 1366px) {
     width: 100%;
   }
@@ -120,7 +123,7 @@ export const PricingCard = styled.div`
     font-size: 14px;
     font-weight: 700;
     text-transform: capitalize;
-    background-color: ${themeGet("colors.yellow", "#FFA740")};
+    background-color: #6c247e;
     img {
       margin-right: 6px;
     }

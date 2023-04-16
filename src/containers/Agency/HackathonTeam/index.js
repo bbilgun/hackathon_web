@@ -203,7 +203,7 @@ const HackathonTeam = ({
     <Fragment>
       <Button
         type="submit"
-        className="default"
+        className="primary"
         title="Багийн гишүүн нэмэх"
         {...btnStyle}
         style={{ borderRadius: 5 }}
@@ -275,7 +275,7 @@ const HackathonTeam = ({
                     marginBottom: 30,
                   }}
                 >
-                  Нэг баг нь 3-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд
+                  Нэг баг нь 4-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд
                   багийн гишүүний тоо хүрээгүй тохиолдолд тэмцээнд оролцох
                   боломжгүйг анхаарна уу!
                 </Alert>

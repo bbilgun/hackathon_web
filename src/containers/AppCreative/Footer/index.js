@@ -23,8 +23,8 @@ const Footer = () => {
           <CopyrightInfo>
             <Fade up delay={100}>
               <NextImage
-                width={200}
-                height={100}
+                width={300}
+                height={70}
                 src={footerWidget.logo}
                 alt="Logo"
               />

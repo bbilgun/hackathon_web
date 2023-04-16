@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
   ::selection {
@@ -114,6 +114,23 @@ const ResetCSS = createGlobalStyle`
       &:hover {
         opacity: 0.88 !important;
       }
+    }
+  }
+  input:disabled {
+    background-color: white !important;
+  }
+  select:disabled {
+    background-color: white !important;
+  }
+  .burtgel-btn {
+    margin: 20px 0 0 0 !important;
+    @media only screen and (min-width: 768px) {
+      margin: 0 0 0 30px !important;
+    }
+  }
+  .sp-img {
+    @media only screen and (min-width: 768px) {
+      display: none !important;
     }
   }
 `;

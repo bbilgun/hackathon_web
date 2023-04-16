@@ -20,6 +20,9 @@ import GlobalStyle, {
 } from "containers/AppCreative/appCreative.style";
 import CountDownSection from "containers/CryptoModern/CountDown";
 import moment from "moment";
+import NextImage from "common/components/NextImage";
+import logoImg from "common/assets/image/appCreative/main_logo.png";
+import Fade from "react-reveal/Fade";
 
 // Дуусах хугацаа
 const deadline = moment("2023-04-27");
@@ -29,7 +32,7 @@ const endTime = today > deadline;
 export default function index() {
   return (
     <ThemeProvider theme={theme}>
-      <Fragment >
+      <Fragment>
         <Head>
           <title>Sys&CoTech club | SICT</title>
           <meta name="theme-color" content="#10ac84" />

@@ -21,7 +21,7 @@ import SectionWrapper, {
 } from "./experience.style";
 import { experiences, event } from "common/data/AppCreative";
 import PricingPolicy from "containers/AppModern/PricingPolicy";
-import backgroundImage from "common/assets/image/appCreative/1_2.png"
+import backgroundImage from "common/assets/image/appCreative/1_2.png";
 // close button for modal
 const CloseModalButton = () => (
   <Button
@@ -67,7 +67,6 @@ const Experiences = () => {
 
   return (
     <SectionWrapper id="experience">
-      
       <Container>
         <SectionHeader>
           <Heading content={title} />
@@ -82,10 +81,12 @@ const Experiences = () => {
             />
           </VideoArea>
           <SectionHeader>
-            <Heading content="Ерөнхий ивээн тэтгэгч" />
-            <Text
-              content={`"Dev Hackathon Vol3 - 2023" тэмцээний ерөнхий ивээн тэтгэгч`}
+            <Heading
+              content='"Dev Hackathon Vol3" тэмцээний ерөнхий ивээн тэтгэгч'
+              style={{ marginBottom: 0 }}
             />
+          </SectionHeader>
+          <SectionHeader style={{ padding: "20px 0px" }}>
             <PricingPolicy>
               <FeatureBlock
                 logo
@@ -96,8 +97,8 @@ const Experiences = () => {
                     alt={`Icon ${event.id}`}
                     objectFit="contain"
                     className="experience__image"
-                    width={200}
-                    height={90}
+                    width={500}
+                    height={200}
                   />
                 }
                 iconPosition="left"
@@ -107,8 +108,10 @@ const Experiences = () => {
             </PricingPolicy>
           </SectionHeader>
           <SectionHeader>
-            <Heading content="Ивээн тэтгэгч" />
-            <Text content={slogan} />
+            <Heading
+              content="Ивээн тэтгэгч байгууллагууд"
+              style={{ marginBottom: 0 }}
+            />
           </SectionHeader>
           <ExperienceWrapper>
             {features.map((item, index) => (
@@ -144,6 +147,7 @@ const Experiences = () => {
                 <Logo
                   key={`slide1__key${item.id}`}
                   href={item.link}
+                  target="_blank"
                   logoSrc={item.logo}
                   title={item.name}
                   logoStyle={{ height: 60 }}
@@ -155,6 +159,7 @@ const Experiences = () => {
                 <Logo
                   key={`slide2__key${item.id}`}
                   href={item.link}
+                  target="_blank"
                   logoSrc={item.logo}
                   title={item.name}
                   logoStyle={{ height: 60 }}
@@ -166,6 +171,7 @@ const Experiences = () => {
                 <Logo
                   key={`slide3__key${item.id}`}
                   href={item.link}
+                  target="_blank"
                   logoSrc={item.logo}
                   title={item.name}
                   logoStyle={{ height: 60 }}

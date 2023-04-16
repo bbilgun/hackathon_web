@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Box from 'common/components/Box';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
-import FeatureBlock from 'common/components/FeatureBlock';
-import Container from 'common/components/UI/Container';
+import React from "react";
+import PropTypes from "prop-types";
+import Box from "common/components/Box";
+import Text from "common/components/Text";
+import Heading from "common/components/Heading";
+import FeatureBlock from "common/components/FeatureBlock";
+import Container from "common/components/UI/Container";
 
-import SectionWrapper from './feature.style';
-import { FEATURES } from 'common/data/SaasClassic';
+import SectionWrapper from "./feature.style";
+import { FEATURES } from "common/data/SaasClassic";
 
 const FeatureSection = ({
   secTitleWrapper,
@@ -71,70 +71,70 @@ FeatureSection.propTypes = {
 
 FeatureSection.defaultProps = {
   secTitleWrapper: {
-    mb: ['60px', '100px'],
+    mb: ["60px", "100px"],
   },
   secText: {
-    as: 'span',
-    display: 'block',
-    textAlign: 'center',
-    fontSize: '14px',
-    letterSpacing: '0.15em',
-    fontWeight: '700',
-    color: '#ff4362',
-    mb: '12px',
+    as: "span",
+    display: "block",
+    textAlign: "center",
+    fontSize: "14px",
+    letterSpacing: "0.15em",
+    fontWeight: "700",
+    color: "#6C247E",
+    mb: "12px",
   },
   secHeading: {
-    textAlign: 'center',
-    fontSize: ['20px', '24px', '36px', '36px'],
-    fontWeight: '700',
-    color: '#0f2137',
-    letterSpacing: '-0.025em',
-    mb: '0',
-    ml: 'auto',
-    mr: 'auto',
-    lineHeight: '1.12',
-    width: '540px',
-    maxWidth: '100%',
+    textAlign: "center",
+    fontSize: ["20px", "24px", "36px", "36px"],
+    fontWeight: "700",
+    color: "#0f2137",
+    letterSpacing: "-0.025em",
+    mb: "0",
+    ml: "auto",
+    mr: "auto",
+    lineHeight: "1.12",
+    width: "540px",
+    maxWidth: "100%",
   },
   row: {
     flexBox: true,
-    flexWrap: 'wrap',
-    ml: ['-30px', '-30px', '-30px', '-25px', '-30px'],
-    mr: ['-30px', '-30px', '-30px', '-25px', '-45px'],
+    flexWrap: "wrap",
+    ml: ["-30px", "-30px", "-30px", "-25px", "-30px"],
+    mr: ["-30px", "-30px", "-30px", "-25px", "-45px"],
   },
   col: {
     width: [1, 1 / 2, 1 / 2, 1 / 3],
-    pl: ['30px', '30px', '30px', '25px', '45px'],
-    pr: ['30px', '30px', '30px', '25px', '45px'],
-    mb: ['50px', '70px'],
+    pl: ["30px", "30px", "30px", "25px", "45px"],
+    pr: ["30px", "30px", "30px", "25px", "45px"],
+    mb: ["50px", "70px"],
   },
   FeatureItemStyle: {},
   iconStyle: {
-    width: ['72px', '72px', '72px', '72px', '82px'],
-    height: ['72px', '72px', '72px', '72px', '82px'],
-    mr: '20px',
-    borderRadius: ['20px', '20px', '20px', '20px', '28px'],
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    bg: '#ffecef',
-    color: '#ff4361',
-    fontSize: ['26px', '26px', '26px', '26px', '30px'],
+    width: ["72px", "72px", "72px", "72px", "82px"],
+    height: ["72px", "72px", "72px", "72px", "82px"],
+    mr: "20px",
+    borderRadius: ["20px", "20px", "20px", "20px", "28px"],
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    bg: "#ffecef",
+    color: "#ff4361",
+    fontSize: ["26px", "26px", "26px", "26px", "30px"],
   },
   featureTitle: {
-    fontSize: ['17px', '19px'],
-    fontWeight: '500',
-    color: '#0f2137',
-    letterSpacing: '-0.020em',
-    lineHeight: '1.5',
-    mb: ['10px', '13px'],
+    fontSize: ["17px", "19px"],
+    fontWeight: "500",
+    color: "#0f2137",
+    letterSpacing: "-0.020em",
+    lineHeight: "1.5",
+    mb: ["10px", "13px"],
   },
   featureDescription: {
-    fontSize: '15px',
-    fontWeight: '400',
-    color: '#5d646d',
-    letterSpacing: '-0.025em',
-    lineHeight: '1.88',
+    fontSize: "15px",
+    fontWeight: "400",
+    color: "#5d646d",
+    letterSpacing: "-0.025em",
+    lineHeight: "1.88",
     mb: 0,
   },
 };

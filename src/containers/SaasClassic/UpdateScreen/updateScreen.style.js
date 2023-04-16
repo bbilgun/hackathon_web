@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const SectionWrapper = styled.section`
   padding: 100px 0 40px 0;
@@ -39,11 +39,11 @@ const SectionWrapper = styled.section`
         margin-bottom: 30px;
       }
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 1px;
-        background: #e7e8eb;
+        background: #6c247e;
         display: block;
         left: 0;
         bottom: 0;
@@ -71,7 +71,7 @@ const SectionWrapper = styled.section`
       }
       .rc-tabs-tab {
         font-size: 18px;
-        color: #000000;
+        color: #ffffff;
         font-weight: 400;
         min-width: 230px;
         padding: 0 0 25px 0;
@@ -80,11 +80,13 @@ const SectionWrapper = styled.section`
         transition: 0.25s ease-in-out;
         display: inline-block;
         float: none;
+        background-color: #111022 !important;
+        opacity: 0.5;
         &:hover {
-          color: #ff4362;
+          color: #ffffff;
         }
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           width: 100%;
           height: 2px;
@@ -96,13 +98,14 @@ const SectionWrapper = styled.section`
           }
         }
         &:after {
-          background: #ff4362;
+          background: #ffffff;
           transform: scaleX(0);
           transform-origin: right center 0;
           transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0s;
         }
         &.rc-tabs-tab-active {
-          color: #ff4362;
+          color: #ffffff;
+          opacity: 1;
           &:after {
             transform: scaleX(1);
             transform-origin: left center 0;

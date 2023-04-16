@@ -62,7 +62,6 @@ export const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
 
   .menubarRegitser {
     margin-left: 30px;
@@ -75,7 +74,7 @@ export const AppWrapper = styled.div`
   .sticky-active {
     .navbar {
       padding: 20px 0 21px;
-      
+
       box-shadow: 0px 3px 8px 0px rgba(43, 83, 135, 0.08);
       @media only screen and (max-width: 1366px) {
         padding: 15px 0 16px;
@@ -112,7 +111,6 @@ export const AppWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-
   // flex: 1 0 auto;
   // width: 100%;
 `;
@@ -124,10 +122,14 @@ export const SectionHeader = styled.header`
   text-align: center;
   position: relative;
   background-color: #383848;
+  padding: 20px;
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   @media only screen and (max-width: 768px) {
     margin-bottom: 45px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: 30px 50px;
   }
   p {
     font-size: 15px;
@@ -160,6 +162,5 @@ export const SectionHeader = styled.header`
     }
   }
 `;
-
 
 export default GlobalStyle;

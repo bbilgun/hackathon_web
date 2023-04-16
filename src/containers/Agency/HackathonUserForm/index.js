@@ -15,6 +15,9 @@ import { plusCircle } from "react-icons-kit/fa/plusCircle";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { FormComponent } from "../HackathonTeam";
+import NextImage from "common/components/NextImage";
+import removeImg from "common/assets/image/appCreative/remove.png";
+
 import {
   collection,
   addDoc,
@@ -376,18 +379,18 @@ const HackathonUserForm = ({
     }
   };
 
-  const submitBtnDisaled = forms.length >= 3;
+  const submitBtnDisaled = forms.length >= 4;
 
   const SignupButtonGroup = ({ setFieldValue }) => (
     <Fragment>
       <Button
         type="submit"
         icon={<Icon className="close" icon={plusCircle} />}
-        className="default"
+        className="primary"
         iconPosition={"left"}
         title="Багийн гишүүн нэмэх"
         {...btnStyle}
-        style={{ borderRadius: 5 }}
+        style={{ borderRadius: 5, backgroundColor: "#6C247E" }}
         onClick={() => {
           setFieldValue("isSubmit", false);
         }}
@@ -395,7 +398,7 @@ const HackathonUserForm = ({
 
       <Button
         type="submit"
-        className="default"
+        className="primary burtgel-btn"
         title="Бүртгүүлэх"
         disabled={!submitBtnDisaled}
         style={{
@@ -416,17 +419,17 @@ const HackathonUserForm = ({
       <Button
         type="submit"
         icon={<Icon className="close" icon={plusCircle} />}
-        className="default"
+        className="primary"
         iconPosition={"left"}
         title="Багийн гишүүн нэмэх"
         {...btnStyle}
         onClick={() => {
           setLastUser(true);
         }}
-        style={{ borderRadius: 5 }}
+        style={{ borderRadius: 5, backgroundColor: "#6C247E" }}
       />
       <Button
-        className="default"
+        className="primary burtgel-btn"
         title="Бүртгүүлэх"
         disabled={!submitBtnDisaled}
         style={{
@@ -464,22 +467,32 @@ const HackathonUserForm = ({
       }) => (
         <form onSubmit={handleSubmit}>
           <HeadingContainer>
-            <Heading content={`Багийн гишүүн #${id}`} />
+            <Heading
+              content={`Багийн гишүүн #${id}`}
+              style={{ color: "black", paddingTop: "20px" }}
+            />
             {id !== 1 && (
               <div
                 style={{
                   marginLeft: "10px",
-                  marginTop: "2px",
+                  marginTop: "23px",
                   cursor: "pointer",
+                  color: "black",
                 }}
                 onClick={() => handleRemoveUsers(id)}
               >
-                <Icon
+                <NextImage
+                  width="20"
+                  height="20"
+                  src={removeImg}
+                  alt="remove"
+                />
+                {/* <Icon
                   color="#6C247E"
                   size={20}
                   className="close btn-icon"
                   icon={minusCircle}
-                />
+                /> */}
               </div>
             )}
           </HeadingContainer>
@@ -625,7 +638,10 @@ const HackathonUserForm = ({
   }) => (
     <>
       <HeadingContainer>
-        <Heading content={`Багийн гишүүн #${id}`} />
+        <Heading
+          content={`Багийн гишүүн #${id}`}
+          style={{ color: "black", paddingTop: "20px" }}
+        />
       </HeadingContainer>
       <Box className="row" {...row}>
         <Box className="col" {...col}>

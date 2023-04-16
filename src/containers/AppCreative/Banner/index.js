@@ -8,6 +8,7 @@ import NextImage from "common/components/NextImage";
 import Button from "common/components/Button";
 import Heading from "common/components/Heading";
 import Container from "common/components/UI/Container";
+import logoImg from "common/assets/image/appCreative/main_logo_sp.png";
 import BannerWrapper, {
   BannerContent,
   BannerImage,
@@ -19,7 +20,7 @@ import BannerWrapper, {
 import bannerImg from "common/assets/image/appCreative/main_logo.png";
 import bannerImgMobile from "common/assets/image/appCreative/availableThumb.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import backgroundImage from "common/assets/image/appCreative/1_1.png"
+import backgroundImage from "common/assets/image/appCreative/1_1.png";
 
 // close button for modal
 const CloseModalButton = () => (
@@ -63,16 +64,21 @@ const Banner = () => {
   };
   return (
     <BannerWrapper id="home">
-        {/* <NextImage
+      {/* <NextImage
           layout='fill'
           objectFit='cover'
           src={backgroundImage}
           alt="Picture of the author"
           id="bakground_image"
         /> */}
-        
+
       <Container>
         <BannerContent>
+          <div className="sp-img">
+            <Fade bottom delay={40}>
+              <NextImage src={logoImg} alt="logo Image" />
+            </Fade>
+          </div>
           <Fade up delay={100}>
             <Heading as="h1" content={`"Dev Hackathon Vol3 - 2023"`} />
           </Fade>

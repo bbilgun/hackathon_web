@@ -52,7 +52,7 @@ export const keyFeatures = {
   features: [
     {
       id: 1,
-      icon: keyFeature1,
+      icon: keyFeature4,
       title: "Artificial intelligence",
       description: "",
     },
@@ -88,17 +88,17 @@ export const chooseUs = {
   features: [
     {
       id: 1,
-      title: "1-р байр Цом, Өргөмжлөл, 1'500'000₮.",
+      title: "1-р байр Цом, Өргөмжлөл, 1'500'000₮ + сургалтын эрх.",
       description: "",
     },
     {
       id: 2,
-      title: "2-р байр Өргөмжлөл, 1'000'000₮.",
+      title: "2-р байр Өргөмжлөл, 1'000'000₮ + сургалтын эрх.",
       description: "",
     },
     {
       id: 3,
-      title: "3-р байр Өргөмжлөл, 500'000₮.",
+      title: "3-р байр Өргөмжлөл, 500'000₮ + сургалтын эрх.",
       description: "",
     },
   ],
@@ -127,7 +127,7 @@ export const event = {
 };
 export const experiences = {
   title: "Зохион байгуулагч",
-  slogan: `Sys&CoTech клубээс зохион байгуулж буй "Dev Hackathon Vol3 - 2023" тэмцээний ивээн тэтгэгч байгууллагууд`,
+  slogan: `тэмцээний ивээн тэтгэгч байгууллагууд`,
   video_theme: videoTheme,
   features: [
     {
@@ -147,7 +147,7 @@ export const experiences = {
     {
       id: 3,
       icon: SystemCenter,
-      title: "SystemCenter",
+      title: "System Center",
       description: "Дэлхийд өрсөлдөх Монгол инженерийг БИД бэлтгэнэ.",
     },
 
@@ -181,7 +181,7 @@ export const experiences = {
     {
       id: 4,
       logo: SystemCenter,
-      name: "SystemCenter",
+      name: "System Center",
       link: "https://www.ict-training.mn/?fbclid=IwAR12KIpBUYODkWq85vwCtMwD1rW3KuO_-_UbWE7jOc06859-GqIwpLByOOM",
     },
     {
@@ -223,7 +223,7 @@ export const features = {
       thumbnail: Image3,
       title: "Хакатонд хэн оролцож болох вэ?",
       description:
-        "Шинийг илэрхийлдэг, өөрийгөө сорих хүсэлтэй, мэдээллийн технологийн чиглэлд сонирхолтой ЕБС-ийн сурагчид болон их дээд сургуулийн оюутнууд ",
+        "Шинийг илэрхийлдэг, өөрийгөө сорих хүсэлтэй, мэдээллийн технологийн чиглэлд сонирхолтой их дээд сургуулийн оюутан залуучууд ",
     },
     {
       id: 4,
@@ -542,7 +542,7 @@ import { Icon } from "react-icons-kit";
 import { facebook } from "react-icons-kit/fa/facebook";
 import { dribbble } from "react-icons-kit/fa/dribbble";
 import { twitter } from "react-icons-kit/fa/twitter";
-import footerLogo from "../../assets/image/appCreative/logo.png";
+import footerLogo from "../../assets/image/appCreative/client_logo/2.png";
 
 export const footerWidget = {
   logo: footerLogo,

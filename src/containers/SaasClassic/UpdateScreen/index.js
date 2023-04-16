@@ -155,7 +155,7 @@ UpdateScreen.defaultProps = {
     fontSize: "14px",
     letterSpacing: "0.15em",
     fontWeight: "700",
-    color: "#ff4362",
+    color: "#6C247E",
     mb: "12px",
   },
   secHeading: {

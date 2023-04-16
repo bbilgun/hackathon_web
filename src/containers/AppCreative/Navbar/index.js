@@ -70,14 +70,18 @@ const Navbar = () => {
             className="menubar"
             icon={
               state.mobileMenu ? (
-                <Icon className="bar" icon={x} />
+                <Icon className="bar" icon={x} style={{ color: "white" }} />
               ) : (
                 <Fade>
-                  <Icon className="close" icon={menu} />
+                  <Icon
+                    className="bar"
+                    icon={menu}
+                    style={{ color: "white" }}
+                  />
                 </Fade>
               )
             }
-            color="#0F2137"
+            color="white"
             variant="textButton"
             onClick={() => toggleHandler("menu")}
           />
@@ -85,7 +89,10 @@ const Navbar = () => {
       </Container>
 
       {/* start mobile menu */}
-      <MobileMenu className={`mobile-menu ${state.mobileMenu ? "active" : ""}`}>
+      <MobileMenu
+        className={`mobile-menu ${state.mobileMenu ? "active" : ""}`}
+        style={{ backgroundColor: "#1C1C28" }}
+      >
         <Container>
           <Scrollspy
             className="menu"
@@ -99,6 +106,7 @@ const Navbar = () => {
                   href={menu.path}
                   offset={menu.offset}
                   onClick={handleRemoveMenu}
+                  style={{ color: "white" }}
                 >
                   {menu.label}
                 </AnchorLink>

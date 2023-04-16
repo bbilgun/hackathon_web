@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
-import { rgba } from 'polished';
+import styled from "styled-components";
+import { themeGet } from "@styled-system/theme-get";
+import { rgba } from "polished";
 
 const BannerWrapper = styled.div`
   padding-top: 80px;
@@ -8,7 +8,7 @@ const BannerWrapper = styled.div`
   overflow: hidden;
   position: relative;
   width: 100%;
-    height: 100%;
+  height: 100%;
   @media only screen and (max-width: 1199px) {
     min-height: auto;
   }
@@ -69,7 +69,7 @@ export const BannerContent = styled.div`
     font-size: 72px;
     line-height: 1.25;
     font-weight: 700;
-    color: ${themeGet('colors.white', '#ffffff')};
+    color: ${themeGet("colors.white", "#ffffff")};
     margin-bottom: 20px;
     letter-spacing: -2px;
     @media only screen and (max-width: 1366px) {
@@ -142,8 +142,8 @@ export const ButtonGroup = styled.div`
     padding-right: 20px;
     margin-top: 10px;
     &.primary {
-      background-color: ${themeGet('colors.primary', '#6C247E')};
-      color: ${themeGet('colors.white')};
+      background-color: ${themeGet("colors.primary", "#6C247E")};
+      color: ${themeGet("colors.white")};
       font-size: 15px;
       min-height: 55px;
       &:hover {
@@ -153,7 +153,7 @@ export const ButtonGroup = styled.div`
 
     &.text {
       font-size: 17px;
-      color: ${themeGet('colors.priamry', '#6C247E')};
+      color: ${themeGet("colors.priamry", "#6C247E")};
       letter-spacing: -0.3px;
       font-weight: 700;
       margin-left: 5px;
@@ -172,7 +172,7 @@ export const VideoWrapper = styled.div`
   position: relative;
   width: 900px;
   &:before {
-    content: '';
+    content: "";
     display: block;
     padding-top: 56.25%;
   }

@@ -22,7 +22,7 @@ const playPluse = keyframes`
 `;
 
 const SectionWrapper = styled.section`
-width: 100%;
+  width: 100%;
   padding-bottom: 70px;
   position: relative;
   @media only screen and (max-width: 991px) {
@@ -44,7 +44,6 @@ width: 100%;
       max-width: 1290px;
     }
   }
-  
 `;
 export const ExperienceMainWrap = styled.div`
   margin-left: auto;
@@ -189,7 +188,6 @@ export const ExperienceWrapper = styled.div`
   padding: 0 15px;
   @media only screen and (max-width: 1219px) {
     justify-content: center;
-    
   }
   @media only screen and (max-width: 991px) {
     padding: 0;
@@ -197,17 +195,17 @@ export const ExperienceWrapper = styled.div`
   .experience__item {
     display: flex;
     align-items: flex-start;
-    padding: 0px 70px;
+    padding: 20px 70px;
     margin: 20px 40px 35px 0px;
     width: 46%;
     background-color: #383848;
     border-radius: 32px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     @media only screen and (max-width: 1366px) {
-      padding: 0px 40px;
+      padding: 20px 40px;
     }
     @media only screen and (max-width: 1219px) {
-      padding: 0px 15px;
+      padding: 20px 15px;
       width: 60%;
       margin: 20px 0px 35px 0px;
     }
@@ -216,15 +214,15 @@ export const ExperienceWrapper = styled.div`
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0px 15px;
+      padding: 20px 15px;
       width: 100%;
     }
     @media only screen and (max-width: 624px) {
-      padding: 0px 50px;
+      padding: 20px 50px;
       width: 100%;
     }
     @media only screen and (max-width: 480px) {
-      padding: 0px 20px;
+      padding: 20px 20px;
     }
     .icon__wrapper {
       margin-right: 20px;

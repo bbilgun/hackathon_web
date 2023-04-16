@@ -9,7 +9,10 @@ const LoginModalWrapper = styled.div`
   background-color: #232334;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 32px;
+  padding: 0px;
+  @media only screen and (min-width: 768px) {
     padding: 50px;
+  }
   @media only screen and (min-width: 1201px) {
     max-width: 1170px;
     width: 100%;
@@ -38,7 +41,6 @@ const LoginModalWrapper = styled.div`
     }
   }
   .reusecore__button {
-    background-color: transparent;
     &.default {
       background-color: ${themeGet("colors.primary", "#10ac84")};
       transition: all 0.3s ease;
