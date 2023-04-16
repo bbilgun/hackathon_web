@@ -100,7 +100,7 @@ export const chooseUs = {
       id: 3,
       title: "3-р байр Өргөмжлөл, 500'000₮.",
       description: "",
-    }
+    },
   ],
 };
 
@@ -148,10 +148,9 @@ export const experiences = {
       id: 3,
       icon: SystemCenter,
       title: "SystemCenter",
-      description:
-        "Онлайн худалдааны бизнес эрхлэгчдэд зориулан илүү бага зардлаар, илүү хялбар технологийг ашиглаж, захиалга, хүргэлт, худалдааг автоматжуулах боломжийг онлайн худалдааны ZOCHIL платформ зах зээлд нэвтрүүлээд байна.",
+      description: "Дэлхийд өрсөлдөх Монгол инженерийг БИД бэлтгэнэ.",
     },
-    
+
     {
       id: 4,
       icon: puzzleIcon,
@@ -559,7 +558,7 @@ export const footerWidget = {
       },
       {
         id: 2,
-        url: "tel:+97686550963",
+        url: "tel:94945798",
         text: "Холбогдох утас",
       },
       {

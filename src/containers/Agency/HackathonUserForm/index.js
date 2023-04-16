@@ -15,6 +15,17 @@ import { plusCircle } from "react-icons-kit/fa/plusCircle";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { FormComponent } from "../HackathonTeam";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+} from "firebase/firestore";
+import { db } from "common/plugins/firebase";
+import Alert from "common/components/Alert";
 
 const schoolData = [
   "ШУТИС",
@@ -36,7 +47,7 @@ const schoolData = [
   "Бусад",
 ];
 
-const courseList = ["1", "2", "3", "4", "5", "6", "7", "8"];
+const courseList = ["1", "2", "3", "4"];
 
 const schoolValidation = (schoolName, value) => {
   switch (schoolName) {
@@ -167,6 +178,7 @@ const HackathonUserForm = ({
   contentWrapper,
   registerSuccess = false,
   setRegisterSuceess,
+  showTab,
 }) => {
   const [lastUser, setLastUser] = useState(true);
   const [forms, setForms] = useState([]);
@@ -194,15 +206,24 @@ const HackathonUserForm = ({
 
   const registerUsers = (hackathonTeamId, data, id) => {
     toast.promise(
-      axios.post(
-        `https://syscotech-api.herokuapp.com/api/v1/hackathonteams/${hackathonTeamId}/users`,
-        data,
-        {
-          headers: {
-            "Access-Control-Allow-Headers": "*",
-          },
+      new Promise((res, rej) => {
+        try {
+          const ref = doc(db, "teams", hackathonTeamId);
+          updateDoc(ref, {
+            members: arrayUnion(data),
+          })
+            .then((data) => {
+              res();
+            })
+            .catch((e) => {
+              console.error("Error adding document: ", e);
+              rej();
+            });
+        } catch (e) {
+          console.error("Error adding document: ", e);
+          rej();
         }
-      ),
+      }),
       {
         pending: `Оролцогч ${id} бүртгэж байна... `,
         success: {
@@ -221,21 +242,26 @@ const HackathonUserForm = ({
 
   const teamRegister = async (data) => {
     toast.promise(
-      axios.post(
-        "https://syscotech-api.herokuapp.com/api/v1/hackathons/6255f6fbbaf0fa4aebde4072/teams",
-        data,
-        {
-          headers: {
-            "Access-Control-Allow-Headers": "*",
-          },
+      new Promise((res, rej) => {
+        try {
+          addDoc(collection(db, "teams"), data)
+            .then((docRef) => {
+              res(docRef.id);
+            })
+            .catch((e) => {
+              console.error("Error adding document: ", e);
+              rej();
+            });
+        } catch (e) {
+          console.error("Error adding document: ", e);
+          rej();
         }
-      ),
+      }),
       {
         pending: "Багийн бүртгэл хийгдэж байна... ",
         success: {
-          render(data) {
-            const requestData = data.data.data;
-            promises(requestData.data.id);
+          render(result) {
+            promises(result.data);
             return `Амжилттай бүртгэгдлээ. `;
           },
         },
@@ -252,15 +278,26 @@ const HackathonUserForm = ({
     const formData = data;
     const isSubmit = formData.isSubmit;
     toast.promise(
-      axios.post(
-        "https://syscotech-api.herokuapp.com/api/v1/hackathonusers/check",
-        data,
-        {
-          headers: {
-            "Access-Control-Allow-Headers": "*",
-          },
+      new Promise((res, rej) => {
+        try {
+          getDocs(collection(db, "teams")).then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              data = doc.data();
+              if (data.members && data.members.length) {
+                data.members.forEach((member) => {
+                  if (member.studentCode == formData.studentCode) {
+                    rej();
+                  }
+                });
+              }
+            });
+            res();
+          });
+        } catch (e) {
+          console.error("Error adding document: ", e);
+          rej();
         }
-      ),
+      }),
       {
         pending: `Оролцогч #${id} мэдээллийг шалгаж байна... `,
         success: {
@@ -284,13 +321,12 @@ const HackathonUserForm = ({
       }
     );
   };
-  async function promises(id) {
-    const unresolved = forms.map(async (data, index) => {
-      await registerUsers(id, data, index + 1);
-      return data;
-    });
-
-    await Promise.all(unresolved);
+  async function promises(teamId) {
+    await Promise.all(
+      forms.map(async (data, index) => {
+        await registerUsers(teamId, data, index + 1);
+      })
+    );
   }
 
   const createUserForm = async () => {
@@ -340,7 +376,7 @@ const HackathonUserForm = ({
     }
   };
 
-  const submitBtnDisaled = forms.length >= 2;
+  const submitBtnDisaled = forms.length >= 3;
 
   const SignupButtonGroup = ({ setFieldValue }) => (
     <Fragment>
@@ -696,6 +732,9 @@ const HackathonUserForm = ({
                 value={form}
                 id={index + 1}
                 visibleBtn={forms.length === index + 1}
+                key={
+                  form && form.studentCode ? form.studentCode + index : index
+                }
               />
               <Space />
               <Space />
@@ -705,6 +744,34 @@ const HackathonUserForm = ({
         {forms.length < 5 && lastUser && <UserForm id={forms.length + 1} />}
         <Space />
         <Space />
+        {registerSuccess && (
+          <>
+            <Alert
+              style={{
+                borderColor: "#badbcc",
+                backgroundColor: "#d1e7dd",
+                color: "#0f5132",
+                marginBottom: 30,
+              }}
+            >
+              - Амжилттай бүртгэлээ. Та хураамж хэсэг рүү очиж бүртгэлийн
+              хураамжийг төлснөөр тэмцээнд оролцох эрх баталгаажих болно. <br />{" "}
+              - Бүртгэлтэй холбоотой асууж тодруулах зүйл гарвал манай сошиал
+              хаягууд руу хандана уу!
+            </Alert>
+            <Button
+              className="default"
+              title="Бүртгэлийн хураамж төлөх"
+              style={{
+                marginLeft: 30,
+                backgroundColor: "green",
+                borderRadius: 5,
+              }}
+              onClick={() => showTab("2")}
+              {...btnStyle}
+            />
+          </>
+        )}
         {/* <SignupButtonGroup /> */}
         {/* <LoginButtonGroup /> */}
       </Box>

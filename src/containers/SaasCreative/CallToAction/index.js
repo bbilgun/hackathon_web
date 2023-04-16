@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
-import { Icon } from 'react-icons-kit';
-import { androidArrowDropdown } from 'react-icons-kit/ionicons/androidArrowDropdown';
-import Container from 'common/components/UI/Container';
-import { Button, MenuItem } from 'react-aria-menubutton';
-import Link from 'common/components/Link';
-import Heading from 'common/components/Heading';
-import Text from 'common/components/Text';
-import Section, { Content, DownloadButton, DownloadOptions } from './cta.style';
+import React, { useState } from "react";
+import { Icon } from "react-icons-kit";
+import { androidArrowDropdown } from "react-icons-kit/ionicons/androidArrowDropdown";
+import Container from "common/components/UI/Container";
+import { Button, MenuItem } from "react-aria-menubutton";
+import Link from "common/components/Link";
+import Heading from "common/components/Heading";
+import Text from "common/components/Text";
+import Section, { Content, DownloadButton, DownloadOptions } from "./cta.style";
 
-const menuItemWords = ['Download for MacOS', 'Download for Windows x64'];
+const menuItemWords = ["Download for MacOS", "Download for Windows x64"];
 
 const CallToAction = () => {
-  const [downloadFor, setDownloadFor] = useState('Download for MacOS');
+  const [downloadFor, setDownloadFor] = useState("Download for MacOS");
   const handleSelection = (value, event) => {
-    console.log(value);
     setDownloadFor(value);
   };
   return (

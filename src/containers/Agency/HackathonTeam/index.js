@@ -12,6 +12,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Alert from "common/components/Alert";
+import { db } from "common/plugins/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const HackathonTeamSchema = Yup.object().shape({
   name: Yup.string()
@@ -212,15 +214,22 @@ const HackathonTeam = ({
   const checkTeamName = (data) => {
     const formData = data;
     toast.promise(
-      axios.post(
-        "https://syscotech-api.herokuapp.com/api/v1/hackathonteams/check",
-        data,
-        {
-          headers: {
-            "Access-Control-Allow-Headers": "*",
-          },
+      new Promise((res, rej) => {
+        try {
+          getDocs(collection(db, "teams")).then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              data = doc.data();
+              if (data.name == formData.name) {
+                rej();
+              }
+            });
+            res();
+          });
+        } catch (e) {
+          console.error("Error adding document: ", e);
+          rej();
         }
-      ),
+      }),
       {
         pending: "Багийн мэдээллийг шалгаж байна... ",
         success: {
@@ -257,20 +266,7 @@ const HackathonTeam = ({
         {({ values, errors, touched, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <Box style={{ paddingBottom: 32 }} {...contentWrapper}>
-              {registerSuccess ? (
-                <Alert
-                  style={{
-                    borderColor: "#badbcc",
-                    backgroundColor: "#d1e7dd",
-                    color: "#0f5132",
-                    marginBottom: 30,
-                  }}
-                >
-                  - Бүртгэлийн хураамжийг төлснөөр тэмцээнд оролцох эрх
-                  баталгаажих болно. <br /> - Бүртгэлтэй холбоотой асууж
-                  тодруулах зүйл гарвал манай сошиал хаягууд руу хандана уу!
-                </Alert>
-              ) : (
+              {!registerSuccess && (
                 <Alert
                   style={{
                     borderColor: "#ffecb5",

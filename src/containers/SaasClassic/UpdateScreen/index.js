@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Icon from "react-icons-kit";
 import Tabs, { TabPane } from "rc-tabs";
@@ -20,12 +20,35 @@ import { users } from "react-icons-kit/fa/users";
 import { userCircleO } from "react-icons-kit/fa/userCircleO";
 import { creditCard } from "react-icons-kit/fa/creditCard";
 import Alert from "common/components/Alert";
+import { db } from "common/plugins/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const UpdateScreen = ({ secTitleWrapper, secText, secHeading, endTime }) => {
   const [activeKey, setActiveKey] = useState("1");
   const [teamId, setTeamId] = useState(null);
   const [validTeam, setValidTeam] = useState(false);
   const [registerSuccess, setRegisterSuceess] = useState(false);
+
+  // const fetchFirebase = async () => {
+  //   const querySnapshot = await getDocs(collection(db, "members"));
+  //   querySnapshot.forEach((doc) => {
+  //     console.log(`${doc.id} =>`, doc.data());
+  //   });
+  // };
+
+  const showTab = (i) => {
+    setActiveKey(i);
+    const burtgel = document.getElementById("screenshot_section");
+    if (burtgel && burtgel.scrollIntoView) {
+      burtgel.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    // fetchFirebase();
+  }, []);
 
   const onChange = (index) => {
     if (index === "3") {
@@ -92,6 +115,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading, endTime }) => {
                     registerSuccess={registerSuccess}
                     setRegisterSuceess={setRegisterSuceess}
                     validTeam={validTeam}
+                    showTab={showTab}
                   />
                 )}
               </>
