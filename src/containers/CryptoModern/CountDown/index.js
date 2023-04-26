@@ -12,7 +12,7 @@ import LoginModal from "containers/Agency/LoginModal";
 import JuramModal from "containers/Agency/JuramModal";
 
 // Дуусах хугацаа
-const deadline2 = new Date("2023-04-27 18:00:00");
+const deadline2 = new Date("2023-04-26 18:00:00");
 
 import SectionWrapper, { ContentWrapper } from "./countdown.style";
 import { SectionHeader } from "containers/AppCreative/appCreative.style";
