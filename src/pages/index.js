@@ -25,7 +25,7 @@ import logoImg from "common/assets/image/appCreative/main_logo.png";
 import Fade from "react-reveal/Fade";
 
 // Дуусах хугацаа
-const deadline = moment("2023-04-27");
+const deadline = moment("2023-04-26");
 const today = new Date();
 const endTime = today > deadline;
 
