@@ -23,9 +23,10 @@ import moment from "moment";
 import NextImage from "common/components/NextImage";
 import logoImg from "common/assets/image/appCreative/main_logo.png";
 import Fade from "react-reveal/Fade";
+import Header from "../components/Header"
 
 // Дуусах хугацаа
-const deadline = moment("2023-04-26");
+const deadline = moment("2024-04-26");
 const today = new Date();
 const endTime = today > deadline;
 
@@ -57,6 +58,7 @@ export default function index() {
           <Sticky top={0} innerZ={9999} activeClass="sticky-active">
             <Navbar />
           </Sticky>
+          <Header/>
           <ContentWrapper>
             <Banner />
             {<CountDownSection deadline={deadline} endTime={endTime} />}

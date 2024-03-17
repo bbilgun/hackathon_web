@@ -76,7 +76,6 @@ const ResetCSS = createGlobalStyle`
     padding: 0 !important;
     &.demo_switcher_modal {
       border: 0 !important;
-      background-color: #1f1e5a !important;
       .innerRndComponent {
         border-radius: 8px !important;
       }
@@ -86,7 +85,6 @@ const ResetCSS = createGlobalStyle`
   button.modalCloseBtn {
     position: fixed !important;
     z-index: 999991 !important;
-    background-color: transparent !important;
     top: 10px !important;
     right: 10px !important;
     min-width: 34px !important;
@@ -115,12 +113,6 @@ const ResetCSS = createGlobalStyle`
         opacity: 0.88 !important;
       }
     }
-  }
-  input:disabled {
-    background-color: white !important;
-  }
-  select:disabled {
-    background-color: white !important;
   }
   .burtgel-btn {
     margin: 20px 0 0 0 !important;

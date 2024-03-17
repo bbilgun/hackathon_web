@@ -7,12 +7,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'DM Sans', sans-serif;
     color: white;
-    background-image: url(${back.src}) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @media only screen and (max-width: 992px) {
-      background-image: url(${back2.src}) ;
-      }
   }
   .reuseModalParentWrapper,
   .reuseModalOverlay {
