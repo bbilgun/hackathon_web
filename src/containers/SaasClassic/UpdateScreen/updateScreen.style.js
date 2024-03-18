@@ -80,7 +80,7 @@ const SectionWrapper = styled.section`
         transition: 0.25s ease-in-out;
         display: inline-block;
         float: none;
-        background-color: #111022 !important;
+        background-color: transparent;
         opacity: 0.5;
         &:hover {
           color: #ffffff;

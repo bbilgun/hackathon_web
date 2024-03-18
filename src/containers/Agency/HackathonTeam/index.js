@@ -51,7 +51,7 @@ export const Space = styled.div`
 
 export const FormLabel = styled.label`
   display: block;
-  color: #767676;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -269,13 +269,12 @@ const HackathonTeam = ({
               {!registerSuccess && (
                 <Alert
                   style={{
-                    borderColor: "#ffecb5",
-                    backgroundColor: "#fff3cd",
-                    color: "#664d03",
+                    backgroundColor: "#8860D0",
+                    color: '#ffffff',
                     marginBottom: 30,
                   }}
                 >
-                  Нэг баг нь 4-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд
+                  Нэг баг нь 3-5 хүний бүрэлдэхүүнтэй оролцох боломжтой бөгөөд
                   багийн гишүүний тоо хүрээгүй тохиолдолд тэмцээнд оролцох
                   боломжгүйг анхаарна уу!
                 </Alert>
