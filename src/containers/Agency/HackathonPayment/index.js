@@ -19,9 +19,8 @@ const HackathonPayment = ({ contentWrapper }) => {
         <Box {...contentWrapper}>
           <Alert
             style={{
-              borderColor: "#ffecb5",
-              backgroundColor: "#fff3cd",
-              color: "#664d03",
+              backgroundColor: "#8860D0",
+              color: '#ffffff',
               marginBottom: 30,
             }}
           >
@@ -47,7 +46,7 @@ const HackathonPayment = ({ contentWrapper }) => {
               }}
             >
               <Fade up delay={50}>
-                <Heading as="h2" content="Голомт банк" />
+                <Heading as="h2" content="Хаан банк" />
                 <div
                   style={{
                     display: "flex",
@@ -68,7 +67,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                         mt="-5px"
                         as="h3"
                         fontWeight="500"
-                        content="1105456517"
+                        content="5094640241"
                       />
                     </div>
                     <div
@@ -118,7 +117,7 @@ const HackathonPayment = ({ contentWrapper }) => {
                         mt="-5px"
                         as="h3"
                         fontWeight="500"
-                        content="Төрмандах"
+                        content="Төгөлдөр Цэрэндорж"
                       />
                     </div>
                     <div

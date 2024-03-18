@@ -71,7 +71,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading, endTime }) => {
           <Text {...secText} content="Sys&CoTech club" />
           <Heading
             {...secHeading}
-            content={`"Dev Hackathon Vol3 - 2023" бүртгүүлэх`}
+            content={`"Dev Hackathon Vol4 - 2024" бүртгүүлэх`}
           />
         </Box>
         <Tabs
@@ -101,7 +101,7 @@ const UpdateScreen = ({ secTitleWrapper, secText, secHeading, endTime }) => {
                   margin: 30,
                 }}
               >
-                {`"Dev Hackathon Vol3 - 2023" тэмцээний бүртгэл хаагдсан.`}
+                {`"Dev Hackathon Vol4 - 2024" тэмцээний бүртгэл нээгдсэн.`}
               </Alert>
             ) : (
               <>

@@ -6,7 +6,7 @@ const LoginModalWrapper = styled.div`
   margin: auto;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #232334;
+  backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 32px;
   padding: 0px;
