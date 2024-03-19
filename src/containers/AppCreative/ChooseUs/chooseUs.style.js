@@ -3,40 +3,127 @@ import { themeGet } from "@styled-system/theme-get";
 import { rgba } from "polished";
 
 const SectionWrapper = styled.section`
+  > div.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (min-width: 1367px) {
+      max-width: 90vw;
+    }
+    @media only screen and (max-width: 624px) {
+      flex-direction: column-reverse;
+    }
+  }
+  p{
+    margin-bottom: 0rem;
+    background-image: -webkit-linear-gradient(#ffffff, #CBB593 50%, #948A76 55%, #ffe2b4);
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    font-size: 30px;
+  }
+  span{
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  h2{
+    font-family: "Reaver", serif;
+    font-size: 3vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    filter: drop-shadow(0px 0px 4px #002C4C);
+    background: -webkit-linear-gradient(#31C8DB 10%, #176490 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  h3{
+    margin-bottom: 0rem;
+    font-family: "Radiance", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    filter: drop-shadow(0px 2px 2px #000);
+  }
+  h1{
+    font-family: "Reaver", serif;
+    font-size: 4vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    filter: drop-shadow(0px 0px 4px #002C4C);
+    background: -webkit-linear-gradient(#31C8DB 10%, #176490 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  .keyFeatures__price{
+    padding: 15px 0px 15px 0px;
+  }
+  .keyFeatures__price2{
+    padding: 10px 0px 10px 0px;
+  }
   padding: 75px 0 40px;
   @media only screen and (max-width: 1219px) {
     padding-bottom: 70px;
   }
   @media only screen and (max-width: 991px) {
     padding-bottom: 80px;
+    p{
+      font-size: 23px;
+    }
+  }
+  @media only screen and (max-width: 730px) {
+    #hidden_bar{
+      display: none;
+    }
+    #hidden_navbar{
+      display: block;
+      margin-top: 20px;
+    }
+    > div.container {
+      justify-content: center;
+    }
+    h3{
+      font-size: 18px;
+    }
+    h2, h1 {
+      font-size: 6vw;
+    }
   }
   @media only screen and (max-width: 624px) {
+    h2, h1 {
+      font-size: 10vw;
+    }
     padding: 45px 0 60px;
   }
-  > div.container {
-    display: flex;
-    flex-wrap: wrap;
-    @media only screen and (min-width: 1367px) {
-      max-width: 1290px;
-    }
-    @media only screen and (max-width: 624px) {
-      flex-direction: column-reverse;
+  @media only screen and (min-width: 730px) {
+    #hidden_navbar{
+      display: none;
     }
   }
+  
 `;
 
 export const ThumbWrapper = styled.div`
-  width: calc(100% - 710px);
-  margin-right: 200px;
-  margin-bottom: 100px;
+  width: 20vw;
+  text-align: center;
   @media only screen and (max-width: 1219px) {
-    width: calc(100% - 525px);
-    margin-right: 60px;
-    margin-bottom: 0px;
+    width: 20vw;
   }
-  @media only screen and (max-width: 991px) {
-    width: calc(100% - 400px);
-    margin-right: 50px;
+  @media only screen and (max-width: 730px) {
+    width: 50vw;
   }
   @media only screen and (max-width: 624px) {
     width: 80%;

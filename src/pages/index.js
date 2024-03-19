@@ -24,6 +24,7 @@ import NextImage from "common/components/NextImage";
 import logoImg from "common/assets/image/appCreative/main_logo.png";
 import Fade from "react-reveal/Fade";
 import Header from "../components/Header"
+import KeyFeatures from "containers/AppCreative/KeyFeatures";
 
 // Дуусах хугацаа
 const deadline = moment("2024-04-26");
@@ -64,6 +65,7 @@ export default function index() {
             {<CountDownSection deadline={deadline} endTime={endTime} />}
             <Experiences />
             <UpdateScreen endTime={endTime} />
+            <KeyFeatures />
             <ChooseUs />
             {/* Ментор */}
             {/* <Team /> */}
