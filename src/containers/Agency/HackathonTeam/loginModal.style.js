@@ -4,9 +4,9 @@ import { themeGet } from "@styled-system/theme-get";
 const LoginModalWrapper = styled.div`
   width: 80%;
   margin: auto;
-  border-radius: 5px;
   overflow: hidden;
   backdrop-filter: blur(5px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.2) 90%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 32px;
   padding: 0px;

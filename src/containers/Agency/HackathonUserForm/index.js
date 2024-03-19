@@ -379,7 +379,7 @@ const HackathonUserForm = ({
     }
   };
 
-  const submitBtnDisaled = forms.length >= 4;
+  const submitBtnDisabled = forms.length >= 2;
 
   const SignupButtonGroup = ({ setFieldValue }) => (
     <Fragment>
@@ -400,10 +400,10 @@ const HackathonUserForm = ({
         type="submit"
         className="primary burtgel-btn"
         title="Бүртгүүлэх"
-        disabled={!submitBtnDisaled}
+        disabled={!submitBtnDisabled}
         style={{
           marginLeft: 30,
-          backgroundColor: !submitBtnDisaled ? "grey" : "green",
+          backgroundColor: !submitBtnDisabled ? "grey" : "green",
           borderRadius: 5,
         }}
         {...btnStyle}
@@ -431,10 +431,10 @@ const HackathonUserForm = ({
       <Button
         className="primary burtgel-btn"
         title="Бүртгүүлэх"
-        disabled={!submitBtnDisaled}
+        disabled={!submitBtnDisabled}
         style={{
           marginLeft: 30,
-          backgroundColor: !submitBtnDisaled ? "grey" : "green",
+          backgroundColor: !submitBtnDisabled ? "grey" : "green",
           borderRadius: 5,
         }}
         onClick={createUserForm}
@@ -725,9 +725,9 @@ const HackathonUserForm = ({
             type="submit"
             className="default"
             title="Бүртгүүлэх"
-            disabled={!submitBtnDisaled}
+            disabled={!submitBtnDisabled}
             style={{
-              backgroundColor: !submitBtnDisaled ? "grey" : "green",
+              backgroundColor: !submitBtnDisabled ? "grey" : "green",
               borderRadius: 5,
             }}
             {...btnStyle}
