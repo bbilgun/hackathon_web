@@ -3,10 +3,12 @@ import { themeGet } from "@styled-system/theme-get";
 
 const LoginModalWrapper = styled.div`
   width: 80%;
-  margin: auto;
-  border-radius: 5px;
+  margin: 20px auto 0 auto;
   overflow: hidden;
-  background-color: ${themeGet("colors.white", "#ffffff")};
+  backdrop-filter: blur(5px);
+  border-radius: 32px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.2) 90%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   @media only screen and (min-width: 1201px) {
     max-width: 1170px;
     width: 100%;
