@@ -32,7 +32,6 @@ const SectionWrapper = styled.section`
     text-transform: uppercase;
   }
   h2{
-    font-family: "Reaver", serif;
     font-size: 3vw;
     font-weight: 600;
     text-transform: uppercase;
@@ -56,7 +55,6 @@ const SectionWrapper = styled.section`
     filter: drop-shadow(0px 2px 2px #000);
   }
   h1{
-    font-family: "Reaver", serif;
     font-size: 4vw;
     font-weight: 600;
     text-transform: uppercase;

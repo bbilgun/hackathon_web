@@ -82,9 +82,8 @@ body {
 }
 
 #particles-background {
-  background-image: linear-gradient(to top, #8860d0, #8067d6, #776ddb, #6e73e0, #6479e4, #5981e8, #4e89eb, #4490ed, #3e9bee, #40a6ee, #4bb0ec, #5ab9ea);
-  background-image: -moz-linear-gradient(to top, #8860d0, #8067d6, #776ddb, #6e73e0, #6479e4, #5981e8, #4e89eb, #4490ed, #3e9bee, #40a6ee, #4bb0ec, #5ab9ea);
-  background-image: -webkit-linear-gradient(to top, #8860d0, #8067d6, #776ddb, #6e73e0, #6479e4, #5981e8, #4e89eb, #4490ed, #3e9bee, #40a6ee, #4bb0ec, #5ab9ea);
+  background-image: -moz-linear-gradient(to right top, #dbe2ef, #bfcce3, #a4b7d7, #88a2cb, #6b8dbf, #597eb1, #476fa4, #336096, #2a5383, #224671, #19395f, #112d4e);
+  background-image: linear-gradient(to right top, #dbe2ef, #bfcce3, #a4b7d7, #88a2cb, #6b8dbf, #597eb1, #476fa4, #336096, #2a5383, #224671, #19395f, #112d4e);
 }
 
 @keyframes rotate { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);}}
