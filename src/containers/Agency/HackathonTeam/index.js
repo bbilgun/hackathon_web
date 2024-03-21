@@ -269,7 +269,7 @@ const HackathonTeam = ({
               {!registerSuccess && (
                 <Alert
                   style={{
-                    backgroundColor: "#8860D0",
+                    backgroundColor: "#6C247E",
                     color: '#ffffff',
                     marginBottom: 30,
                   }}

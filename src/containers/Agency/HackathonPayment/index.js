@@ -19,7 +19,7 @@ const HackathonPayment = ({ contentWrapper }) => {
         <Box {...contentWrapper}>
           <Alert
             style={{
-              backgroundColor: "#8860D0",
+              backgroundColor: "#6C247E",
               color: '#ffffff',
               marginBottom: 30,
             }}
