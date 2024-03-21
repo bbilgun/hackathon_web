@@ -146,7 +146,6 @@ const SectionWrapper = styled.section`
       .rc-tabs-tabpane {
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0px 5px 60px 0px rgba(27, 67, 111, 0.15);
         &.rc-tabs-tabpane-active {
           animation: 0.7s ScaleInUp;
         }
