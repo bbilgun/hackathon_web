@@ -62,7 +62,8 @@ export const ContentWrapper = styled.div`
         width: 110px;
         height: 100px;
         border-radius: 5px;
-        background-color: #0b1741;
+        background-color: rgba(0, 0, 0, 0.5); 
+        backdrop-filter: blur(10px);
         @media (max-width: 480px) {
           width: 65px;
           height: 65px;
@@ -75,7 +76,7 @@ export const ContentWrapper = styled.div`
           span {
             font-size: 60px;
             letter-spacing: -1px;
-            color: #ffffff;
+            color: rgba(200, 230, 255, 1);
             font-family: "Roboto";
             font-weight: 300;
             text-align: center;
@@ -87,7 +88,7 @@ export const ContentWrapper = styled.div`
         .digitLabel {
           font-size: 14px;
           letter-spacing: 3px;
-          color: #6c247e;
+          color: rgba(66, 76, 85);
           font-family: "Roboto";
           font-weight: 500;
           text-align: center;

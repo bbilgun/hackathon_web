@@ -93,7 +93,7 @@ const CountDownSection = ({ deadline, endTime }) => {
             <Fade up>
               <Heading
                 as="h1"
-                content={`"Dev Hackathon Vol3 - 2023" бүртгэл хаагдахад`}
+                content={`"Dev Hackathon Vol3 - 2024" бүртгэл хаагдахад`}
                 style={{ margin: 0 }}
               />
               {/* <Text content={slogan} /> */}
@@ -102,9 +102,9 @@ const CountDownSection = ({ deadline, endTime }) => {
           {endTime ? (
             <Alert
               style={{
-                borderColor: "#ffecb5",
-                backgroundColor: "#fff3cd",
-                color: "#664d03",
+                borderColor: "#000000",
+                backgroundColor: "#000000",
+                color: "#000000",
                 margin: 30,
               }}
             >
