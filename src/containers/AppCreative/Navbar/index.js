@@ -91,7 +91,7 @@ const Navbar = () => {
       {/* start mobile menu */}
       <MobileMenu
         className={`mobile-menu ${state.mobileMenu ? "active" : ""}`}
-        style={{ backgroundColor: "#1C1C28" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
       >
         <Container>
           <Scrollspy
@@ -122,7 +122,7 @@ const Navbar = () => {
                 <Button
                   right={0}
                   title="Бүртгүүлэх"
-                  color="#6C247E"
+                  color="#ffffff"
                   borderRadius="60px"
                   minHeight="40px"
                   variant="outlined"

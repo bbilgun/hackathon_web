@@ -7,7 +7,8 @@ const NavbarWrapper = styled.nav`
   position: fixed;
   z-index: 9999;
   transition: all 0.3s ease;
-  background-color: #111022;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
   @media only screen and (max-width: 1366px) {
     padding: 20px 0 21px;
   }
@@ -36,7 +37,7 @@ const NavbarWrapper = styled.nav`
     }
   }
   ul {
-    background: #1C1C28;
+    background: #transparent;
     border-radius: 100px;
     padding: 8px !important;
     li {
@@ -56,7 +57,7 @@ const NavbarWrapper = styled.nav`
       }
       &.is-current {
         a {
-          background: linear-gradient(180deg, #7A50F2 0%, #6966F6 100%);
+          background: linear-gradient(180deg, #495C83 0%, #2596be 100%);
           color: #ffffff !important;
         }
       }
@@ -67,9 +68,9 @@ const NavbarWrapper = styled.nav`
 export const MenuArea = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 40px;
-  @media only screen and (max-width: 1620px) {
-    margin-left: 20px;
+  margin-left: 289px;
+  @media only screen and (max-width: 991px) {
+    margin-left: 80px;
   }
   .menu {
     display: flex;
@@ -244,6 +245,11 @@ export const MobileMenu = styled.div`
         margin-top: 20px;
       }
     }
+  }
+`;
+export const StopScroll = styled.div`
+  html, body {
+    overflow: hidden;
   }
 `;
 
